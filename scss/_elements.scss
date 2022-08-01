@@ -1,0 +1,203 @@
+// 快捷鍵 ////////////////////////////////////
+.accesskey{ display: none; }
+@media screen and (min-width: $wwNormal){
+  .accesskey{ 
+    display: block; z-index: 9; 
+    position: absolute; left: 0; top: 0; margin: 2px;
+    text-decoration: none; 
+    &:focus{ outline: 2px solid $primaryColor;}
+  }
+  .webFooter .accesskey{ 
+    // color: $fontInvert;
+    &:focus{  outline: 2px solid $fontColor;}
+  }
+}
+
+
+// 跳至內容區 ////////////////////////////////////
+.goCenter{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; position: absolute; top: -2em; left: 0; z-index: 991;
+    padding: 0 .8em; border-radius: 0 0 4px 4px;
+    overflow: hidden;
+    font-size: .9rem; height: 1.8em; line-height: 1.8;
+    background-color: $primaryColor; color: $fontInvert;
+    text-decoration: none; outline: none;  cursor: pointer;
+    transition:top .3s; 
+    &:focus{ top: 0;}
+    &:hover, &:focus{  opacity: 1; color: $fontInvert;}
+  }
+  @media screen and (min-width: $wwMaximum){
+    left: calc(50vw  - #{$wwMaximum}*.5);
+  }
+}
+
+////////////////////////////////////
+.blockHeader{
+  margin: 0 0 24px; padding:0;
+  font-size: 2rem; text-align: center; line-height: 1.4;
+  span{ display: inline-block;}
+  .he{ font-weight: normal;  font-family: 'Tenor Sans', sans-serif; letter-spacing: -1px; }
+  .hc{ font-size: 1.3rem;}
+}
+
+////////////////////////////////////
+.more{
+  a{
+    display: inline-block; height: 2.4em; line-height: 2.5em; padding: 0 1.2em; 
+    border-radius: 2em; text-decoration: none;
+    background-color: $primaryColor; color: $fontInvert;
+    transition: .2s;
+
+    &:hover{
+      box-shadow: $primaryColor 0 0 0 2px;
+    }
+    &:focus{
+      box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
+    }
+  }
+}
+
+
+////////////////////////////////////
+.goTop{
+  position: fixed; right: 10px; bottom: -60px; z-index: 99;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: none; text-indent: -5em; overflow: hidden;
+  box-shadow: transparent 0 0 0 2px, rgba(0, 0, 0, .3) 0 0 12px;
+  background-color: rgba(255, 255, 255, .8); cursor: pointer;
+  transition:box-shadow .2s, background-color.2s, bottom .8s;
+  &::before,  &::after{
+    content: ''; position: absolute; width: 8px; height: 8px;
+    left: 50%; top: 50%; margin-top: -6px; margin-left: -5px;
+    border: 2px solid $primaryColor; border-top: none; border-left: none;
+    transform: rotate(225deg);transition: .3s;
+  }
+  &::after{ margin-top: 1px;}
+
+  &:hover{
+    background-color: #fff;
+    box-shadow: #fff 0 0 0 2px, rgba(0, 0, 0, .4) 0 0 20px;
+   
+  }
+  &:focus{
+    background-color: #fff;
+    box-shadow:$primaryColor 0 0 0 2px, rgba(0, 0, 0, .4) 0 0 10px;
+  }
+
+  &.show{
+    bottom: 20px;
+  }
+
+  @media screen and (min-width: $wwMaximum + 64px){
+    right: calc(50vw - #{$wwMaximum}*.5 - 22px);
+  }
+
+}
+
+
+// 行動版查詢控制圖示 and 行動版側欄開關  ////////////////////////////////////
+.searchCtrl, .sidebarCtrl{
+  position: absolute; top: 4px; width: 52px; height: 52px; z-index: 9;
+  text-indent: -20em; overflow: hidden; outline: none;
+  border-radius: 0; background-color: transparent; border: none;
+  cursor: pointer; 
+
+  &:hover, &:focus{
+    background-color: $assistant;
+  }
+  &:focus{
+    box-shadow: $assistant 0 0 0 4px;
+  }
+}
+
+// 行動版查詢控制圖示 * begin
+.searchCtrl{
+  right: 4px;transition: .2s;
+  &::before, &::after{content: ''; position: absolute;}
+  &::before{
+    left: calc(50% - 12px); top: calc(50% - 12px);
+    width: 16px; height: 16px; border: 2px solid $black; border-radius: 50%;
+  }
+  &::after{
+    width: 12px; height: 3px; background-color: $black; border-radius: 0 2px 2px 0;
+    left: calc(50% + 2px); top: calc(50% + 6px);
+    transform: rotate(45deg);
+  }
+  @media screen and (min-width: $wwNormal){
+    display: none;
+  }
+}
+
+
+// .sidebarCtrl 控制行動版側欄開關（漢堡圖示）
+.sidebarCtrl{
+  left: 4px;
+  &::before, &::after{
+    content: ''; position: absolute; left: 12px;
+    width: 28px;height: 2px; background: $fontColor;
+  }
+  &::before{
+    top: 25px;
+    box-shadow: $fontColor 0 -9px 0;
+    transition: box-shadow .2s .2s, transform .2s 0s;
+  }
+  &::after{
+    top: 34px;
+    transition: transform .2s 0s, top .2s .2s;
+  }
+
+  &.closeIt{
+    &::before{
+      box-shadow: $fontColor 0 0 0;
+      transform: rotate(45deg);
+      transition:box-shadow .2s 0s, transform .2s .2s;
+    }
+    &::after{ 
+      top: 25px; transform: rotate(-45deg);
+      transition: transform .2s .2s, top .2s 0s;
+    }
+  }
+
+  &:hover {
+    border: none; box-shadow: none;background-color: $assistant;
+  }
+  &:focus{
+    background-color: $assistant;box-shadow: $assistant 0 0 0 4px;
+  }
+
+  @media screen and (min-width: $wwNormal){
+    display: none;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////
+// slick套件  //////////////////////////////////////////////////////////
+// slick套件: 左右箭頭
+.slick-arrow{
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 9;
+  width: 42px; height: 42px; border-radius: 50%;
+  text-indent: -20em; overflow: hidden; margin: 0;
+  background-color: $primaryColor;
+  cursor: pointer; outline: none; border: none; transition: .2s;
+  &::before{
+    content: ''; position: absolute; width: 8px; height: 8px;
+    left: 50%; top: 50%; margin-top: -5px;
+    border: 2px solid $fontInvert; border-top: none; border-right: none;
+    transform: rotate(45deg);
+  }
+  &.slick-prev{ left: 0; 
+    &::before{ margin-left: -4px; }
+  }
+  &.slick-next{ right: 0;
+      &::before{transform: rotate(225deg); margin-left: -7px;}
+  }
+
+  &:hover{
+    box-shadow: $primaryColor 0 0 0 2px;
+  }
+  &:focus{
+    box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
+  }
+}

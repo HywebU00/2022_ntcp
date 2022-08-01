@@ -1,0 +1,74 @@
+// variables
+// ---------- 長度常數 ---------- //
+$sideBarWidth: 280px;  // 窄版側欄選單
+$mobileWidth: 92vw; // 窄螢幕寬度 moduals width in mobile
+$normalWidth: 82vw; // 寬螢幕寬度
+// ---------- 長度常數 ---------- //
+
+
+// ---------- RWD 斷點 ---------- //
+$wwSlim: 480px;
+$wwMedium: 700px;
+$wwNormal: 1000px;
+$wwMaximum: 1200px;
+// ---------- RWD 斷點 ----------- //
+
+
+// ---------- 主要內容寬度設定 ----------- //
+%mainWidth {
+  width: $mobileWidth; margin: 0 auto;
+  @media screen and (min-width: $wwNormal){
+    width: $normalWidth;
+  }
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum*($normalWidth / 100vw);
+  }
+}
+// ---------- 主要內容寬度設定 ----------- //
+
+
+// ---------- 顏色變數 ----------- //
+$primaryColor:#1A2D3D;
+// $secondaryColor: #222;
+$assistant: #FFCB11;
+$hiLight:#6b6aba;
+// $hiLight2:#d6c41b;
+$notice: #cd0082;
+
+$fontColor: #222;
+$fontColorLight: #666;
+// $fontColorPale: #999;
+// $fontColorDark: #000;
+$fontInvert: #fff;
+$linkColor: #24afc6;
+$mainBg: #fff;
+
+$borderColor: #c1c4c6;
+$borderColorLight: #d2d2d2;
+$borderColorDark:#434242;
+// $shadow:rgba(0, 0, 0, 0.2);
+// $shadow2:rgba(0, 0, 0, 0.5);
+
+$gray: #dddad4;
+$grayLight: #F3F0EA;
+$grayDark: #b8b6b3;
+
+$btnBg1: $primaryColor;
+$btnBg2: darken($primaryColor, 12%);
+
+$footerBg: #fcfcfc;
+$sidebarBg: $primaryColor;
+
+// %gradient1{
+//   background: linear-gradient(0deg, #fee486 0%, #FFCF26 100%);
+//   // linear-gradient(#fee486, #FFCF26)
+// }
+
+@mixin gradient($deg: 0deg) {
+  background: linear-gradient($deg, #fee486 0%, #FFCF26 100%);
+}
+
+$black:#000;
+$white:#fff;
+
+// ---------- 顏色變數 ----------- //

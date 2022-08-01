@@ -1,0 +1,217 @@
+// 頁腳
+.webFooter{
+  position: relative; margin: 0 auto; padding:0;
+  background-color: #fff;
+
+  &::after{
+    content: '';
+    position: absolute; left: 0;right: 0;bottom: 0;height: 9px;
+    background-color: $assistant;
+  }
+
+  .fatFootCtrl, .fatFooter{display: none;}
+
+  //////////////////////////////////////////////////////////////////
+  .base{
+    position: relative;padding: 50px 4%; 
+  }
+
+  // 頁腳的單位名稱與logo 圖檔
+  .logo{
+    position: relative; margin: 0 auto 1em;
+    img{display: block; width: 100%; max-width: 448px;}
+  }
+
+  // 聯絡資訊
+  .contactInfo{
+    margin: 1em auto 0;
+    ul{ list-style: none; margin: 0; padding: 0;line-height: 1.6;}
+    li{
+      display: flex; padding:.7em 0; margin: 0;
+      .dt{
+        flex: 0 0 4em; width: 4em; margin: 0 .6em 0 0;
+        text-align: right;
+      }
+      .map{
+        display: inline-block; vertical-align: middle; margin: 0 0 0 5px;
+       a{
+         display: block; width: 30px; height: 30px; 
+         background: url(../images/icon_map.png) no-repeat center center;
+         background-size: 100%;
+
+         &:hover, &:focus{
+          box-shadow: $assistant 0 0 0 2px; border-radius: 4px;
+         }
+        }
+      }
+    }
+
+  }
+
+  // 宣告連結
+  .declaration{
+    margin: 1.5em auto 0;
+    ul{ 
+      list-style: none; overflow: hidden; 
+      margin:4px 0 0; padding: 0;line-height: 1.2;
+    }
+    li{
+      float: left; position: relative; margin: 0; padding: 0 1em 0 0;
+      &+li{margin-left: 1em;}
+      &::after{
+        content: ''; position: absolute; right: 0; top: .1em; 
+        width: 1px; height: 0.9em; background-color: $fontColor;
+      }
+      &:last-child{
+        &::after{display: none;}
+      }
+      a{
+        display: block;text-decoration: none; color: $fontColor;
+        white-space: nowrap;
+        border-bottom: 2px solid transparent;
+        &:hover, &:focus{ border-bottom-color: $fontColor;}
+      }
+    }
+  }
+
+  // 更新日期 與 瀏覽次數
+  .update{
+    // outline: 1px solid red;
+    display: block;margin: 2em auto 0;
+    span{
+      display: inline-block; color: $fontColorLight;
+      &+span{margin-left: 1.5em;}
+
+      em{ display: inline-block; color: $fontColor; font-style: normal;}
+    }
+  }
+
+
+  // 無障礙標章
+  .aaBadge{
+    margin: 1em 0 0;
+    display: inline-block; vertical-align: top;
+    img{ display: block; width: 150px; transition: .2s;}
+     a{ display: block;
+      &:hover, &:focus{
+        img{
+          box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;
+          border-radius: 2px;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+  @media screen and (min-width: $wwNormal){
+    // fatFooter 開關
+    .fatFootCtrl {
+      display: block;
+      position: absolute; top: 3px; right: 60px; z-index: 9;
+      width: 44px; height: 44px; 
+      text-indent: -5em; overflow: hidden;
+      background-color: $primaryColor;
+      border: none; box-shadow: none; cursor: pointer; 
+      transition: .2s;
+      &::before{
+        content: ''; position: absolute; width: 8px; height: 8px;
+        left: 50%; top: 50%; margin-top: -3px; margin-left: -5px;
+        border: 2px solid $fontInvert; border-top: none; border-left: none;
+        transform: rotate(225deg);transition: .3s;
+      }
+      &:hover{box-shadow: $primaryColor 0 0 0 2px;}
+      &:focus{box-shadow:$fontInvert 0 0 0 1px, $primaryColor 0 0 0 3px;}
+      &.closed{
+        &::before{transform: rotate(45deg); margin-top: -6px;}
+      }
+    }
+    .fatFooter{
+      display: block; padding: 60px 0 10px;
+      background: $footerBg url(../images/fatFooter_bg.jpg) no-repeat 0 0;
+    }
+    
+    // 二層網站架構
+    .siteTree{
+      margin: 0 auto; width: 80%;
+      ul{list-style: none; margin: 0; padding: 0;}
+      &>ul{
+        display: flex; flex-flow: row wrap;line-height: 1.4;
+
+        a {
+          display: block;text-decoration: none;color: $fontColor;
+          transition: .2s;
+        }
+        
+        &>li{
+          flex: 0 1 17%; margin: 1em 1.5% 0;min-width: 6em;
+          &>a{
+            padding: 5px 0 0;
+            font-weight: bold;border-bottom: 2px solid transparent;
+            &:hover, &:focus{
+              border-bottom-color: $fontColor;
+            }
+          }
+
+          &>ul{
+            margin: 1.2em 0 3em;
+            &>li{
+              margin: 0 0 1em;
+              &>a{
+                position: relative; padding-right: 12px;
+                border-bottom: 1px solid transparent;
+                &::before{
+                  content: ''; position: absolute; left: 1px; top: .45em;
+                  width: 0; height: 6px;
+                  background-color: $primaryColor; transition: .2s;
+                }
+                &:hover, &:focus{
+                  border-bottom-color: $primaryColor;
+                  padding-left: 12px; padding-right: 0;
+                  &::before{ width: 6px; }
+                }
+              }
+            }
+            ul{display: none;}
+          }
+        }
+      }
+    }
+
+    // base ////////////////////////////////////////////////////////////
+    .base{ padding-left: 6%; padding-right: 6%; padding-top: 40px;}
+    .logo{
+      width: 448px; margin: 0;
+    }
+
+    // 聯絡資訊
+    .contactInfo {
+      margin: 2em auto 0;
+      li{
+        dt{nav-right: 1.6em;}
+      }
+    }
+
+    // 宣告，無障礙標章
+    .declaration, .aaBadge{position: absolute; margin: 0; top: 50px;}
+    .declaration{
+      right:calc(6% + 160px); width: calc(88% - 620px );
+      ul{ text-align: right;}
+      li{
+        margin-bottom: 5px ;
+        float: none; display: inline-block;
+      }
+    }
+    .aaBadge{ right: 6%;}
+
+  }
+
+
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum;
+  }
+  
+}

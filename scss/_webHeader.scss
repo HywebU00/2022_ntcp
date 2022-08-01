@@ -1,0 +1,269 @@
+// .webHeader 版頭 ////////////////////////////////////////////
+.webHeader{
+  position: relative; z-index: 990;
+  width: 100vw; height: 60px; margin: 0 auto;padding:0;
+  background-color: $white;
+  transition: .3s;
+  background: $white;
+  &.fixed{
+    position: fixed; top: 0; left: 0;
+    box-shadow: rgba(0,0,0,.5) 0 2px 16px;
+  }
+
+  h1 {
+    margin: 0 60px; padding:2px 0;
+    line-height: 60px; text-align: center; font-size: 1.5em;
+    a{ display: block;}
+    img{
+      display: block; width: 100%; height: 56px; object-fit: contain;
+      margin: 0 auto;
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    height: auto; 
+    h1{
+      margin: 0; padding: 28px 0 12px 30px; width: 48%; height: auto;
+      min-width: 450px; max-width: $wwMaximum*.48;
+      text-align: left; line-height: 1;
+      a{ display: block;
+        &:focus{
+          box-shadow: $linkColor 0 0 0 2px;
+        }
+      }
+      img{
+        width: 447px; height: auto; margin: 0;
+      }
+    }
+    // 固定的版頭
+    &.fixed{
+      h1, .topLinks, .search, .goCenter{ display: none; }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    h1{
+      margin-left: calc( 50vw - #{$wwMaximum}/2);
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////
+
+.webHeader .topLinks{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; margin-right: 28px;
+    position: absolute; right: 0; top: 7px;
+    ul{
+      display: flex;
+      list-style: none; margin: 0; padding: 0; line-height: 1.2;
+      
+      &>li{
+        position: relative;
+        flex: 0 0 auto; margin: 0; padding: 0 .8em 0 .9em;
+        &>a{
+          display: block; position: relative; padding: 0 1px 1px;
+          text-decoration: none;color: $fontColor;
+          &::after{
+            content: ''; position: absolute; left: 50%; bottom: 0; width: 0;
+            height: 2px; background-color: $primaryColor;
+            transition: .2s;
+          }
+          &:hover, &:focus{
+            &::after{left: 0; width: 100%;}
+          }
+        }
+
+        &::before{
+          content: ''; position: absolute; left: 0; top: 2px; height: .9em; width: 1px;
+          background-color: $fontColorLight;
+        }
+        &:first-child{
+          &::before{display: none;}
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum ){
+    right: calc( 50vw - #{$wwMaximum}*.5);
+  }
+}
+
+///////////////////////////////////////////////////////////////
+
+// 主選單 /////////////////////////////////////////////////////
+.menu{
+  ul { list-style: none; margin: 0; padding: 0;}
+  a{ display: block; text-decoration: none; outline: none;}
+}
+
+
+// 主選單：在版頭內
+.webHeader .menu{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block;
+    margin:0 auto; width: 100%;
+    background: $assistant;
+    li{
+      margin: 0; padding: 0;
+      a{ color: $fontColor;}
+  
+      &.hasChild{
+        position: relative;
+        &>a{
+          &::after{
+            content: ''; width: 8px; height: 8px; 
+            border: 2px solid $black; border-left: none; border-bottom: none;
+          }
+        }
+      }
+    }
+  
+    // 第一層選單
+    &>ul{
+      display: flex; flex-flow: row nowrap; justify-content: flex-end;
+      margin: 0 auto;
+      line-height: 1.5; font-size: 1.15em;
+      &>li{
+        flex: 1 1 auto; margin: 0;transition: .2s; text-align: center;
+        &>a{
+          padding:.8em .5em; white-space: nowrap; 
+          transition: .2s;
+          &:focus, &:hover {
+            background-color: $primaryColor; color: $fontInvert;
+            &::after{ border-color: $fontInvert;}
+          }
+        }
+        &.hasChild{
+          &>a{
+            &::after{
+              display: inline-block; margin: .4em 0 0 10px; vertical-align: top;
+              transform: rotate(135deg);
+            }
+          }
+          &.here{
+            &>a{  background-color: $primaryColor; color: $fontInvert;
+              &::after{ border-color: $fontInvert;}
+            }
+          }
+        }
+  
+        // 第二層選單
+        &>ul {
+          top: auto;left: 0;z-index: 99;
+          min-width: 100%;max-width: 20em;
+        }
+        // 第二層及其之後的選單
+        ul{
+          display: none; position: absolute;  width: auto; 
+          text-align: left;font-size: 1rem;
+          background-color: #fff; color: $black;
+          box-shadow: rgba(0, 0, 0, 0.5) 0 5px 20px;
+  
+          &>li{
+            &>a{
+              color: $black; padding: .9em 1em .8em; 
+              white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+              border-bottom: 1px solid $borderColor;
+              transition: .15s; 
+              &:hover, &:focus{ 
+                background-color: $primaryColor; color: $white;
+              }
+            }
+            &:last-child>a{border-bottom-color:transparent}
+  
+            &.hasChild{
+              &>a{
+                position: relative; padding-right: 36px;
+                &::after{
+                  position: absolute; left: auto; right: 13px; top: 1.3em;
+                  border-color: $black; transform: rotate(45deg);
+                  transition: .3s;
+                }
+                &:hover, &:focus{
+                  &::after{border-color: $white; }
+                }
+              }
+  
+              &.here{
+                background-color:$primaryColor; 
+                &>a{color: $white;
+                  &::after{border-color: $white;}
+                }
+              }
+  
+              &.turn{
+                &>a::after{ transform: rotate(225deg); right: 9px; }
+              }
+    
+              // 第三層及其之後
+              ul {
+                top: 0;left: 100%;z-index: 99;
+                min-width: 8em;max-width: 12em;
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    // 控制選單上下的按鈕
+    button.downward, button.upward{
+      position: fixed; top: calc(100vh - 36px); left: 0; z-index: 99;
+      width: 32px; height: 32px; margin: 0; padding: 0;
+      transform: translateX(calc(-100% - 4px));
+      background-color: $primaryColor;box-shadow: $white 0 0 0 1px;
+      transition:box-shadow .2s, opacity .2s;
+      border: none;  cursor: pointer;
+      &:hover{
+        box-shadow: $primaryColor 0 0 0 2px;
+      }
+      &:focus {
+        box-shadow: $white 0 0 0 1px inset, $primaryColor 0 0 0 2px;
+      }
+      &::before{
+        content: ''; position: absolute; width: 8px; height: 8px; top: 50%; left: 50%;
+        border: 2px solid $white; border-left: none; border-top: none;
+      }
+  
+      &[disabled]{ 
+        opacity: .2; cursor: default;background-color:$black;
+        box-shadow: none;
+      }
+      
+      &.downward{
+        &::before{
+          transform: translate(-4px, -6px) rotate(45deg);
+        }
+      }
+  
+      &.upward{
+        top: calc(100vh - 72px); 
+        &::before{
+          transform: translate(-4px, -2px) rotate(225deg);
+        }
+      }
+    }
+
+  
+    @media screen and (min-width: $wwMaximum){      
+      &>ul{width: $wwMaximum;}
+    }
+  }
+
+}
+
+
+
+
+.bigBanner{
+  width: 100vw; margin: 0 auto; 
+  img{display: block; width: 100%; margin: 0 auto;}
+
+  @media screen and (min-width: $wwMaximum){
+    width: $wwMaximum;
+  }
+}

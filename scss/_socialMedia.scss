@@ -1,0 +1,37 @@
+// 首頁區塊：右側固定側邊欄（社群連結）
+.socialMedia{
+  display: none;
+  @media screen and (min-width: $wwNormal){
+    display: block; z-index: 199;
+    position: fixed; top: 250px; right: 0; padding:5px 10px;
+    border-radius: 6px 0 0 6px;
+    background-color: transparentize($primaryColor, .15);
+    ul{ list-style: none; margin: 0; padding: 0; width: 34px;}
+    li{
+      margin: 10px 0; padding: 0; 
+      a{
+        display: block; padding: 5px; border-radius: 3px;
+        text-indent: -20em; overflow: hidden; transition: .2s;
+        img{
+          display: block; width: 24px; height: 24px; object-fit: contain;
+          transition: .2s;
+        }
+
+        &:hover, &:focus{
+          img{
+            transform: scale(1.2);
+          }
+        }
+        &:focus{
+          box-shadow: $fontInvert 0 0 0 2px;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum + 108px){
+    right: calc( 50vw - #{$wwMaximum}/2 - 54px );
+    border-radius: 0 6px 6px 0;
+
+  }
+}

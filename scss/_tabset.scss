@@ -1,0 +1,107 @@
+// 頁籤基本設定
+.tabSet {
+  .tabItems {
+    display: flex; flex-flow: row nowrap; margin: 0 auto;
+    button {
+      flex: 1 1 auto; font-size: 1em; text-align: center;
+      border: none; box-shadow: none; background:none;
+      cursor: pointer;
+      &.active{cursor: default;}
+    }
+  }
+
+  .tabContent {
+    display: none;
+    .skip {
+      position: absolute;right: 0;bottom: 0;
+      width: 1px;height: 1px;padding: 0;
+      background-color: transparent;border: none;
+    }
+  }
+}
+
+
+///////////////////////////////////////////
+// .main>*:not(.servTab){display: none;}
+
+// Service 為民服務（頁籤）
+.servTab{
+  position: relative; margin: 0 auto; padding:50px 0;
+  background-color: $grayLight;
+
+  .blockHeader{text-align: center; margin: 0 0 30px;}
+
+  .tabSet{
+    .tabItems{
+      margin: 0 auto 10px; width: 94%;
+      button{
+        line-height: 1.5; height: auto;
+        margin:4px;padding: .7em 1em .6em; border-radius: 1.5em;
+        background-color: $white; color: $fontColor;
+        transition: .2s;
+        &:focus, &:hover{
+          box-shadow: $primaryColor 0 0 0 2px inset;
+        }
+        &.active {
+          color: $fontInvert; background: $fontColor;
+          &:focus, &:hover{
+            box-shadow: $assistant 0 0 0 1px inset, $primaryColor 0 0 0 3px;
+          }
+        }
+      }
+    }
+  
+    .tabContent{
+      .image{
+        overflow: hidden;
+        img{display: block; width: 100%; transition: .3s;}
+        a{
+          display: block; position: relative;
+          &::before{
+            position: absolute; left: 0;right: 0;top: 0;bottom: 0;
+            box-shadow: $linkColor 0 0 0 3px inset, $white 0 0 0 4px inset;
+          }
+          &:hover, &:focus {
+            img{ transform: scale(1.05);}
+          }
+          &:focus {
+            &::before{ content: ''; z-index: 9; }
+          }
+        }
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+
+    padding: 0;
+
+    .blockHeader{
+      position: absolute; left: 0; top: 4em;
+      width: auto; text-align: left; margin:0 50px;
+      span{ display: block;}
+    }
+
+    .tabSet{
+      display: flex; flex-flow: row nowrap;
+      .tabItems {
+        display: block;flex: 0 0 24%;
+        padding: 14em 30px 30px;margin: 0;
+        &>button {
+          display: block; margin: 0; width: 100%;
+          &+button { margin-top: .8em;}
+        }
+      }
+      .tabContentGroup{flex: 0 0 76%;}
+      .tabContent{
+        position: relative;min-height: 30em;width: 100%;
+       
+        .image{
+          a{display: block;}
+          img{display: block;width: 100%; height: auto; }
+        }
+      }
+    }
+  }
+}
