@@ -271,6 +271,9 @@ $(function(){
     _goTop.click(function(){
       _html.stop(true,false).animate({scrollTop: 0}, 800);
     });
+    $('.webHeader .accesskey').focus( function(){
+      _html.stop(true,false).animate({scrollTop: 0}, 800);
+    })
     // --end of-- 向上捲動箭頭 //////////////////////////////
     
   

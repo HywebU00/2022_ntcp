@@ -37,10 +37,13 @@
        a{
          display: block; width: 30px; height: 30px; 
          background: url(../images/icon_map.png) no-repeat center center;
-         background-size: 100%;
+         background-size: 100%;border-radius: 4px;
 
-         &:hover, &:focus{
-          box-shadow: $assistant 0 0 0 2px; border-radius: 4px;
+         &:hover{
+          box-shadow: $assistant 0 0 0 2px; 
+         }
+         &:focus{
+          box-shadow: $primaryColor 0 0 0 2px;
          }
         }
       }
