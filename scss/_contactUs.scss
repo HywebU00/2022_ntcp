@@ -3,7 +3,8 @@
 
 .contactUs{
   padding: 50px 0;
-  background-color: $assistant;
+  // background-color: $assistant;
+  @include gradient($deg: 0deg);
 
   .depLinks{
     .label{
@@ -156,8 +157,8 @@
           color: $fontColor; text-decoration: none;
           &::after{
             content: ''; position: absolute; 
-            left: 2.5em; right: 5px; bottom:.3em; height: 1px;
-            background-color: $fontColorLight; transition: .2s;
+            left: 2.5em; right: 5px; bottom:.4em; height: 1px;
+            background-color: $borderColor; transition: .2s;
           }
           img{
             position: absolute; left: 3px; top: 3px; z-index: 3;
@@ -166,7 +167,7 @@
           }
 
           &:hover, &:focus{
-            &::after{background-color: $primaryColor; height: 3px;}
+            &::after{background-color: $primaryColor; height: 2px;}
           }
           &:focus{background-color: $assistant;box-shadow: $assistant 0 0 0 2px;}
         }
@@ -219,9 +220,14 @@
     position: relative;
     padding: 40px 0 40px 5%;
     background-color: #fff;
-    background: url(../images/contactUs_bg.jpg) no-repeat right top,
-      url(../images/police_logo.png) no-repeat 0 0;
-    background-size: auto 100%, 50% auto;
+    // background-image: none;
+    // background: url(../images/contactUs_bg.jpg) no-repeat right top,
+    //   url(../images/police_logo.png) no-repeat 0 0;
+    // background-size: auto 100%, 50% auto;
+    background: url(../images/police_logo.png) no-repeat right -60px top -10px;
+    background-size: 45% auto;
+
+
 
     .blockHeader{
       position: absolute; left: 6%; top: calc(40px + 1rem);
@@ -255,15 +261,22 @@
       position: relative; z-index: 5;
       flex: 1 0 75%; width: auto; margin: 0; padding: 35px 20% 25px 40px;
       background-color: transparent;
-      background-image: linear-gradient( to right, rgba(255,255,255, 1) 70%, rgba(255,255,255,0) 110%);
-      box-shadow: rgba(0,0,0,.15) -2px 2px 4px;
+      background-image: linear-gradient( to right, rgba(255,255,255, 1) 50%, rgba(255,255,255,0) 110%);
+      box-shadow: rgba(0,0,0,.12) -2px 2px 6px;
       border-radius: 4px 0 0 4px;
     }
 
     // 裝飾的色塊
     &::before{
       content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 33%;
-      background-image: linear-gradient( to bottom, rgba(255, 203, 17, .98) 20%, rgba(253, 237, 148, 0.7) 100%) ;
+      // background-image: linear-gradient( to bottom, rgba(255, 203, 17, .98) 20%, rgba(253, 237, 148, 0.7) 100%) ;
+      @include gradient($deg: 0deg);
+
+    }
+    &::after{
+      content: "";
+      position: absolute; right: 0; top: 0; bottom: 0;width: 66%;
+      background-image: linear-gradient(to bottom, rgba(255,255,255, .95) 0%, rgba(255,255,255, .7) 80%); 
     }
   }
 

@@ -65,7 +65,7 @@ $sidebarBg: $primaryColor;
 // }
 
 @mixin gradient($deg: 0deg) {
-  background: linear-gradient($deg, #fee486 0%, #FFCF26 100%);
+  background: linear-gradient($deg, #ffeb87 0%, #FFCF26 100%);
 }
 
 $black:#000;
