@@ -3,14 +3,19 @@
 @media screen and (min-width: $wwNormal){
   .accesskey{ 
     display: block; z-index: 9; 
-    position: absolute; left: 0; top: 0; margin: 2px;
-    text-decoration: none; 
-    &:focus{ outline: 2px solid $primaryColor;}
+    position: absolute; left: 0; top: 0; padding: 0 3px;
+    text-decoration: none; color: $fontColorLight;
+    &:focus{ outline:none; box-shadow:$primaryColor 0 0 0 2px inset;}
   }
-  .webFooter .accesskey{ 
-    // color: $fontInvert;
-    &:focus{  outline: 2px solid $fontColor;}
+  .main .accesskey{ color: #fff;}
+  // .webFooter .accesskey{ top: 100px;}
+}
+
+@media screen and (min-width: $wwMaximum){
+  .webHeader .accesskey{
+    left: calc(50vw - #{$wwMaximum}/2)
   }
+
 }
 
 
@@ -18,7 +23,7 @@
 .goCenter{
   display: none;
   @media screen and (min-width: $wwNormal){
-    display: block; position: absolute; top: -2em; left: 0; z-index: 991;
+    display: block; position: absolute; top: -2em; left: 1.5em; z-index: 991;
     padding: 0 .8em; border-radius: 0 0 4px 4px;
     overflow: hidden;
     font-size: .9rem; height: 1.8em; line-height: 1.8;
@@ -29,7 +34,7 @@
     &:hover, &:focus{  opacity: 1; color: $fontInvert;}
   }
   @media screen and (min-width: $wwMaximum){
-    left: calc(50vw  - #{$wwMaximum}*.5);
+    left: calc(50vw  - #{$wwMaximum}*.5 + 1.5em);
   }
 }
 

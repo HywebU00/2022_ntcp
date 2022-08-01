@@ -48,7 +48,7 @@
         display: block; padding: 0 8px;
         background: $black; border-radius: 6px; transition: .2s;
         img{ display: block; height: 50px;}
-        &:hover{box-shadow: $fontInvert 0 0 0 2px;}
+        &:hover, &:focus {box-shadow: $fontInvert 0 0 0 2px;}
       }
     }
   }
