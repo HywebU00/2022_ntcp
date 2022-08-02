@@ -9,6 +9,9 @@
 @import "_webFooter"; // 頁腳
 @import "_sidebar"; // 行動版側欄
 @import "_search"; // 簡易查詢
+@import "_modules";
+
+// ------------------------------------------------------------- //
 @import "servIcons"; // 首頁區塊： 為民服務圖示
 @import "_news"; // 首頁區塊： 最新消息
 @import "_spotlight"; // 首頁區塊： 宣導專區
@@ -19,7 +22,10 @@
 @import "_contactUs"; // 首頁區塊：聯絡我們 
 @import "_mailAndApp"; //首頁區塊：局長信箱 + 新北市iPolice APP
 @import "_socialMedia"; // 首頁區塊：右側固定側邊欄（社群連結） 
-// @import "_menu";
+// ------------------------------------------------------------- //
+@import "_np";
+@import "_lp";
+@import "_paginations";
+@import "_category";
 // @import "_bigBanner";
-// @import "_mp";
 // @import "_lightbox"; // 燈箱

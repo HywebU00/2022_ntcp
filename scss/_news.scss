@@ -9,7 +9,7 @@
     text-align: center;
   }
 
-  .list{
+  .newsList{
     width: 92%; margin: 0 auto;
     li{
       margin:0; padding: 0;
@@ -112,7 +112,7 @@
       padding: 50px 40px 15px;margin: 0;
     }
 
-    .list{
+    .newsList{
       padding: 0; width: 100%;
       li{
 
@@ -152,7 +152,7 @@
   }
 
   @media screen and (min-width: $wwMaximum){
-    .list{
+    .newsList{
       li{
         &:first-child{ width: $wwMaximum*.35;}
       }

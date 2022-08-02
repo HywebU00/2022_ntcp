@@ -1,8 +1,8 @@
 // variables
 // ---------- 長度常數 ---------- //
 $sideBarWidth: 280px;  // 窄版側欄選單
-$mobileWidth: 92vw; // 窄螢幕寬度 moduals width in mobile
-$normalWidth: 82vw; // 寬螢幕寬度
+$mobileWidth: 94vw; // 窄螢幕寬度 moduals width in mobile
+$normalWidth: 88vw; // 寬螢幕寬度
 // ---------- 長度常數 ---------- //
 
 
@@ -35,17 +35,17 @@ $hiLight:#6b6aba;
 // $hiLight2:#d6c41b;
 $notice: #cd0082;
 
-$fontColor: #222;
+$fontColor: #333;
 $fontColorLight: #666;
 // $fontColorPale: #999;
-// $fontColorDark: #000;
+$fontColorDark: #000;
 $fontInvert: #fff;
-$linkColor: #24afc6;
+$linkColor: #07637f;
 $mainBg: #fff;
 
-$borderColor: #c1c4c6;
-$borderColorLight: #d2d2d2;
-$borderColorDark:#434242;
+$borderColor: #c1c5c6;
+$borderColorLight: #e2e1e1;
+$borderColorDark:#a4a9aa;
 // $shadow:rgba(0, 0, 0, 0.2);
 // $shadow2:rgba(0, 0, 0, 0.5);
 
@@ -59,16 +59,11 @@ $btnBg2: darken($primaryColor, 12%);
 $footerBg: #fcfcfc;
 $sidebarBg: $primaryColor;
 
-// %gradient1{
-//   background: linear-gradient(0deg, #fee486 0%, #FFCF26 100%);
-//   // linear-gradient(#fee486, #FFCF26)
-// }
+$black:#000;
+$white:#fff;
 
 @mixin gradient($deg: 0deg) {
   background: linear-gradient($deg, #ffeb87 0%, #FFCF26 100%);
 }
-
-$black:#000;
-$white:#fff;
 
 // ---------- 顏色變數 ----------- //
