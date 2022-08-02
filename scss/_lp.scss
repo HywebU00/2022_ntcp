@@ -35,7 +35,6 @@
         display: block; margin: .5em 0 0 0;
         color: $fontColorLight; text-align: right;
       }
-
       &:last-child{border-bottom: none;}
     }
 
@@ -49,26 +48,25 @@
         time{position: absolute; right: 5px; top: 0.9em; margin: 0;}
       }
     }
-
   }
 }
 
 // 表格 table 條列 //
+// 注意：表格樣式非小螢幕優先 
 .list{
-  
   &>table{
     border-collapse: collapse; line-height: 1.5; width: calc(100% - 8px); margin:4px;
     border-top: 3px solid $borderColor; border-bottom: 3px solid $borderColor;
     thead{
-      tr{border-bottom-color: $borderColor;}
+      tr{ border-bottom-color: $borderColor; }
     }
-    tbody tr:last-child{border-bottom: none;}
+    tbody tr:last-child{ border-bottom: none; }
     tr{ border-bottom: 1px solid $borderColor; }
     th, td{ 
       padding: 14px 16px 12px; position: relative;
       &::after{
         content: ''; position: absolute;top: 4px; bottom: 4px; left: 0;
-         width: 1px; background: $borderColorLight; 
+         width: 1px; background: $borderColorLight;
       }
       &:first-child{
         &::after{background-color: transparent;}
@@ -81,7 +79,8 @@
       &.aRight{ text-align: right;}
       
       &.numb{
-        text-align: right; 
+        width: 4em; text-align: right;
+        padding-right: 8px; padding-left: 0;
         &::after{content: '.'; position: static;}
       }
       &.from{ min-width: 5em;}
@@ -93,76 +92,49 @@
         color: $linkColor; text-decoration:none; transition: .2s;
         &::before{
           content: ''; position: absolute; left: 4px; right: 4px; bottom: 4px;top: 4px;
-          border-radius: 4px; z-index: -1;
-          transition: .2s;
+          border-radius: 4px; transition: .2s;
         }
         &:hover, &:focus{
          &::before{ z-index: 0;box-shadow: $linkColor 0 0 0 2px inset; }
         }
       }
       time{ display: inline-block; white-space: nowrap;}
+
     }
   }
-
-
-  @media screen and (max-width: $wwNormal - 1){
-    &.wide{ 
-      margin-left: auto; margin-right: auto;
-      &>table{
-        thead{display: none;}
-        tr, th, td{ display: block;}
-        tr{ position: relative; overflow: hidden; padding: .8em 0 2em 3.4em;}
-        th, td{
-          position: static; margin: 0; text-align: left;
-          &::after{display: none;}
-        }
-
-        td{
-          padding:.3em 15px .3em 0;
-          &::before {
-            content: attr(data-th) ':'; display: inline-block; margin-right: .5em;
-            color: $fontColorLight;
-          }
-
-          &.numb{
-            position: absolute; top: .8em; left: 0;width: 2.4em; text-align: right;
-            font-size: 1.125em; font-weight: bold;
-            &::before{display: none;}
-            &::after{display: inline-block;}
-          }
-          &>a{display: inline;}
-        }
-      }
-    }
-  }
-
 
   @media screen and (max-width: $wwMedium - 1px){
-    &:not(.wide){
-      &>table{
-        thead{display: none;}
-        tr, th, td{ display: block;}
-        tr{ position: relative; overflow: hidden; padding: .8em 0 2em 3.4em;}
-        th, td{
-          position: static; padding: 0;margin: 0; text-align: left;
-          &::after{display: none;}
+    &>table.rwdTable{
+      thead{display: none;}
+      tr, th, td{ display: block;}
+      tr{ position: relative; overflow: hidden; padding: .8em 0 .7em 3.4em;}
+      th, td{
+        position: static; padding: 0;margin: 0; text-align: left;
+        &::after{display: none;}
+      }
+      td{
+        padding:.3em 15px .3em 0;
+        &::before {
+          content: attr(data-th) ':'; display: inline-block; margin-right: .5em;
+          color: $fontColorLight;
         }
-        td{
-          padding:.3em 15px .3em 0;
-          &::before {
-            content: attr(data-th) ':'; display: inline-block; margin-right: .5em;
-            color: $fontColorLight;
-          }
 
-          &.numb{
-            position: absolute; top: .8em; left: 0;width: 2.4em; text-align: right;
-            font-size: 1.125em; font-weight: bold;
-            &::before{ display: none;}
-            &::after{display: inline-block;}
+        &.numb{
+          position: absolute; top: .7em; left: 0;width: 3em;
+          text-align: right; white-space: nowrap;
+          font-size: 1.125em; font-weight: bold;
+          &::before{ display: none;}
+          &::after{display: inline-block;}
+        }
+        &.title{
+          &>a{ display: inline;
+            &::before{
+              left: 0; right: 0;
+            }
           }
-          .downloadFiles{ display: inline-block; vertical-align: top;}
         }
       }
+      .downloadFiles{ display: inline-block; vertical-align: middle; }
     }
   }
 }

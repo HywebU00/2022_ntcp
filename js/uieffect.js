@@ -24,31 +24,31 @@ $(function(){
   _html.removeClass('no-js');
 
 
-    // 固定版頭
-    var fixHeadThreshold;
-    if ( ww >= wwNormal) {
-      fixHeadThreshold =  hh - _menu.outerHeight();
+  // 固定版頭 //////////////////////////////
+  var fixHeadThreshold;
+  if ( ww >= wwNormal) {
+    fixHeadThreshold =  hh - _menu.outerHeight();
+  } else {
+    fixHeadThreshold = 0;
+  }
+
+  _window.scroll(function(){
+    if (_window.scrollTop() > fixHeadThreshold ) {
+      _webHeader.addClass('fixed');
+      _body.offset({top: hh});
     } else {
-      fixHeadThreshold = 0;
+      _webHeader.removeClass('fixed');
+      _body.removeAttr('style');
     }
-  
-    _window.scroll(function(){
-      if (_window.scrollTop() > fixHeadThreshold ) {
-        _webHeader.addClass('fixed');
-        _body.offset({top: hh});
-      } else {
-        _webHeader.removeClass('fixed');
-        _body.removeAttr('style');
-      }
-  
-      // goTop button 顯示、隱藏
-      if (_window.scrollTop() > 200) {
-        _goTop.addClass('show');
-      } else {
-        _goTop.removeClass('show');
-      }
-    })
-    _window.trigger('scroll');
+
+    // goTop button 顯示、隱藏
+    if (_window.scrollTop() > 200) {
+      _goTop.addClass('show');
+    } else {
+      _goTop.removeClass('show');
+    }
+  })
+  _window.trigger('scroll');
 
 
   // 查詢區開合 //////////////////////////////
@@ -67,41 +67,59 @@ $(function(){
   // --end of-- 查詢區 //////////////////////////////
 
   
-    // window resize
-    var winResizeTimer0;
-    var wwNew;
-    _window.resize(function () {
-      clearTimeout(winResizeTimer0);
-      winResizeTimer0 = setTimeout( function () {
-  
-        wwNew = _window.width();
-        
-        // 由小螢幕到寬螢幕
-        if( ww < wwNormal && wwNew >= wwNormal ) {
-          if (_sidebar.hasClass('reveal')) {
-            _sidebar.removeClass('reveal');
-            _sidebarCtrl.removeClass('closeIt');
-            _sidebarMask.hide();
-            _body.removeClass('noScroll');
-          }
-          _body.removeAttr('style');
-          _webHeader.removeClass('fixed');
-          _search.removeClass('reveal').removeAttr('style')
-          hh = _webHeader.outerHeight();
-          fixHeadThreshold =  hh - _menu.outerHeight();
-          _window.trigger('scroll');
+  // window resize
+  var winResizeTimer0;
+  var wwNew;
+  _window.resize(function () {
+    clearTimeout(winResizeTimer0);
+    winResizeTimer0 = setTimeout( function () {
+
+      wwNew = _window.width();
+      
+      // 由小螢幕到寬螢幕
+      if( ww < wwNormal && wwNew >= wwNormal ) {
+        if (_sidebar.hasClass('reveal')) {
+          _sidebar.removeClass('reveal');
+          _sidebarCtrl.removeClass('closeIt');
+          _sidebarMask.hide();
+          _body.removeClass('noScroll');
         }
-  
-        // 由寬螢幕到小螢幕
-        if( ww >= wwNormal && wwNew < wwNormal ){
-          hh = _webHeader.outerHeight();
-          fixHeadThreshold = 0;
-          _body.removeAttr('style');
-          _window.trigger('scroll');
-        }
-        ww = wwNew;
-      }, 200);
-    });
+        _body.removeAttr('style');
+        _webHeader.removeClass('fixed');
+        _search.removeClass('reveal').removeAttr('style')
+        hh = _webHeader.outerHeight();
+        fixHeadThreshold =  hh - _menu.outerHeight();
+        _window.trigger('scroll');
+      }
+
+      // 由寬螢幕到小螢幕
+      if( ww >= wwNormal && wwNew < wwNormal ){
+        hh = _webHeader.outerHeight();
+        fixHeadThreshold = 0;
+        _body.removeAttr('style');
+        _window.trigger('scroll');
+      }
+      ww = wwNew;
+    }, 200);
+  });
+
+  // fatfooter 開合 //////////////////////////////
+  var _fatFootCtrl = $('.fatFootCtrl');
+  var _footSiteTree = $('.fatFooter').find('.siteTree>ul>li>ul');
+  const text1 = _fatFootCtrl.text();
+  const text2 = _fatFootCtrl.attr('data-altText');
+
+  _fatFootCtrl.click(function(){
+    if ( _footSiteTree.is(':visible')) {
+      _footSiteTree.slideUp();
+      $(this).addClass('closed').text(text2);
+    } else {
+      _footSiteTree.slideDown();
+      $(this).removeClass('closed').text(text1);
+    }
+  })
+  // --end of-- fatfooter 開合 //////////////////////////////
+    
   
     // -----------------------------------------------------
   
@@ -405,7 +423,6 @@ $(function(){
     _this.focusout( function(){
       _this.removeClass('reveal');
     })
-
   })
 
 
@@ -431,23 +448,23 @@ $(function(){
   // })
   ////////////////////////////////////////////////////////
 
-  // // rwd Table ////////////////////////////
-  // // 把 th 的內容複製到對應的td的 data-th 屬性值
-  // _rwdTable = $('.rwdTable');
-  // _rwdTable.each( function(){
-  //   let _this = $(this);
-  //   let _th = _this.find('thead>tr>th');
-  //   let count = _th.length;
-  //   let _tr = _this.find('tbody').children('tr');
+  // rwd Table ////////////////////////////
+  // 把 th 的內容複製到對應的td的 data-th 屬性值
+  var _rwdTable = $('.rwdTable');
+  _rwdTable.each( function(){
+    let _this = $(this);
+    let _th = _this.find('thead>tr>th');
+    let count = _th.length;
+    let _tr = _this.find('tbody').children('tr');
 
-  //     _tr.each(function(){
-  //       let _td = $(this).children('td');
-  //       for ( let i = 0; i<count; i++ ) {
-  //         _td.eq(i).attr('data-th', _th.eq(i).text());
-  //       }
-  //     })
-  // })
-  ////////////////////////////////////////////////////////
+      _tr.each(function(){
+        let _td = $(this).children('td');
+        for ( let i = 0; i<count; i++ ) {
+          _td.eq(i).attr('data-th', _th.eq(i).text());
+        }
+      })
+  })
+  //////////////////////////////////////////////////////
 
 
 
@@ -496,22 +513,6 @@ $(function(){
 
 
 
-  // fatfooter 開合 //////////////////////////////
-  var _fatFootCtrl = $('.fatFootCtrl');
-  var _footSiteTree = $('.fatFooter').find('.siteTree>ul>li>ul');
-  const text1 = _fatFootCtrl.text();
-  const text2 = _fatFootCtrl.attr('data-altText');
-
-  _fatFootCtrl.click(function(){
-    if ( _footSiteTree.is(':visible')) {
-      _footSiteTree.slideUp();
-      $(this).addClass('closed').text(text2);
-    } else {
-      _footSiteTree.slideDown();
-      $(this).removeClass('closed').text(text1);
-    }
-  })
-  // --end of-- fatfooter 開合 //////////////////////////////
 
 
 
