@@ -4,20 +4,23 @@
   position: relative; padding: 10px 0;
 
   &>ul{
-    list-style: none; margin: 0; padding: 0;
-    line-height: 1.6; font-size: 1.125em;
+    list-style: none; margin: 0; padding: 0; line-height: 1.6;
     border-top: 3px solid $borderColor; border-bottom: 3px solid $borderColor;
     &>li{
       border-bottom: 1px solid $borderColorLight; margin:0; padding: 0;
       a{
         display: block; position: relative;
-        padding: .9em 5px .8em 3em; margin: 2px 0;
-        text-decoration: none; color: $fontColor; border-radius: 4px;
-        transition: .2s;
-        &:hover, &:focus{
-          background-color: lighten($assistant, 30%); color: $fontColorDark;
-          .title{ text-decoration: underline;}
+        padding: .9em 5px .8em 3em; margin: 3px 0;
+        text-decoration: none; color: $fontColorDark;
+        
+        &::before{
+          content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+          border-radius: 4px; z-index: -1; transition: .3s;
         }
+        &:hover, &:focus{
+          &::before{ z-index: 0; box-shadow: $hiLight 0 0 0 2px inset;}
+        }
+
       }
       .numb{
         position: absolute; left: 5px; top: .85em;
@@ -32,12 +35,11 @@
         &::after{content: '）';}
       }
       time{
-        display: block; margin: .5em 0 0 0;
+        display: block; margin: .5em 0 0 0; padding: 0 8px;
         color: $fontColorLight; text-align: right;
       }
       &:last-child{border-bottom: none;}
     }
-
   }
 
   @media screen and (min-width: $wwMedium){
@@ -45,7 +47,7 @@
       &>li{
         &>a{padding-right: 6.5em; padding-left: 3em;}
         .numb{ left: 5px;}
-        time{position: absolute; right: 5px; top: 0.9em; margin: 0;}
+        time{position: absolute; right: 0; top: 0.9em; margin: 0;}
       }
     }
   }
@@ -89,13 +91,13 @@
       }
       &>a{
         display: block;
-        color: $linkColor; text-decoration:none; transition: .2s;
+        color: $fontColorDark; text-decoration:none; transition: .2s;
         &::before{
-          content: ''; position: absolute; left: 4px; right: 4px; bottom: 4px;top: 4px;
+          content: ''; position: absolute; left: 3px; right: 3px; bottom: 3px;top: 3px;
           border-radius: 4px; transition: .2s;
         }
         &:hover, &:focus{
-         &::before{ z-index: 0;box-shadow: $linkColor 0 0 0 2px inset; }
+         &::before{ z-index: 0;box-shadow: $hiLight 0 0 0 2px inset; }
         }
       }
       time{ display: inline-block; white-space: nowrap;}

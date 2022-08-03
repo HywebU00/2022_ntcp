@@ -26,15 +26,15 @@
     }
 
     .slick-dots{
-      position: absolute; right: 120px; top: 15px;
+      position: absolute; right: 125px; top: 15px;
       list-style: none; margin: 0 2.1em 0 0; padding: 0;
       
       li{
         position: absolute; left: 0; top: 0; opacity: 0;
         margin: 0; padding: 0;
         button{
-          border: none; padding: 0;margin: 0;
-          font-size: 1.1rem; font-weight: bold; color: $fontColor;
+          border: none; padding: 0;margin: 0; background-color: transparent;
+          font-size: 1.1rem; height: 1em; line-height: 1; font-weight: bold; color: $fontColor;
           &[disabled]{ color: $fontColor;}
         }
         &.slick-active{opacity: 1;}

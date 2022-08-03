@@ -8,7 +8,6 @@
     &:focus{ outline:none; box-shadow:$primaryColor 0 0 0 2px inset;}
   }
   .main .accesskey{ color: #fff;}
-  // .webFooter .accesskey{ top: 100px;}
 }
 
 @media screen and (min-width: $wwMaximum){
@@ -17,6 +16,7 @@
   }
 
 }
+// -----------------------------------------------------------------
 
 
 // 跳至內容區 ////////////////////////////////////
@@ -37,8 +37,10 @@
     left: calc(50vw  - #{$wwMaximum}*.5 + 1.5em);
   }
 }
+// -----------------------------------------------------------------
 
-////////////////////////////////////
+
+// 首頁區塊標題 //////////////////////////////////
 .blockHeader{
   margin: 0 0 24px; padding:0;
   font-size: 2rem; text-align: center; line-height: 1.4;
@@ -46,8 +48,10 @@
   .he{ font-weight: normal; letter-spacing: -1px; }
   .hc{ font-size: 1.3rem;}
 }
+// -----------------------------------------------------------------
 
-////////////////////////////////////
+
+// 更多 //////////////////////////////////
 .more{
   a{
     display: inline-block; height: 2.4em; line-height: 2.5em; padding: 0 1.2em; 
@@ -63,9 +67,10 @@
     }
   }
 }
+// -----------------------------------------------------------------
 
 
-////////////////////////////////////
+// 捲動至頁面最上方 //////////////////////////////////
 .goTop{
   position: fixed; right: 10px; bottom: -60px; z-index: 99;
   width: 44px; height: 44px; border-radius: 50%;
@@ -100,12 +105,13 @@
   }
 
 }
+// -----------------------------------------------------------------
 
 
-// 行動版查詢控制圖示 and 行動版側欄開關  ////////////////////////////////////
+// 行動版查詢控制圖示 and 行動版側欄開關  ////////////////////////////
 .searchCtrl, .sidebarCtrl{
   position: absolute; top: 4px; width: 52px; height: 52px; z-index: 9;
-  text-indent: -20em; overflow: hidden; outline: none;
+  text-indent: -20em; overflow: hidden; outline: none; margin: 0;
   border-radius: 0; background-color: transparent; border: none;
   cursor: pointer; 
 
@@ -117,9 +123,9 @@
   }
 }
 
-// 行動版查詢控制圖示 * begin
+// 行動版查詢控制圖示 
 .searchCtrl{
-  right: 4px; margin: 0; transition: .2s;
+  right: 4px; transition: .2s;
   &::before, &::after{content: ''; position: absolute;}
   &::before{
     left: calc(50% - 12px); top: calc(50% - 12px);
@@ -135,10 +141,9 @@
   }
 }
 
-
 // .sidebarCtrl 控制行動版側欄開關（漢堡圖示）
 .sidebarCtrl{
-  left: 4px; margin: 0;
+  left: 4px;
   &::before, &::after{
     content: ''; position: absolute; left: 12px;
     width: 28px;height: 2px; background: $fontColor;
@@ -176,9 +181,10 @@
     display: none;
   }
 }
+// -----------------------------------------------------------------
 
 
-// 關閉（燈箱）Ｘ ////////////////////////////////////
+// 關閉Ｘ圖示 //////////////////////////////////////////////////////
 button.closeThis{
   position: relative;
   height: 44px; width: 44px; padding: 0; margin: 0;
@@ -200,10 +206,12 @@ button.closeThis{
   }
   &:focus{ background-color: $notice; box-shadow: $white 0 0 0 1px, $notice 0 0 0 4px}
 }
+// -----------------------------------------------------------------
 
 
 
-// 影片播放符號 ////////////////////////////////////
+
+// 影片播放符號 ////////////////////////////////////////////////////
 .videoThumb{
   position: relative;
   &::before, &::after{
@@ -224,9 +232,14 @@ a:hover .videoThumb{
   &::before, &::after{opacity: 1;}
   &::before {background-color: #c00; box-shadow: #c00 0 0 0 3px;}
 }
+// -----------------------------------------------------------------
 
 
-////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+
 // slick套件  //////////////////////////////////////////////////////////
 // slick套件: 左右箭頭
 .slick-arrow{
@@ -250,8 +263,11 @@ a:hover .videoThumb{
 
   &:hover{
     box-shadow: $primaryColor 0 0 0 2px;
+    background-color: $primaryColor;
   }
   &:focus{
     box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
+    background-color: $primaryColor;
   }
 }
+// -----------------------------------------------------------------

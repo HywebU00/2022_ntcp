@@ -12,8 +12,6 @@ table.formLayout {
     &:nth-child(even) { padding-right: 0; }
   }
 
-
-
   @media screen and (max-width: $wwMedium - 1) {
     display: block; width: auto;
     tbody {display: block;}
@@ -27,6 +25,8 @@ table.formLayout {
     }
   }
 }
+// -----------------------------------------------------------------
+
 
 // 送出、清除等按鈕 ////////////////////////////////////////
 .btnDv{
@@ -38,6 +38,8 @@ table.formLayout {
     input{ min-width: 7em;}
   }
 }
+// -----------------------------------------------------------------
+
 
 // 日期區間 ////////////////////////////////////////
 .duration{
@@ -54,10 +56,9 @@ table.formLayout {
     flex-wrap: nowrap;
     input{flex:1 1 calc(50% - 3em); cursor: pointer; min-width:0;}
   }
-  @media screen and (min-width: $wwMedium){
-    // max-width: 32em; 
-  }
 }
+// -----------------------------------------------------------------
+
 
 // 單選、複選 ////////////////////////////////////////
 .optionPool{ margin: 3px;
@@ -68,6 +69,8 @@ table.formLayout {
     input{ vertical-align: top; margin-top: .2em;}
   }
 }
+// -----------------------------------------------------------------
+
 
 // 表單樣式A ////////////////////////////////////////
 .formA{
@@ -79,4 +82,5 @@ table.formLayout {
     .formLayout{width: 94%;}
   }
 }
+// -----------------------------------------------------------------
 

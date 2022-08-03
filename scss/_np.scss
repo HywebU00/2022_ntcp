@@ -1,4 +1,4 @@
-// 節點頁 //
+// 節點頁 //////////////////////////////////////////////////////
 .np{
   @extend %mainWidth;
   font-size: 1.125em;padding: 0 0 4em;
@@ -18,17 +18,17 @@
         border: 1px solid $borderColor; border-left: none;
         transition: .2s;
         &::before{
-          content: ''; position: absolute; left: 0; top:0; bottom: 0; width: 5px;
-          background-color: $assistant;
+          content: ''; position: absolute; left: 0; top: -1px; bottom: -1px; width: 5px;
+          background-color: $primaryColor;
           transition: .1s;
         }
         &:hover, &:focus{
           padding-left: 22px;
           box-shadow: $borderColor 0 6px 24px -3px;
-          border-color: $primaryColor;
+          border-color: $hiLight;
           z-index: 9;
           &::before{
-            width: 9px; background-color: $primaryColor;
+            width: 9px; background-color: $hiLight;
           }
         }
       }
@@ -44,3 +44,5 @@
     }  
   }
 }
+
+// -----------------------------------------------------------------

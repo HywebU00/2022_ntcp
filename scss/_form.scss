@@ -1,4 +1,4 @@
-// 表單元件基本樣式 //////////////////
+// 表單元件基本樣式 ////////////////////////////////////
 form {margin: 0;padding: 0;}
 
 label { display: inline-block; font-weight: normal; cursor: pointer;}
@@ -9,13 +9,13 @@ input, textarea, select, button {
   &:focus{ outline: none;}
 }
 
-// 顏色 
+// 顏色 //////////////
 $disabledColor: $gray;
 $inputBg: $white;
 $focused: $hiLight;
 // --------------------
 
-// 文字的input樣式
+// 文字的input樣式 //////////////
 %textInput {
   appearance: none;
   -webkit-appearance: none;
@@ -32,7 +32,7 @@ $focused: $hiLight;
   &:focus{border-color: $focused; box-shadow: $focused 0 0 0 1px;}
 }
 
-// 下拉選單樣式
+// 下拉選單樣式 //////////////
 %selectStyle {
   appearance: none;
   -webkit-appearance: none;
@@ -52,9 +52,7 @@ $focused: $hiLight;
 }
 
 
-
-
-// 文字、數字型態的 input 樣式
+// 文字、數字型態的 input 樣式 //////////////
 input[type="text"],
 input[type="date"],
 input[type="datetime-local"],
@@ -67,18 +65,19 @@ input[type="search"],
 input[type="tel"],
 input[type="time"],
 input[type="url"],
-input[type="week"] { @extend %textInput; 
+input[type="week"] { 
+  @extend %textInput; 
   &.fullWidth{ width: calc(100% - 6px);}
 }
 
 
-// 下拉選單
+// 下拉選單 ////////////////////////////
 select {
   @extend %selectStyle;
   &.fullWidth{ width: calc(100% - 6px);}
 }
 
-// 按鈕樣式
+// 按鈕樣式 ////////////////////////////
 .button>a, button,
 input[type="submit"], input[type="button"] , input[type="reset"]{
   appearance: none;
@@ -108,7 +107,7 @@ input[type="reset"]{
   &:hover, &:focus{
     box-shadow: $btnBg2 0 0 0 2px inset;
   }
-  &:focus{box-shadow: $btnBg2 0 0 0 2px inset, $white 0 0 0 1px, $btnBg2 0 0 0 4px; }
+  &:focus{box-shadow: transparent 0 0 0 2px inset, $btnBg2 0 0 0 4px; }
 }
 
 .button{
@@ -122,7 +121,7 @@ textarea {
   width: calc(100% - 6px);
 }
 
-// radio 和 checkbox
+// radio 和 checkbox ////////////////////////////
 input[type="radio"],
 input[type="checkbox"] {
   -webkit-appearance: none; -moz-appearance: none; appearance: none;
@@ -156,8 +155,9 @@ input[type="checkbox"]{
   }
 }
 
-// ------------------------------------
-// disabled
+//////////////////////////////////////////////////////////
+
+// disabled 
 select[disabled],
 textarea[disabled],
 textarea[disabled]:hover,
@@ -172,7 +172,6 @@ input[disabled]:focus {
 }
 
 
-// ------------------------------------
 // readonly
 textarea[readonly],
 textarea[readonly]:hover,
@@ -189,7 +188,7 @@ input[disabled] {
   color: $fontColorLight;
 }
 
-/* 按鈕的 readonly and disabled*/
+// 按鈕的 readonly and disabled ////////////////////////////
 button[disabled],
 button.disabled,
 input[type="button"][disabled],
@@ -204,7 +203,7 @@ input[type="submit"][disabled]:focus {
   cursor: default;
 }
 
-// fieldset
+// fieldset ////////////////////////////
 fieldset {
   border: 1px solid $borderColorLight; border-radius: 8px;
   &+fieldset {
@@ -223,7 +222,7 @@ fieldset {
 }
 
 
-// 各種表單元件組合 =====================================
+// 各種表單元件組合 ////////////////////////////
 // 必填欄位星號 //
 .required{
   font-size: 1.3em;line-height: .6; margin-right: 3px;
