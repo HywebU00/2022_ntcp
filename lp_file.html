@@ -239,7 +239,7 @@
       
       <section class="funcBar">
         <ul>
-          <li class="searchHere"><button type="button">條件查詢</button></li>
+          <li class="openLbSearch"><button type="button">條件查詢</button></li>
           <li class="print"><button type="button">列印</button></li>
           <li class="forward"><a href="javascript:;">轉寄</a></li>
           <li class="back"><a href="javascript:;">回上一頁</a></li>
@@ -247,20 +247,125 @@
       </section>
     </div>
 
+    <!-- 燈箱：條件查詢 -->
+    <div class="lightbox lbSearch" role="dialog">
+      <button type="button" title="close" class="closeThis"></button>
+
+      <h3 class="header">條件查詢</h3>
+      <section class="formA">
+        <form action="">
+          <table class="formLayout"><tbody>
+            <tr>
+              <td>類別</td>
+              <td>
+                <select class="fullWidth">
+                  <option value="">全部類別</option>
+                  <option value="">可多的業</option>
+                  <option value="">世是又人緊</option>
+                  <option value="">的人國展此服久連</option>
+                  <option value="">子坡往</option>
+                  <option value="">盡年不麼</option>
+                  <option value="">規因景皮</option>
+                  <option value="">子給由手同</option>
+                  <option value="">舞的象果是</option>
+                  <option value="">日然歷巴</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>標題</td>
+              <td><input class="fullWidth" type="text" placeholder="請輸入查詢關鍵字"></td>
+            </tr>
+            <tr>
+              <td>內文</td>
+              <td><input class="fullWidth" type="text" placeholder="請輸入查詢關鍵字"></td>
+            </tr>
+            <tr>
+              <td>張貼日</td>
+              <td>
+                <div class="duration">
+                  <input type="date"><input type="date">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>單位</td>
+              <td>
+                <select class="fullWidth">
+                  <option selected value="0">- 請選擇 -</option>
+                  <option value="">刑事警察大隊</option>
+                  <option value="">交通警察大隊</option>
+                  <option value="">保安警察大隊</option>
+                  <option value="">少年警察隊</option>
+                  <option value="">婦幼警察隊</option>
+                  <option value="">板橋分局</option>
+                  <option value="">海山分局</option>
+                  <option value="">三重分局</option>
+                  <option value="">新莊分局</option>
+                  <option value="">中和分局</option>
+                  <option value="">永和分局</option>
+                  <option value="">新店分局</option>
+                  <option value="">蘆洲分局</option>
+                  <option value="">土城分局</option>
+                  <option value="">樹林分局</option>
+                  <option value="">三峽分局</option>
+                  <option value="">淡水分局</option>
+                  <option value="">汐止分局</option>
+                  <option value="">金山分局</option>
+                  <option value="">瑞芳分局</option>
+                  <option value="">林口分局</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>單選項目</td>
+              <td>
+                <div class="optionPool">
+                  <label><input type="radio" name="aaa" id="">單選項目一</label>
+                  <label><input type="radio" name="aaa" id="">項目二</label>
+                  <label><input type="radio" name="aaa" id="">藥外怎小</label>
+                  <label><input type="radio" name="aaa" id="">而布學</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>多選項目</td>
+              <td>
+                <div class="optionPool">
+                  <label><input type="checkbox" name="" id="">多選項目一</label>
+                  <label><input type="checkbox" name="" id="">項目二</label>
+                  <label><input type="checkbox" name="" id="">製路去黃</label>
+                  <label><input type="checkbox" name="" id="">方該要房</label>
+                  <label><input type="checkbox" name="" id="">會人情</label>
+                  <label><input type="checkbox" name="" id="">生起所</label>
+                  <label><input type="checkbox" name="" id="">多身部很中美水</label>
+                  <label><input type="checkbox" name="" id="">細人縣我</label>
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
+          <div class="btnDv">
+            <input type="button" value="送出">
+            <input type="reset" value="清除">
+          </div>
+        </form>
+      </section>
+    </div>
+
     <section class="category">
       <ul>
-        <li class="active"><a href="#">全部分類</a></li>
-        <li><a href="#">標籤或分類</a></li>
-        <li><a href="#">在小臺</a></li>
-        <li><a href="#">同的住</a></li>
-        <li><a href="#">站呢</a></li>
-        <li><a href="#">數今</a></li>
-        <li><a href="#">兒一下出也古要北人時</a></li>
-        <li><a href="#">了與們個</a></li>
-        <li><a href="#">來可可車農獎如商</a></li>
-        <li><a href="#">美愛何</a></li>
-        <li><a href="#">黃民高不世</a></li>
-        <li><a href="#">小子據</a></li>
+        <li class="active"><a href="javascript:;">全部分類</a></li>
+        <li><a href="javascript:;">標籤或分類</a></li>
+        <li><a href="javascript:;">在小臺</a></li>
+        <li><a href="javascript:;">同的住</a></li>
+        <li><a href="javascript:;">站呢</a></li>
+        <li><a href="javascript:;">數今</a></li>
+        <li><a href="javascript:;">兒一下出也古要北人時</a></li>
+        <li><a href="javascript:;">了與們個</a></li>
+        <li><a href="javascript:;">來可可車農獎如商</a></li>
+        <li><a href="javascript:;">美愛何</a></li>
+        <li><a href="javascript:;">黃民高不世</a></li>
+        <li><a href="javascript:;">小子據</a></li>
       </ul>
     </section>
 

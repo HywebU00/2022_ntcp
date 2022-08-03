@@ -489,11 +489,7 @@ $(function(){
   // 關燈箱
   _hideLightbox.click(function(){
     let _targetLbx = $(this).parents('.lightbox');
-    _targetLbx.stop(true, false).fadeOut(lbxSpeed,
-      function(){
-        _cpBigPhoto.find('.flowList').find('li').hide();
-      }
-    );
+    _targetLbx.stop(true, false).fadeOut(lbxSpeed);
     _targetLbx.prev(_cover).fadeOut(lbxSpeed);
     _body.removeClass('noScroll');
   })
@@ -502,19 +498,20 @@ $(function(){
     let _targetLbx = $(this).next('.lightbox');
     $(this).fadeOut(lbxSpeed);
     _body.removeClass('noScroll');
-    _targetLbx.stop(true, false).fadeOut(lbxSpeed,
-      function(){
-        _cpBigPhoto.find('.flowList').find('li').hide();
-      }
-    );
+    _targetLbx.stop(true, false).fadeOut(lbxSpeed);
   })
 
-  // 開啟查詢燈箱 ///////
+  // 開啟查詢燈箱 //////////////
   var _openLbSearch = $('.openLbSearch>button');
-  var _lpSearch = $('.lightbox.lpSearch');
+  var _lbSearch = $('.lbSearch');
   _openLbSearch.click(function(){
-    _lpSearch.show();
-    _cover.show();
+    _lbSearch.stop(true, false).fadeIn(200);
+    _cover.stop(true, false).fadeIn(200);
+    _hideLightbox.focus();
+    _body.addClass('noScroll');
+  });
+  _lbSearch.find(_hideLightbox).click(function(){
+    _openLbSearch.focus();
   })
 
 

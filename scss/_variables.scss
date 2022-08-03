@@ -31,7 +31,7 @@ $wwMaximum: 1200px;
 $primaryColor:#1A2D3D;
 // $secondaryColor: #222;
 $assistant: #FFCB11;
-$hiLight:#6b6aba;
+$hiLight:#05b9e1;
 // $hiLight2:#d6c41b;
 $notice: #cd0082;
 
@@ -46,15 +46,13 @@ $mainBg: #fff;
 $borderColor: #c1c5c6;
 $borderColorLight: #e2e1e1;
 $borderColorDark:#a4a9aa;
-// $shadow:rgba(0, 0, 0, 0.2);
-// $shadow2:rgba(0, 0, 0, 0.5);
 
 $gray: #dddad4;
 $grayLight: #F3F0EA;
 $grayDark: #b2b0ad;
 
 $btnBg1: $primaryColor;
-$btnBg2: lighten($primaryColor, 12%);
+$btnBg2: $hiLight;
 
 $footerBg: #fcfcfc;
 $sidebarBg: $primaryColor;
