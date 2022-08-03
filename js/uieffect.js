@@ -472,34 +472,50 @@ $(function(){
 
 
   //////////////////////////////////////////////
-  // // 燈箱 ////////////////////////////
-  // var _lightbox = $('.lightbox');
-  // var _hideLightbox = _lightbox.find('.closeThis');
-  // const lbxSpeed = 400;
+  // 燈箱 ---------------------------------------
+  var _lightbox = $('.lightbox');
+  var _hideLightbox = _lightbox.find('.closeThis');
+  const lbxSpeed = 400;
 
-  // _lightbox.before('<div class="coverAll"></div>');
-  // _lightbox.append('<button type="button" class="skip"></button>');
-  // var _cover = $('.coverAll');
-  // var _skipToClose = _lightbox.find('.skip');
+  _lightbox.before('<div class="coverAll"></div>');
+  _lightbox.append('<button type="button" class="skip"></button>');
+  var _cover = $('.coverAll');
+  var _skipToClose = _lightbox.find('.skip');
 
-  // _skipToClose.focus( function () {
-  //   _hideLightbox.focus();
-  // })
+  _skipToClose.focus( function () {
+    _hideLightbox.focus();
+  })
 
-  // // 關燈箱
-  // _hideLightbox.click(function(){
-  //   let _targetLbx = $(this).parents('.lightbox');
-  //   _targetLbx.stop(true, false).fadeOut(lbxSpeed);
-  //   _targetLbx.prev(_cover).fadeOut(lbxSpeed);
-  //   _body.removeClass('noScroll');
-  // })
+  // 關燈箱
+  _hideLightbox.click(function(){
+    let _targetLbx = $(this).parents('.lightbox');
+    _targetLbx.stop(true, false).fadeOut(lbxSpeed,
+      function(){
+        _cpBigPhoto.find('.flowList').find('li').hide();
+      }
+    );
+    _targetLbx.prev(_cover).fadeOut(lbxSpeed);
+    _body.removeClass('noScroll');
+  })
 
-  // _cover.click(function(){
-  //   let _targetLbx = $(this).next('.lightbox');
-  //   $(this).fadeOut(lbxSpeed);
-  //   _body.removeClass('noScroll');
-  //   _targetLbx.stop(true, false).fadeOut(lbxSpeed);
-  // })
+  _cover.click(function(){
+    let _targetLbx = $(this).next('.lightbox');
+    $(this).fadeOut(lbxSpeed);
+    _body.removeClass('noScroll');
+    _targetLbx.stop(true, false).fadeOut(lbxSpeed,
+      function(){
+        _cpBigPhoto.find('.flowList').find('li').hide();
+      }
+    );
+  })
+
+  // 開啟查詢燈箱 ///////
+  var _openLbSearch = $('.openLbSearch>button');
+  var _lpSearch = $('.lightbox.lpSearch');
+  _openLbSearch.click(function(){
+    _lpSearch.show();
+    _cover.show();
+  })
 
 
 

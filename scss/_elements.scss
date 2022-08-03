@@ -177,6 +177,49 @@
   }
 }
 
+
+// 關閉（燈箱）Ｘ ////////////////////////////////////
+button.closeThis{
+  position: relative;
+  height: 44px; width: 44px; padding: 0; margin: 0;
+  text-indent: -20em; overflow: hidden;
+  background-color: rgba(0,0,0,.8);box-shadow: none;border: none;
+  &::before, &::after{
+    content: ''; position: absolute; left: 11px; top: 21px;
+    width: 24px; height: 2px; background-color: #fff;
+  }
+  &::before{transform: rotate(45deg);}
+  &::after{transform: rotate(-45deg);}
+
+  &:hover{ background-color: $btnBg2; box-shadow: none; }
+  &:focus{ background-color: $btnBg1; box-shadow: $btnBg1 0 0 0 2px}
+}
+
+
+
+// 影片播放符號 ////////////////////////////////////
+.videoThumb{
+  position: relative;
+  &::before, &::after{
+    content: ''; position: absolute; left: 50%; top: 50%;
+    opacity: .7; transition: .2s;
+  }
+  &::before{
+    width: 44px; height: 44px; border-radius: 50%; 
+    margin: -22px 0 0 -22px;
+    background-color: rgba(0, 0, 0, 0.5); box-shadow: $white 0 0 0 3px; }
+  &::after{
+    width: 0; height: 0; margin: -10px 0 0 -4px;
+    border-style: solid; border-width: 10px 0 10px 15px;
+    border-color: transparent transparent transparent $white;
+  }
+}
+a:hover .videoThumb{
+  &::before, &::after{opacity: 1;}
+  &::before {background-color: #c00; box-shadow: #c00 0 0 0 3px;}
+}
+
+
 ////////////////////////////////////////////////////////////////////////
 // slick套件  //////////////////////////////////////////////////////////
 // slick套件: 左右箭頭

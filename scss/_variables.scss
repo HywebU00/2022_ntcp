@@ -51,10 +51,10 @@ $borderColorDark:#a4a9aa;
 
 $gray: #dddad4;
 $grayLight: #F3F0EA;
-$grayDark: #b8b6b3;
+$grayDark: #b2b0ad;
 
 $btnBg1: $primaryColor;
-$btnBg2: darken($primaryColor, 12%);
+$btnBg2: lighten($primaryColor, 12%);
 
 $footerBg: #fcfcfc;
 $sidebarBg: $primaryColor;
