@@ -200,9 +200,9 @@ table.formLayout {
 
 // 表單樣式A ////////////////////////////////////////
 .formA{
-  @extend %mainWidth; padding: 20px 3vw 40px;
+  @extend %mainWidth; padding: 20px 3vw 40px; margin-bottom: 50px;
   box-shadow: rgba(0,0,0,.2) 0 0 16px;
-  border-radius: 16px;
+  border-radius: 12px;
   // 必填欄位星號 //
   .required{
     font-size: 1.6em;line-height: .6; margin-right: 3px;
@@ -215,13 +215,13 @@ table.formLayout {
   }
 
   @media screen and (min-width: $wwNormal){
-    padding:30px 30px 50px;
+    padding:30px 30px 50px;margin-bottom: 100px;
   }
 }
 
-.fp{
-  padding: 0 0 60px;
-}
+// .fp{
+//   padding: 0 0 60px;
+// }
 
 // -----------------------------------------------------------------
 

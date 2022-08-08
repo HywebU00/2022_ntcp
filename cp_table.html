@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>qp - 新北市政府警察局</title>
+  <title>cp_table - 新北市政府警察局</title>
 
   <!-- 外掛字型 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -235,214 +235,71 @@
 
 
     <div class="pageHeader">
-      <h2>局長信箱</h2>
+      <h2>文章標題</h2>
       
       <section class="funcBar">
         <ul>
           <li class="print"><button type="button">列印</button></li>
-          <!-- <li class="forward"><a href="javascript:;">轉寄</a></li> -->
+          <li class="forward"><a href="javascript:;">轉寄</a></li>
+          <li class="share compound"><button type="button">分享</button>
+            <ul>
+              <li><a target="_blank" title="分享到 Facebook (open new window)" href="https://www.facebook.com/"><img src="images/icon_fb2.png" alt="Facebook"></a></li>
+              <li><a target="_blank" title="分享到 Twitter (open new window)" href="https://twitter.com/"><img src="images/icon_twitter.png" alt="Twitter"></a></li>
+              <li><a target="_blank" title="分享到 LINE (open new window)" href="https://access.line.me/"><img src="images/icon_line.png" alt="LINE"></a></li>
+            </ul>
+          </li>
           <li class="back"><a href="javascript:;">回上一頁</a></li>
         </ul>
       </section>
     </div>
 
-    <section class="formA">
-      <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
-      <form action="">
-        <table class="formLayout">
-          <tbody>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>留言對象</td>
-              <td>
-                <select>
-                  <option value="001">新北市政府警察局</option>
-                  <option value="002001">板橋分局</option>
-                  <option value="002002">海山分局</option>
-                  <option value="002017">中和分局</option>
-                  <option value="002005">永和分局</option>
-                  <option value="002006">新店分局</option>
-                  <option value="002007">三重分局</option>
-                  <option value="002008">新莊分局</option>
-                  <option value="002009">土城分局</option>
-                  <option value="002010">樹林分局</option>
-                  <option value="002011">淡水分局</option>
-                  <option value="002012">汐止分局</option>
-                  <option value="002013">蘆洲分局</option>
-                  <option value="002014">三峽分局</option>
-                  <option value="002015">瑞芳分局</option>
-                  <option value="002016">金山分局</option>
-                  <option value="002018">林口分局</option>
-                  <option value="003001">交通警察大隊</option>
-                  <option value="003002">刑事警察大隊</option>
-                  <option value="003003">保安警察大隊</option>
-                  <option value="003004">婦幼警察隊</option>
-                  <option value="003005">少年警察隊</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的真實姓名</td>
-              <td><input class="fullWidth" type="text" placeholder="請輸入您的真實姓名"></td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的聯絡電話</td>
-              <td><input class="fullWidth" type="tel" placeholder="請輸入您的聯絡電話"></td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的電子信箱</td>
-              <td><input class="fullWidth" type="email" placeholder="請輸入您的電子信箱"></td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的居住地址 </td>
-              <td>
-                <div class="addressSet">
-                  <select id="XXX01" aria-label="選擇縣、市" required="required">
-                    <option value="" selected="selected">臺北市</option>
-                    <option value="">基隆市</option>
-                    <option value="">新北市</option>
-                    <option value="">宜蘭縣</option>
-                    <option value="">新竹市</option>
-                    <option value="">新竹縣</option>
-                    <option value="">桃園市</option>
-                    <option value="">苗栗縣</option>
-                    <option value="">臺中市</option>
-                    <option value="">彰化縣</option>
-                    <option value="">南投縣</option>
-                    <option value="">嘉義市</option>
-                    <option value="">嘉義縣</option>
-                    <option value="">雲林縣</option>
-                    <option value="">臺南市</option>
-                    <option value="">高雄市</option>
-                    <option value="">澎湖縣</option>
-                    <option value="">屏東縣</option>
-                    <option value="">臺東縣</option>
-                    <option value="">花蓮縣</option>
-                    <option value="">金門縣</option>
-                    <option value="">連江縣</option>
-                  </select>
-                  <select aria-label="選擇區、鄉、鎮、市" required="required">
-                    <option value="">大安區</option>
-                    <option value="">信義區</option>
-                    <option value="">東區</option>
-                    <option value="">南屯區</option>
-                    <option value="">新興區</option>
-                    <option value="">中壢區</option>
-                    <option value="">... ... ...</option>
-                  </select>
-                  <input type="text" aria-label="街道與門牌號碼" placeholder="請輸入您的居住地址">
-                </div>
-                <p>如有自訂地點，請於路段欄位選擇「其他」類別，並於空白欄位輸入地點說明。</p>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>檢舉(陳情)分類</td>
-              <td>
-                <div class="optionPool">
-                  <label><input type="radio" name="aaa" id="">交通</input></label>
-                  <label><input type="radio" name="aaa" id="">刑事</input></label>
-                  <label><input type="radio" name="aaa" id="">行政</input></label>
-                  <label><input type="radio" name="aaa" id="">保安（防）</input></label>
-                  <label><input type="radio" name="aaa" id="">督察政風</input></label>
-                  <label><input type="radio" name="aaa" id="">人事</input></label>
-                  <label><input type="radio" name="aaa" id="">後勤</input></label>
-                  <label><input type="radio" name="aaa" id="">資訊</input></label>
-                  <label><input type="radio" name="aaa" id="">公關</input></label>
-                  <label><input type="radio" name="aaa" id="">秘書</input></label>
-                  <label><input type="radio" name="aaa" id="">戶口</input></label>
-                  <label><input type="radio" name="aaa" id="">外事</input></label>
-                  <label><input type="radio" name="aaa" id="">服務態度</input></label>
-                  <label><input type="radio" name="aaa" id="">其他</input></label>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>檢舉(陳情)地點</td>
-              <td>
-                <div class="addressSet">
-                  <select id="XXX01" aria-label="選擇縣、市" required="required" aria-required="true">
-                    <option value="" selected="selected">臺北市</option>
-                    <option value="">基隆市</option>
-                    <option value="">新北市</option>
-                    <option value="">宜蘭縣</option>
-                    <option value="">新竹市</option>
-                    <option value="">新竹縣</option>
-                    <option value="">桃園市</option>
-                    <option value="">苗栗縣</option>
-                    <option value="">臺中市</option>
-                    <option value="">彰化縣</option>
-                    <option value="">南投縣</option>
-                    <option value="">嘉義市</option>
-                    <option value="">嘉義縣</option>
-                    <option value="">雲林縣</option>
-                    <option value="">臺南市</option>
-                    <option value="">高雄市</option>
-                    <option value="">澎湖縣</option>
-                    <option value="">屏東縣</option>
-                    <option value="">臺東縣</option>
-                    <option value="">花蓮縣</option>
-                    <option value="">金門縣</option>
-                    <option value="">連江縣</option>
-                  </select>
-                  <select aria-label="選擇區、鄉、鎮、市">
-                    <option value="">大安區</option>
-                    <option value="">信義區</option>
-                    <option value="">東區</option>
-                    <option value="">南屯區</option>
-                    <option value="">新興區</option>
-                    <option value="">中壢區</option>
-                  </select>
-                  <input type="text" aria-label="街道與門牌號碼" placeholder="請輸入檢舉(陳情)地點">
-                </div>
-                <p>如有自訂地點，請於路段欄位選擇「其他」類別，並於空白欄位輸入地點說明。</p>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的意見主旨</td>
-              <td>
-                <input class="fullWidth" type="text" placeholder="請輸入您的意見主旨">
-                <p class="hint">主旨輸入請於50個中文字以內</p>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的意見內容</td>
-              <td>
-                <textarea placeholder="請輸入您的意見內容"></textarea>
-                <p class="hint">內容輸入請於2000個中文字以內</p>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>驗證碼</td>
-              <td>
-                <div class="form_content captchaSet">
-                  <input type="text" class="form-control inputCaptcha" id="apCaptcha" name="apCaptcha" placeholder="請輸入圖型驗證碼" maxlength="6" autocomplete="off">
-                  <span class="captchaImage"><img id="CaptchaImage" src="images/captchaImage.jpg" alt="圖型驗證碼"></span>
-                  <input name="Submit" type="button" class="btn btn-sm btn-primary" value="重新產生" onclick="getCAPTCHA();" onkeypress="getCAPTCHA();">
-                  <input name="Submit0" type="button" class="btn btn-sm btn-primary" value="語音播放" onclick="getCAPTCHAVoice();" onkeypress="getCAPTCHAVoice();">
-                  <iframe id="playVideo" src="" width="0" height="0" title="CAPTCHAVoice" style="display:none"></iframe>
-                  <!--[if IE]> <noscript >當script無法執行時可點選<a href='CaptchaVoice-1.mp3' target="_blank"  title="這裡">【這裡】</a>此連結替代</noscript> <![endif]-->
-                  <noscript class="NoscriptIECss" style="display:none">當script無法執行時可點選<a href='CaptchaVoice-1.mp3' target="_blank" title="這裡">【這裡】</a>此連結替代</noscript>
-                  <noscript class="NoscriptCss" style="display:none"> 當script無法執行時可點選<a href='CaptchaVoice.mp3' target="_blank" title="這裡">【這裡】</a>此連結替代 </noscript>
-                  <noscript>您的瀏覽器不支援 JavaScript 語法,將無法使用重新產生驗證碼功能，請按F5重新載入此網頁，以重新產生驗證碼。</noscript>
-                </div>
-                <p class="error">您輸入的驗證碼錯誤</p>
-              </td>
-            </tr>
-            <tr>
-              <td>上傳檔案</td>
-              <td>
-                <input class="fullWidth" id="" type="file" name="AttachFile1" multiple="multiple" accept=".jpeg, .jpg, .png, .avi, .wmv, .mp4, .rm, .asf, .pdf">
-                <!-- <input id="" type="file" name="AttachFile2" multiple="multiple" accept=".jpeg, .jpg, .png, .avi, .wmv, .mp4, .rm, .asf, .pdf"> -->
-                <p class="hint">可上傳檔案類型：jpeg、jpg、png、gif、avi、wmv、mp4、rm、asf、pdf，檔案大小上限總計為30MB</p>
-              </td>
-            </tr>
-          </tbody>
+    <section class="pubInfo">
+      <dl>
+        <div><dt>發布日期</dt><dd><time>111-08-02</time></dd></div>
+        <div><dt>更新日期</dt><dd><time>111-08-05</time></dd></div>
+        <div><dt>發布單位</dt><dd>新北市政府警察局</dd></div>
+      </dl>
+    </section>
 
-        </table>
-        <div class="btnDv">
-          <input type="button" value="送出">
-          <input type="reset" value="清除">
-        </div>
-      </form>
+    <section class="cpMeta">
+      <table summary="回覆問題：大型重型機車可以行駛慢車道嗎？">
+        <tbody>
+          <tr>
+            <th>問答分類</th>
+            <td>警政服務FAQ</td>
+          </tr>
+          <tr>
+            <th>發布單位</th>
+            <td>交通警察大隊</td>
+          </tr>
+          <tr>
+            <th>問題</th>
+            <td>大型重型機車可以行駛慢車道嗎？</td>
+          </tr>
+          <tr>
+            <th>回覆</th>
+            <td>
+              <ol>
+                <li>依「道路交通標誌標線號誌設置規則」第183條之1規定，快慢車道分隔線，係用以指示快車道外側邊緣之位置，劃分快車道與慢車道之界線。其線型為白實線，線寬為10公分。</li>
+                <li>另按「道路交通安全規則」第99條之1規定，大型重型機車，比照小型汽車適用其行駛規定。但另設有標誌、標線或號誌特別管制者，應依其指示行駛。</li>
+                <li>大型重型機車，既適用小型汽車之行駛規定，故亦需符合「道路交通安全規則」第95條第2項規定，四輪以上汽車及大型重型機車在劃有快慢車道分隔線之道路行駛，除起駛、準備轉彎、準備停車或臨時停車，不得行駛慢車道。但設有快慢車道分隔島之道路不在此限。</li>
+              </ol>
+            </td>
+          </tr>
+          <tr>
+            <th>發布日期</th>
+            <td>109-08-03</td>
+          </tr>
+          <tr>
+            <th>轄區分局</th>
+            <td>交通警察大隊</td>
+          </tr>
+          <tr>
+            <th>測試長文字</th>
+            <td>完會病現東視去是配王可半相二天，供巴化風系方我故她資就有。戲日院出不立新場都，資行法一明自。助經夫，印賽數發去館動子人生大美張關足一跑點人；成道機，老是且可使之導德先難、數這多生？界心力天兒我。提情頭在母。去獨一間現氣離！間念種文理士內他，一氣笑出及河有半因力會，寫廣思失興、個在財鄉，父任意現旅，往唱頭字。</td>
+          </tr>
+        </tbody>
+      </table>      
     </section>
 
   </main>

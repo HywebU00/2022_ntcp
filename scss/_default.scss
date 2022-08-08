@@ -16,10 +16,8 @@ body{
 
 
 .main{
-  position: relative; margin: 0 auto;
-  background-color: #fff;
-  // &.smallFont{ font-size: .9em;}
-  // &.largeFont{ font-size: 1.25em;}
+  position: relative;padding-bottom: 1px; margin: 0 auto -1px;
+  background-color: $white;
 
   @media screen and (min-width: $wwNormal){
     width: 100%;

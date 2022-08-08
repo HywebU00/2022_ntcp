@@ -6,9 +6,11 @@
   position:fixed; top:3vw; left:3vw;
   width:94vw; height: calc(100vh - 6vw); z-index:999;
   padding:50px 0 0; margin:0 auto; overflow: auto; overflow-y: auto;
+  background-color: $white;
   box-shadow:rgba(0,0,0,.6) 0 0 28px;
 
   &.lbSearch{background-color: $white;}
+  &.bigPhotos{ background-color: $black;}
 
   .closeThis{
     position: absolute; right:4px; top: 4px; z-index:99;

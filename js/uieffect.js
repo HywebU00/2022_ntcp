@@ -513,10 +513,273 @@ $(function(){
   _lbSearch.find(_hideLightbox).click(function(){
     _openLbSearch.focus();
   })
+  ///////////////////////////////////////////////
+
+  
+ 
+  ///////////////////////////////////////////////
+  // .photoflow：cp頁的相關圖片（Related Photos）
+  // 點擊圖片開啟燈箱並顯示大圖
+  var _photoflow = $('.photoflow');
+  var _cpBigPhoto = $('.lightbox.bigPhotos');
+  var photoIndex;
+  var _keptFlowItem;
+
+  _photoflow.each( function(){
+    let _this = $(this);
+    let _floxBox = _this.find('.flowBox');
+    let _flowList = _floxBox.find('.flowList');
+    let _flowItem = _flowList.children('li');
+    let slideDistance = _flowItem.first().outerWidth(true);
+    let slideCount = _flowItem.length;
+    let _btnRight = _this.find('.diskBtn.next');
+    let _btnLeft = _this.find('.diskBtn.prev');
+    const speed = 400;
+    const actClassName = 'active';
+    let i = 0;
+    let j;
+    let _dots = '';
+
+    // 產生 indicator 和 自訂屬性 data-index
+    _floxBox.append('<div class="flowNav"><ul></ul></div>');
+    let _indicator = _this.find(".flowNav>ul");
+    for (let n = 0; n < slideCount; n++) {
+      _dots = _dots + '<li></li>';
+      _flowItem.eq(n).attr('data-index', n);
+    }
+    _indicator.append(_dots);
+
+    // 複製到燈箱中 *** //
+    _floxBox.clone().insertBefore(_skipToClose);
+
+    let _indicatItem = _indicator.find('li');
+    _indicatItem.eq(i).addClass(actClassName);
+    _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+
+
+    // 依據可視的 slide 項目，決定 indicator 樣式
+    indicatReady();
+    function indicatReady() {
+      _indicatItem.removeClass(actClassName);
+      _indicatItem.eq(i).addClass(actClassName);
+      if (ww < wwMedium) {
+        if (slideCount > 1) {
+          flownavShow();
+        } else {
+          flownavHide();
+        }
+      }
+      if (ww >= wwMedium) {
+        if (slideCount <= 2) {
+          flownavHide();
+        } else {
+          flownavShow();
+          _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+        }
+      }
+      if (ww >= wwNormal) {
+        if (slideCount <= 4) {
+          flownavHide();
+        } else {
+          flownavShow();
+          _indicatItem.eq((i + 1) % slideCount).addClass(actClassName);
+          _indicatItem.eq((i + 2) % slideCount).addClass(actClassName);
+          _indicatItem.eq((i + 3) % slideCount).addClass(actClassName);
+        }
+      }
+    }
+    function flownavShow(){
+      _indicator.add(_btnRight).add(_btnLeft).show();
+    }
+    function flownavHide(){
+      _indicator.add(_btnRight).add(_btnLeft).hide();
+    }
+
+    function slideForward(){
+      _flowList.stop(true, false).animate({'margin-left': -1 * slideDistance }, speed, function(){
+        j = (i + 1) % slideCount;
+        _flowItem.eq(i).appendTo(_flowList);
+        _indicatItem.eq(i).removeClass(actClassName);
+        _indicatItem.eq(j).addClass(actClassName);
+        _flowList.css('margin-left', 0);
+        if (ww >= wwMedium) {
+          _indicatItem.eq((j + 1) % slideCount).addClass(actClassName);
+        }
+        if (ww >= wwNormal) {
+          _indicatItem.eq((j + 3) % slideCount).addClass(actClassName);
+        }
+        i = j;
+      });
+    }
+    function slideBackward() {
+      j = (i - 1) % slideCount;
+      _flowItem.eq(j).prependTo(_flowList);
+      _flowList.css("margin-left", -1 * slideDistance);
+
+      _flowList.stop(true, false).animate({ "margin-left": 0 }, speed, function () {
+          _indicatItem.eq(j).addClass(actClassName);
+          if (ww >= wwNormal) {
+            _indicatItem.eq((i + 3) % slideCount).removeClass(actClassName);
+          } else if (ww >= wwMedium) {
+            _indicatItem.eq((i + 1) % slideCount).removeClass(actClassName);
+          } else {
+            _indicatItem.eq(i).removeClass(actClassName);
+          }
+          i = j;
+        });
+    }
+
+    // 點擊向右箭頭
+    _btnRight.click(function () { slideForward(); });
+
+    // 點擊向左箭頭
+    _btnLeft.click(function () { slideBackward(); });
+
+    // touch and swipe 左右滑動
+    _floxBox.swipe({
+      swipeRight: function () {slideBackward();},
+      swipeLeft: function () {slideForward();},
+      threshold: 20,
+    });
 
 
 
 
+    ///////////////////////////////////////////////////////
+    // 點擊.photoflow的圖片，開燈箱顯示大圖 ***
+    _flowItem.children('a').click(function(){
+      _keptFlowItem = $(this);
+      photoIndex = _keptFlowItem.parent().attr('data-index');
+      _cpBigPhoto.stop(true, false).fadeIn().find('.flowList').find('li').filter( function(){
+        return $(this).attr('data-index') == photoIndex;
+      }).show();
+      _hideLightbox.focus();
+      _cover.stop(true, false).fadeIn();
+      _body.addClass('noScroll');
+    })
+
+    let winResizeTimer;
+    _window.resize(function () {
+      clearTimeout(winResizeTimer);
+      winResizeTimer = setTimeout(function () {
+        ww = _window.width();
+        slideDistance = _flowItem.first().outerWidth(true);
+        indicatReady();
+      }, 200);
+    });
+
+  });
+
+
+
+  // cp 頁大圖燈箱 *** ////////////////////////////
+  _cpBigPhoto.each(function(){
+    let _this = $(this);
+    let _photoBox = _this.find('.flowBox');
+    let _photoList = _photoBox.find('.flowList');
+    let _photoItem = _photoList.children('li');
+    let photoCount = _photoItem.length;
+    let _btnRight = _this.find('.diskBtn.next');
+    let _btnLeft = _this.find('.diskBtn.prev');
+    let _hideBigPhoto = _this.find('.closeThis');
+
+    const speed = 400;
+    let i, j;
+
+    // _photoItem.hide();
+    _photoItem.find('img').unwrap('a');
+
+    // 點擊向右箭頭
+    _btnRight.click(function(){
+      i = Number( _photoItem.filter(':visible').attr('data-index') );
+      j = (i+1) % photoCount;
+
+      _photoItem.filter( function(){
+        return $(this).attr('data-index') == i;
+      }).stop(true, false).fadeOut(speed, function(){
+        $(this).hide();
+      });
+      _photoItem.filter( function(){
+        return $(this).attr('data-index') == j;
+      }).stop(true, false).fadeIn(speed);
+    })
+    
+    // 點擊向左箭頭
+    _btnLeft.click(function(){
+      i = Number(_photoItem.filter(':visible').attr('data-index'));
+      j = (i-1+photoCount) % photoCount;
+
+      _photoItem.filter(function(){
+        return $(this).attr('data-index') == i;
+      }).stop(true, false).fadeOut(speed, function(){
+        $(this).hide();
+      });
+      _photoItem.filter( function(){
+        return $(this).attr('data-index') == j;
+      }).stop(true, false).fadeIn(speed);
+    })
+
+    // 關閉大圖燈箱
+    _hideBigPhoto.add(_cover).click(function(){
+      _photoItem.hide();
+      _keptFlowItem.focus();
+    })
+  })
+  //////////////////////////////////////
+
+
+
+
+
+
+  // 複合功能圖示   //////////////////////////////////////
+  var _compIcon = $('.compound'); //li
+  _compIcon.each(function(){
+    let _this = $(this);
+    let _controler = _this.children('button');
+    let _optList = _this.children('ul');
+    let _optItem = _optList.children('li');
+    let _optButton = _optItem.children('button');
+    let _optLink = _optItem.children('a');
+    let count = _optItem.length;
+
+    const speed = 300;
+
+    // 改變 li 的 z-index 值，第一個 li 要在最上面
+    for (let i = 0; i < count; i++) {
+      _optItem.eq(i).css('z-index', count - i)
+    }
+
+    // 收合
+    function glideUp() {
+      for (let i = 0; i < count; i++) {
+        _optList.stop(true, false).animate({ 'top': 0 }, speed);
+        _optItem.eq(i).delay( speed * i * .4).stop(true, false).animate({ 'top': 0 }, speed, function(){
+          if ( i == count-1) {_optList.height(0).hide()}
+        });
+      }
+    }
+
+    _controler.click(function(){
+      if (_optList.is(':hidden')) {
+        _optList.show();
+        let height = _optItem.outerHeight(true);
+        _optList.stop(true, false).animate({ 'top': height }, speed);
+        for (let i = 0; i < count; i++) {
+          _optItem.eq(i).delay( speed*i*.3 ).stop(true, false).animate({ 'top': height * i }, speed, function(){
+            _optList.height( height * count);
+          })
+        }
+      } else {
+        glideUp();
+      }
+    })
+
+    _optButton.add(_optLink).click(glideUp);
+    _this.siblings().click(glideUp);
+    _this.siblings().children('a, button').focus(glideUp);
+  })
+  //////////////////////////////////////
 
 
 

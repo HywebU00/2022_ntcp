@@ -246,55 +246,53 @@
       </section>
     </div>
 
-    <div class="fp">
-      <section class="formA">
-        <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
-        <form action="">
-          <table class="formLayout"><tbody>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>您的電子信箱</td>
-              <td>
-                <input class="fullWidth" type="email">
-                <p class="warning">這似乎不是一個正常的格式</p>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>收件者電子信箱</td>
-              <td>
-                <input class="fullWidth" type="email" multiple>
-                <p class="hint">多個收件人email請用逗號 "," 或分號 ";" 隔開。</p>
-              </td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>內容</td>
-              <td><textarea name="" id=""></textarea></td>
-            </tr>
-            <tr>
-              <td><abbr title="必填欄位" class="required">*</abbr>驗證碼</td>
-              <td>
-                <div class="form_content captchaSet">
-                  <input type="text" class="form-control inputCaptcha" id="apCaptcha" name="apCaptcha" placeholder="請輸入圖型驗證碼" maxlength="6" autocomplete="off">
-                  <span class="captchaImage"><img id="CaptchaImage" src="images/captchaImage.jpg" alt="圖型驗證碼"></span>
-                  <input name="Submit" type="button" class="btn btn-sm btn-primary" value="重新產生" onclick="getCAPTCHA();" onkeypress="getCAPTCHA();">
-                  <input name="Submit0" type="button" class="btn btn-sm btn-primary" value="語音播放" onclick="getCAPTCHAVoice();" onkeypress="getCAPTCHAVoice();">
-                  <iframe id="playVideo" src="" width="0" height="0" title="CAPTCHAVoice" style="display:none"></iframe>
-                  <!--[if IE]> <noscript >當script無法執行時可點選<a href='CaptchaVoice-1.mp3' target="_blank"  title="這裡">【這裡】</a>此連結替代</noscript> <![endif]-->
-                  <noscript class="NoscriptIECss" style="display:none">當script無法執行時可點選<a href='CaptchaVoice-1.mp3' target="_blank" title="這裡">【這裡】</a>此連結替代</noscript>
-                  <noscript class="NoscriptCss" style="display:none"> 當script無法執行時可點選<a href='CaptchaVoice.mp3' target="_blank" title="這裡">【這裡】</a>此連結替代 </noscript>
-                  <noscript>您的瀏覽器不支援 JavaScript 語法,將無法使用重新產生驗證碼功能，請按F5重新載入此網頁，以重新產生驗證碼。</noscript>
-                </div>
-              <p class="error">您輸入的驗證碼錯誤</p>
-              </td>
-            </tr>
-  
-          </tbody></table>
-          <div class="btnDv">
-            <input type="button" value="送出">
-            <input type="reset" value="清除">
-          </div>
-        </form>
-      </section>
-    </div>
+    <section class="formA">
+      <p class="note">註：<abbr title="必填欄位標註符號" class="required">*</abbr>為必填（選）欄位。</p>
+      <form action="">
+        <table class="formLayout"><tbody>
+          <tr>
+            <td><abbr title="必填欄位" class="required">*</abbr>您的電子信箱</td>
+            <td>
+              <input class="fullWidth" type="email">
+              <p class="warning">這似乎不是一個正常的格式</p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr title="必填欄位" class="required">*</abbr>收件者電子信箱</td>
+            <td>
+              <input class="fullWidth" type="email" multiple>
+              <p class="hint">多個收件人email請用逗號 "," 或分號 ";" 隔開。</p>
+            </td>
+          </tr>
+          <tr>
+            <td><abbr title="必填欄位" class="required">*</abbr>內容</td>
+            <td><textarea name="" id=""></textarea></td>
+          </tr>
+          <tr>
+            <td><abbr title="必填欄位" class="required">*</abbr>驗證碼</td>
+            <td>
+              <div class="form_content captchaSet">
+                <input type="text" class="form-control inputCaptcha" id="apCaptcha" name="apCaptcha" placeholder="請輸入圖型驗證碼" maxlength="6" autocomplete="off">
+                <span class="captchaImage"><img id="CaptchaImage" src="images/captchaImage.jpg" alt="圖型驗證碼"></span>
+                <input name="Submit" type="button" class="btn btn-sm btn-primary" value="重新產生" onclick="getCAPTCHA();" onkeypress="getCAPTCHA();">
+                <input name="Submit0" type="button" class="btn btn-sm btn-primary" value="語音播放" onclick="getCAPTCHAVoice();" onkeypress="getCAPTCHAVoice();">
+                <iframe id="playVideo" src="" width="0" height="0" title="CAPTCHAVoice" style="display:none"></iframe>
+                <!--[if IE]> <noscript >當script無法執行時可點選<a href='CaptchaVoice-1.mp3' target="_blank"  title="這裡">【這裡】</a>此連結替代</noscript> <![endif]-->
+                <noscript class="NoscriptIECss" style="display:none">當script無法執行時可點選<a href='CaptchaVoice-1.mp3' target="_blank" title="這裡">【這裡】</a>此連結替代</noscript>
+                <noscript class="NoscriptCss" style="display:none"> 當script無法執行時可點選<a href='CaptchaVoice.mp3' target="_blank" title="這裡">【這裡】</a>此連結替代 </noscript>
+                <noscript>您的瀏覽器不支援 JavaScript 語法,將無法使用重新產生驗證碼功能，請按F5重新載入此網頁，以重新產生驗證碼。</noscript>
+              </div>
+            <p class="error">您輸入的驗證碼錯誤</p>
+            </td>
+          </tr>
+
+        </tbody></table>
+        <div class="btnDv">
+          <input type="button" value="送出">
+          <input type="reset" value="清除">
+        </div>
+      </form>
+    </section>
 
   </main>
 
