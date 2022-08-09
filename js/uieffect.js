@@ -297,7 +297,7 @@ $(function(){
   
   
   
-  
+  ////////////////////////////////////////////////////////
   // 外掛套件 slick 參數設定 ////////////////////////////
   // 首頁 「宣導專區」
   $('.spotlight .slideShow').slick({
@@ -356,16 +356,38 @@ $(function(){
     mobileFirst: true,
   });
 
+  // 照片內容頁
+  $('.imgSlick').find('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    dots: true,
+    asNavFor: '.imgSlick .slider-nav'
+  });
+  $('.imgSlick').find('.slider-nav').slick({
+    variableWidth: true,
+    slidesToShow: 3,  
+    slidesToScroll: 1,
+    asNavFor: '.imgSlick .slider-for',
+    centerPadding: 0,
+    dots: false,
+    centerMode: true,
+    focusOnSelect: true
+  });
+
   // slick 參數設定：結束 ////////////////////////////
 
   // 取得 slick 總張數
-  var _countSlide = $('.slideShow').filter('.count');
+  var _countSlide = $('.slideShow, .imgSlick').filter('.count');
   _countSlide.each(function(){
     let _this = $(this);
     let _slickDots = _this.find('.slick-dots');
-    _slickDots.after('<div class="slideTotal">/ ' + _slickDots.children('li').length + '</div>');
+    _slickDots.after('<div class="slideTotal">/' + _slickDots.children('li').length + '</div>');
     _slickDots.find('button').attr('disabled', 'disabled');
   })
+////////////////////////////////////////////////////////
+
 
 
   // 仿 select 效果
