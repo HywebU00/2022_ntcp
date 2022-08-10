@@ -68,6 +68,7 @@ input[type="url"],
 input[type="week"] { 
   @extend %textInput; 
   &.fullWidth{ width: calc(100% - 6px);}
+  &.halfWidth{width: calc(50% - 3px);}
 }
 
 
@@ -85,8 +86,8 @@ input[type="submit"], input[type="button"] , input[type="reset"]{
   -moz-appearance: none;
   border: none;
 
-  height: 3em; line-height: 2.9em;
-  padding: 0 1em; margin: 3px;
+  height: 2.6em; line-height: 2.6em;
+  padding: 0 1em; margin: 3px; border-radius: 4px;
   vertical-align: middle;
   cursor: pointer; transition: .15s;
 }
@@ -117,7 +118,7 @@ input[type="reset"]{
 
 textarea {
   @extend %textInput;
-  resize: vertical;line-height: 1.6;height: 8em;
+  resize: vertical;line-height: 1.6;height: 10em;
   width: calc(100% - 6px);
 }
 
@@ -204,21 +205,19 @@ input[type="submit"][disabled]:focus {
 }
 
 // fieldset ////////////////////////////
-fieldset {
-  border: 1px solid $borderColorLight; border-radius: 8px;
-  &+fieldset {
-    margin-top: 1em;
-  }
-  legend {
-    font-weight: normal; font-size: 1.4em; 
-    padding: 9px .8em 8px; margin: 0 0 .5em; line-height: 1.1;
-    border: 2px solid $borderColorLight;
-    border-radius: 2em;
-  }
+// fieldset {
+//   border: 1px solid $borderColorLight; border-radius: 8px;
+//   &+fieldset {
+//     margin-top: 1em;
+//   }
+//   legend {
+//     font-weight: normal; font-size: 1.4em; 
+//     padding: 9px .8em 8px; margin: 0 0 .5em; line-height: 1.1;
+//     border: 2px solid $borderColorLight;
+//     border-radius: 2em;
+//   }
 
-  @media screen and (min-width: $wwNormal){
-    legend{margin-bottom: 1em;}
-  }
-}
-
-
+//   @media screen and (min-width: $wwNormal){
+//     legend{margin-bottom: 1em;}
+//   }
+// }

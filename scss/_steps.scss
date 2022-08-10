@@ -1,5 +1,6 @@
+// 步驟
 .steps {
-  padding: 0;margin: 15px auto;text-align: center;
+  padding: 0;margin: 15px auto 20px;text-align: center;
 
   ul, ol {
     list-style: none;margin: 0 auto;padding: 0;
@@ -56,38 +57,4 @@
   @media screen and (min-width: $wwMedium) {
     width: 96%; max-width: 960px;
   }
-}
-
-// ////////////////////////////////////////////////////////////////////
-.terms{
-  @extend %mainWidth;
-  padding: 40px 4vw; margin-bottom: 50px;
-  line-height: 1.8;
-  box-shadow: rgba(0,0,0,.2) 0 0 16px;
-  h3{
-    margin: 0 0 2rem; font-size: 1.4rem;
-    border-bottom: 3px solid $borderColor;
-  }
-  ol{
-    &.tradChineseInformal{
-      list-style-type: trad-chinese-informal;
-    }
-  }
-  li{
-    &+li{ margin-top: 1em;}
-    ol{
-      margin: 1em 0;
-      li{
-        list-style-type: lower-alpha;
-      }
-    }
-  }
-
-  @media screen and (min-width: $wwMedium){
-  }
-
-  @media screen and (min-width: $wwNormal){
-    padding: 40px;
-  }
-
 }

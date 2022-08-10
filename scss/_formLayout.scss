@@ -7,11 +7,12 @@ table.formLayout {
     padding: 4px 0;
     &:nth-child(odd) {
       padding:1.2em .5em 0 0; width: 9em;
-      vertical-align: top; text-align: right;
+      vertical-align: top; text-align: right; font-weight: bold;
+      label{ font-weight: bold; cursor: default;}
     }
     &:nth-child(even) {
       padding-right: 0;
-      p{margin:6px 3px; font-size: .9rem; line-height: 1.5;}
+      p{margin:6px 3px; font-size: .9rem; line-height: 1.5; color: $fontColorLight;}
     
     }
   }
@@ -45,10 +46,14 @@ table.formLayout {
       background-position: center 2px;
     }
   }
+  td:nth-child(even){
+    p.error{color: #c00;}
+  }
 
+  // .btnDv
   &+.btnDv{ 
     margin-top: 20px; padding-top: 25px;
-    border-top: 1px solid $borderColor;
+    border-top: 2px solid $borderColor;
   }
 
   @media screen and (max-width: $wwMedium - 1) {
@@ -58,7 +63,7 @@ table.formLayout {
     td {
       padding: 1px 0;
       &:nth-child(odd) {
-        width: 100%;padding: 1.5em 0 0 .8em;
+        width: 100%;padding: 1.5em 0 0 3px;
         vertical-align: top;text-align: left; font-weight: bold;
       }
     }
@@ -73,11 +78,12 @@ table.formLayout {
 // 送出、清除等按鈕 ////////////////////////////////////////
 .btnDv{
   text-align: center; margin: 0 auto;
-  input{
+  input, button{
     min-width: 10em; border-radius: 2em; border-width: 2px;
+    height: 3em; line-height: 3;
   }
   @media screen and (max-width: $wwMedium - 1) {
-    input{ min-width: 7em;}
+    input{ min-width: 6em;}
   }
 }
 // -----------------------------------------------------------------
@@ -103,13 +109,28 @@ table.formLayout {
 
 
 // 單選、複選 ////////////////////////////////////////
-.optionPool{ margin: 3px;
+.optionPool{ 
+  margin: 3px;
   label{
     display: inline-block; margin:0 1em 3px 0; padding: .5em 1em .4em .3em;
     line-height: 1.5; border-radius: 3px;
     &:hover { box-shadow: $focused 0 0 0 1px; }
     input{ vertical-align: top; margin-top: .2em;}
   }
+}
+// -----------------------------------------------------------------
+
+
+// 授課時間 ////////////////////////////////////////
+.classTime{
+  margin: 0 3px 5px; padding:3px 0 6px; overflow: hidden; clear: both;
+  border-bottom: 1px dotted $borderColor;
+  // outline: 1px solid red;
+  .date{display: inline-block; height: 2.4em; line-height: 2.4;
+    time{ color: $fontColorDark;}
+  }
+  label{ display: inline-block;}
+  button{ float: right; margin-right: 5px;}
 }
 // -----------------------------------------------------------------
 
@@ -189,12 +210,17 @@ table.formLayout {
 }
 .formLayout td .addressSet{
   margin: 0;
-  // background: #eef;
-  @media screen and (min-width: $wwNormal){
-    // width: calc(90% + 6px); margin: 0;
-  }
 }
 // -----------------------------------------------------------------
+
+.agreeCheck{
+  display: block;position: relative;
+  border-radius: 4px; box-shadow: $borderColorLight 0 0 0 1px;
+  padding: .5em 1em .4em 2.5em; margin: 1.5em auto;
+  input{
+    position: absolute; left: .5em; top: .75em;
+  }
+}
 
 
 
@@ -203,6 +229,11 @@ table.formLayout {
   @extend %mainWidth; padding: 20px 3vw 40px; margin-bottom: 50px;
   box-shadow: rgba(0,0,0,.2) 0 0 16px;
   border-radius: 12px;
+  h3{
+    margin: 10px 0 2rem; font-size: 1.4rem;
+    border-bottom: 3px solid $borderColor;
+  }
+
   // 必填欄位星號 //
   .required{
     font-size: 1.6em;line-height: .6; margin-right: 3px;
@@ -210,18 +241,11 @@ table.formLayout {
   }
 
   // 註： //
-  .note{
-    text-align: right; margin: 12px 0 5px 0;
-  }
+  .note{text-align: right; margin: 12px 0 5px 0;}
 
   @media screen and (min-width: $wwNormal){
     padding:30px 30px 50px;margin-bottom: 100px;
   }
 }
-
-// .fp{
-//   padding: 0 0 60px;
-// }
-
 // -----------------------------------------------------------------
 
