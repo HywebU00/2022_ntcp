@@ -69,7 +69,7 @@
     position: absolute; left: auto; right: 40px; top: 2.6em; 
     background: none;transform: none;
 
-    form{background-color: #F6F3EE;}
+    form{background-color: $grayLight;}
     input[type="text"], input[type="button"], input[type="submit"] {
       height: 2.5em;
     }
@@ -86,13 +86,13 @@
 
     .hotKeywords{
       margin-top: 3px;
-      .label{ font-size: 1rem; display: inline-block; vertical-align: middle;}
+      .label{ font-size: 1rem; display: inline-block; vertical-align: middle; color: $fontColor;}
       ul{display: inline-block; vertical-align: middle; margin: 0 -2px 0 0;}
       li{
         &:nth-child(n){display: inline-block;}
         a{ 
           height: 1.7em; line-height: 1.75;
-          background-color: #F6F3EE; transition: .2s;
+          background-color: $grayLight; transition: .2s;
           &:hover, &:focus{
             box-shadow: $primaryColor 0 0 0 2px;
           }
