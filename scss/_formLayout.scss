@@ -17,38 +17,7 @@ table.formLayout {
     }
   }
   
-  // 表單輸入欄位下的提示訊息文字
-  .hint, .warning, .error{
-    position: relative; padding-left: 24px;
-    &::before{
-      content: ''; position: absolute; left: 0; top: 0;
-      width: 20px; height: 20px; border-radius: 50%;
-      background: $grayDark url(../images/icon_msg.svg) no-repeat center 0;
-      background-size: 16px auto;
-    }
-  }
-  .hint{
-    &::before{
-      background-color: #0a97cb;
-      background-position: center -78px;
-    }
-  }
-  .warning{
-    &::before{
-      background-color: #f9770c;
-      background-position: center -118px;
-    }
-  }
-  .error{
-    color: #c00;
-    &::before{
-      background-color: #c00;
-      background-position: center 2px;
-    }
-  }
-  td:nth-child(even){
-    p.error{color: #c00;}
-  }
+
 
   // .btnDv
   &+.btnDv{ 
@@ -249,3 +218,35 @@ table.formLayout {
 }
 // -----------------------------------------------------------------
 
+// 提示訊息文字
+.hint, .warning, .error{
+  position: relative; padding-left: 24px; line-height: 1.6;
+  &::before{
+    content: ''; position: absolute; left: 0; top: 2px;
+    width: 20px; height: 20px; border-radius: 50%;
+    background: $grayDark url(../images/icon_msg.svg) no-repeat center 0;
+    background-size: 16px auto;
+  }
+}
+.hint{
+  &::before{
+    background-color: #0a97cb;
+    background-position: center -78px;
+  }
+}
+.warning{
+  &::before{
+    background-color: #f9770c;
+    background-position: center -118px;
+  }
+}
+.error{
+  color: #c00;
+  &::before{
+    background-color: #c00;
+    background-position: center 2px;
+  }
+}
+td:nth-child(even){
+  p.error{color: #c00;}
+}

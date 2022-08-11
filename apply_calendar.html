@@ -240,7 +240,7 @@
       
       <section class="funcBar">
         <ul>
-          <!-- <li class="print"><button type="button">列印</button></li> -->
+          <li class="print"><button type="button">列印</button></li>
           <!-- <li class="forward"><a href="javascript:;">轉寄</a></li> -->
           <li class="back"><a href="javascript:;">回上一頁</a></li>
         </ul>
@@ -257,16 +257,149 @@
     </section>
 
     <section class="calendar">
-      <div>
-        選擇月份
-        <select name="" id="">
-          <option value="">111年 8月</option>
-          <option value="">111年 9月</option>
-          <option value="">111年 10月</option>
-        </select>
-        <p class="hint">僅開放7天後的課程預約申請，上午時段為09:00~12:00、下午時段為12:00~21:00</p>
-      </div>
+      <form action="">
+        <div class="monthChange">
+          <label>
+            選擇月份
+            <select name="" id="">
+              <option value="">111年 8月</option>
+              <option value="">111年 9月</option>
+              <option value="">111年 10月</option>
+            </select>
+          </label>
+          <p class="hint">僅開放7天後的課程預約申請，上午時段為09:00~12:00、下午時段為12:00~21:00</p>
+        </div>
 
+        <div class="oneMonth">
+          <h3>111年 8月</h3>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col" title="星期">日</th>
+                <th scope="col" title="星期">一</th>
+                <th scope="col" title="星期">二</th>
+                <th scope="col" title="星期">三</th>
+                <th scope="col" title="星期">四</th>
+                <th scope="col" title="星期">五</th>
+                <th scope="col" title="星期">六</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td><span class="date">1</span></td>
+                <td><span class="date">2</span></td>
+                <td><span class="date">3</span></td>
+                <td><span class="date">4</span></td>
+                <td><span class="date">5</span></td>
+                <td><span class="date">6</span></td>
+              </tr>
+              <tr>
+                <td><span class="date">7</span></td>
+                <td><span class="date">8</span></td>
+                <td><span class="date">9</span></td>
+                <td><span class="date">10</span></td>
+                <td><span class="date">11</span></td>
+                <td><span class="date">12</span></td>
+                <td><span class="date">13</span></td>
+              </tr>
+              <tr>
+                <td><span class="date">14</span></td>
+                <td><span class="date">15</span></td>
+                <td><span class="date">16</span></td>
+                <td>
+                  <span class="date">17</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">18</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">19</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" class="checked" title="已預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">20</span>
+                  <button type="button" class="occupied" disabled="disabled" title="額滿">上午</button>
+                  <button type="button" class="occupied" disabled="disabled" title="額滿">下午</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="date">21</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" class="occupied" disabled="disabled" title="額滿">下午</button>
+                </td>
+                <td>
+                  <span class="date">22</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">23</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">24</span>
+                  <button type="button" class="checked" title="已預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">25</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td>
+                  <span class="date">26</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" class="occupied" disabled="disabled" title="額滿">下午</button>
+                </td>
+                <td>
+                  <span class="date">27</span>
+                  <button type="button" class="occupied" disabled="disabled" title="額滿">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="date">28</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                  </td>
+                <td>
+                  <span class="date">29</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                  </td>
+                <td><span class="date">30</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                  </td>
+                <td><span class="date">31</span>
+                  <button type="button" title="可預約">上午</button>
+                  <button type="button" title="可預約">下午</button>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="hint">宣導地點限於新北市轄區，請見諒。</p>
+        <p class="hint">如無法點選，表示該時段額滿。</p>
+
+
+        <div class="btnDv">
+          <input type="submit" value="下一步">
+          <input type="reset" value="清除">
+        </div>
+      </form>
     </section>
     
 
