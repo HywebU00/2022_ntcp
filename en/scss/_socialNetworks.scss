@@ -1,0 +1,71 @@
+// 首頁：雲端社區警政
+// .main>*:not(.socialNetworks){display: none;}
+.socialNetworks{
+  padding: 50px 0;background: $grayLight;
+
+  .blockHeader{ 
+    text-align: center; 
+    span{ display: block;
+      &+span{ margin-top: .6rem;}
+    }
+  }
+
+  .links{
+    width: 92%; margin: 0 auto; max-width: 400px;
+    ul{
+      list-style: none; margin: 0 auto; padding: 0; 
+      font-size: 1.375rem;
+    }
+    li{
+      margin: 0 0 10px;
+      a{
+        position: relative;display: block; white-space: nowrap;
+        width: 100%; border-radius: 4px;
+        padding:0 20px 0 80px;
+        text-decoration: none;
+        background-color: $fontInvert; color: $fontColor;
+        box-shadow: rgba(0,0,0,.2) 0 3px 4px -1px;
+        transition: .2s;
+        &:hover{box-shadow: $white 0 0 0 2px, rgba(0,0,0,.25) 0 5px 20px 0;
+        }
+        &:focus{box-shadow: $fontColorLight 0 0 0 2px, rgba(0,0,0,.25) 0 5px 20px 0;
+        }
+      }
+      img{
+        position: absolute;  left: 18px; top: 18px;
+        width: 52px; height: 52px; object-fit: contain;
+      }
+      .text{
+        display: block; height: 88px; line-height: 90px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $wwSlim + 100px){
+    .blockHeader{ 
+      span{ display: inline-block;
+        &+span{ margin-top: 0; margin-left: .4em;}
+      }
+    }
+    .links{
+      width: 96%; max-width: 640px;
+      ul{display: flex; flex-flow: row wrap;}
+      li{flex: 0 0 calc(50% - 10px); margin: 5px;}
+    }
+  }
+
+  @media screen and (min-width: $wwNormal){
+    .links{
+      width: 88%; margin: 0 auto; max-width: none;
+      ul{flex-flow: row nowrap;}
+      li{
+        flex: 1 1 auto; margin: 6px;
+        a{
+          margin: 3px 0 0;
+          &:hover, &:focus {margin-top: 0; margin-bottom: 3px;}
+        }
+      }
+    }
+  }
+  
+}

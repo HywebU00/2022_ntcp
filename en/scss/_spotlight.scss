@@ -1,0 +1,123 @@
+// 首頁：宣導專區
+// .main>*:not(.spotlight){display: none;}
+.spotlight{
+  position: relative; padding: 50px 0;
+  background: $grayLight;
+
+  .blockHeader{
+    position: relative;
+    width: 94%; margin: 0 auto 10px;
+  }
+
+  .slideShow{
+    position: relative; margin: 0 auto; width: 94%; padding-top: 55px;
+    .image{
+      width: 100vw;
+      a{ display: block; width: 100%;}
+      img{ display: block;width: 100%; height: 56.25vw;}
+      // 寬高比 .5625, 依據 YouTube 的影片寬高預設值
+    }
+
+    .slick-arrow{
+      position: absolute; top: 5px; right: 0; transform: translateY(0);
+      &.slick-prev{
+        left: auto; right: 52px;
+      }
+    }
+
+    .slick-dots{
+      position: absolute; right: 125px; top: 15px;
+      list-style: none; margin: 0 2.1em 0 0; padding: 0;
+      
+      li{
+        position: absolute; left: 0; top: 0; opacity: 0;
+        margin: 0; padding: 0;
+        button{
+          border: none; padding: 0;margin: 0; background-color: transparent;
+          font-size: 1.1rem; height: 1em; line-height: 1; font-weight: bold; color: $fontColor;
+          &[disabled]{ color: $fontColor;}
+        }
+        &.slick-active{opacity: 1;}
+      }
+    }
+
+    .slideTotal{
+      position: absolute; right: 120px;top: 15px;
+      font-size: 1.1rem;
+    }
+
+  }
+
+  .video{
+    position: relative;width: 94%; margin: 30px auto 0;
+    padding: 55px 0 0;
+    iframe {
+      display: block; margin: 0; width: 100%; height:94vw * .5625;
+    }
+    .more{position: absolute; right: 5px; top: 5px;}
+  }
+
+  &::before{
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    width: 20vw; height: 100%;
+    @include gradient($deg: 180deg);
+  }
+
+  @media screen and (min-width: $wwNormal){
+    padding: 50px 30px 50px 90px;
+
+    .blockHeader{
+      margin: 0; text-align: left;
+      span{
+        display: block;
+        &:last-child{ margin-top: .5rem;}
+      }
+    }
+
+    .flexbox{ 
+      position: relative;
+      display: flex; align-items: flex-end;
+    }
+
+    .slideShow{
+      flex: 0 0 calc(50% - 12px); width: calc(50% - 12px);
+      .image{
+        a{
+          position: relative;
+          &::before{
+            z-index: -1;
+            content: ''; position: absolute; left: 0; top: 0; right: 0; bottom: 0;
+            box-shadow: $primaryColor 0 0 0 3px inset, $white 0 0 0 4px inset;
+          }
+          &:focus{
+            &::before{ z-index: 9;}
+          }
+        }
+        img{height: calc((50vw - 72px) * .5625);}
+      }
+    }
+    .video{
+      flex: 0 0 calc(50% - 12px); width: calc(50% - 12px);
+      margin: 0 0 0 24px;
+      iframe { height: calc((50vw - 72px) * .5625);}
+    }
+
+    &::before{top: 0; width: 35vw; height: auto;}
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    .slideShow{
+      flex-basis: 528px;
+      .image{
+        img{ width: 528px; height: 297px;}
+      }
+    }
+    .video{
+      flex-basis: 528px;
+      iframe{width: 528px; height: 297px;}
+    }
+    &::before{ width: $wwMaximum*.35;}
+  }
+  
+}

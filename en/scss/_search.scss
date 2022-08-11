@@ -1,0 +1,111 @@
+// ---------- 版頭快速查詢區
+.search {
+  display: none;transform: translateX(100%);
+  flex-flow: row nowrap; align-items: flex-end;
+  position: absolute;left: 0; top: auto; z-index: 19;
+  width: 100vw; padding:10px 2% 12px;
+  background-color: transparentize($primaryColor, .2);
+  transition:transform .5s;
+
+  &.reveal{transform: translateX(0);display: flex;}
+
+  a{ color: $fontColor; }
+
+  form{
+    position: relative; flex: 1 1 50%;
+    padding: 2px; margin: 0; overflow: hidden;
+    background-color: $white; border-radius: 4px;
+  }
+  input[type="text"],
+  input[type="button"], input[type="submit"] {
+    font-size: 1rem; height: 2.8em; line-height: 2.8; border-radius: 3px;
+    box-shadow: none; margin: 0; border: none;  outline: none;
+  }
+  input[type="text"]{
+    width: calc(100% - 2.8em - 2px); padding: 0 .5em;
+    &:hover{background-color: $grayLight;}
+    &:focus{
+      box-shadow:$linkColor 0 0 0 2px inset;
+      background-color: $white;
+    }
+  }
+  input[type="button"], input[type="submit"] {
+    position: absolute;width: 2.8em; right: 2px; padding: 0;
+    text-indent: -20em; overflow: hidden; cursor: pointer;
+    background: url(../images/icon_search.svg) no-repeat center center;
+    background-size: 60%;
+    &:hover, &:focus{ background-color: $assistant;}
+  }
+
+  // 熱門關鍵字
+  .hotKeywords{
+    flex: 0 0 auto;display: inline-block; vertical-align: top;
+    list-style: none; margin: 0 0 0 10px; padding: 0; line-height: 1.1;
+    .label {
+      display: block;height: 1em; margin-right: .5em;
+      color: $fontInvert;font-size: .8rem;
+      }
+    ul{ list-style: none; margin:3px 0 0 -2px; padding: 0; overflow: hidden;}
+    li{
+       margin:0; padding: 2px; float: left;
+       &+li{margin-left: 2px;}
+       &:nth-child(n+3){display: none;}
+      a{ 
+        display: block;
+        height: 2em; line-height: 2.1; padding: 0 .4em; margin: 0; border-radius: 4px;
+        text-decoration: none; cursor: pointer;
+        background-color: $white;
+        &:hover, &:focus{ 
+          background-color: $primaryColor; color: $fontInvert;
+          box-shadow: $white 0 0 0 2px;
+        }
+      }
+    }
+  }
+
+
+  @media screen and (min-width: $wwNormal){
+    display: block; margin: 0; padding:0; width: auto;
+    position: absolute; left: auto; right: 40px; top: 2.6em; 
+    background: none;transform: none;
+
+    form{background-color: $grayLight;}
+    input[type="text"], input[type="button"], input[type="submit"] {
+      height: 2.5em;
+    }
+    input[type="button"], input[type="submit"]{
+      width: 2.5em;
+      &:focus{ box-shadow:$assistant 0 0 0 2px; }
+    }
+    input[type="text"]{
+      width: calc(100% - 2.5em - 2px); 
+      background-color: transparent;
+      &:hover{ background-color: $white; }
+      &:focus{ box-shadow:$primaryColor 0 0 0 1px inset, $primaryColor 0 0 0 1px; }
+    }
+
+    .hotKeywords{
+      margin-top: 3px;
+      .label{ font-size: 1rem; display: inline-block; vertical-align: middle; color: $fontColor;}
+      ul{display: inline-block; vertical-align: middle; margin: 0 -2px 0 0;}
+      li{
+        &:nth-child(n){display: inline-block;}
+        a{ 
+          height: 1.7em; line-height: 1.75;
+          background-color: $grayLight; transition: .2s;
+          &:hover, &:focus{
+            box-shadow: $primaryColor 0 0 0 2px;
+          }
+        }
+      }
+    }
+    .linkBtn{
+      a{height: 2em; line-height: 2; width: auto;}
+    }
+  }
+
+  @media screen and (min-width: $wwMaximum){
+    right: calc(50vw - #{$wwMaximum}*.5 + 40px)
+  }
+
+}
