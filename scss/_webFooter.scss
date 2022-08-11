@@ -135,7 +135,7 @@
     }
     .fatFooter{
       display: block; padding: 60px 0 10px;
-      background: $footerBg url(../images/fatFooter_bg.jpg) no-repeat 0 0;
+      background: $footerBg url(../images/fatFooter_bg.jpg) no-repeat left bottom;
     }
     
     // 二層網站架構
@@ -186,7 +186,7 @@
     }
 
     // base ////////////////////////////////////////////////////////////
-    .base{ padding-left: 6%; padding-right: 6%; padding-top: 40px;}
+    .base{ padding-left: 6%; padding-right: 6%; padding-top: 40px; border: none;}
     .logo{
       width: 448px; margin: 0;
     }
