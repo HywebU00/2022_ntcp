@@ -30,8 +30,9 @@
     li{
       display: flex; padding:.7em 0; margin: 0;
       .dt{
-        flex: 0 0 4em; width: 4em; margin: 0 .6em 0 0;
-        text-align: right;
+        flex: 0 0 4.5em; width: 4em; margin: 0 .6em 0 0;
+        text-align: right; font-weight: 500;
+        &::after{content: ':'; display: inline-block;}
       }
       .map{
         display: inline-block; vertical-align: middle; margin: 0 0 0 5px;
@@ -56,22 +57,24 @@
   .declaration{
     margin: 1.5em auto 0;
     ul{ 
-      list-style: none; overflow: hidden; 
-      margin:4px 0 0; padding: 0;line-height: 1.2;
+      list-style: none;
+      margin:4px -1em 0; padding: 0;line-height: 1.2;
+      display: flex;
     }
     li{
-      float: left; position: relative; margin: 0; padding: 0 1em 0 0;
-      &+li{margin-left: 1em;}
+      flex: 1 1 auto;
+      position: relative; margin: 0 0 .5em; padding: 0 1em;
+      &:first-child{flex-basis: 20%;}
       &::after{
-        content: ''; position: absolute; right: 0; top: .1em; 
-        width: 1px; height: 0.9em; background-color: $fontColor;
+        content: ''; position: absolute; right: 0; top: .1em; bottom: .1em;
+        width: 1px;background-color: $fontColorLight;
       }
       &:last-child{
         &::after{display: none;}
       }
       a{
         display: block;text-decoration: none; color: $fontColor;
-        white-space: nowrap;
+        font-weight: 400; color: $fontColorDark;
         border-bottom: 2px solid transparent;
         &:hover, &:focus{ border-bottom-color: $fontColor;}
       }
@@ -86,7 +89,7 @@
       display: inline-block; color: $fontColorLight;
       &+span{margin-left: 1.5em;}
 
-      em{ display: inline-block; color: $fontColor; font-style: normal;}
+      em{ display: inline-block; color: $fontColor; font-style: normal; font-weight: 400;}
     }
   }
 
@@ -107,6 +110,12 @@
   }
 
 
+  @media screen and (min-width: $wwMedium){
+    .declaration{
+      ul{ display: block; overflow: hidden;}
+      li{ float: left;}
+    }
+  }
 
 
 
@@ -140,24 +149,21 @@
     
     // 二層網站架構
     .siteTree{
-      margin: 0 auto; width: 80%;
+      margin: 0 auto; width: 90%;
       ul{list-style: none; margin: 0; padding: 0;}
       &>ul{
-        display: flex; flex-flow: row wrap;line-height: 1.4;
-
+        display: flex; flex-flow: row wrap;line-height: 1.4; margin: 0 -20px;
         a {
           display: block;text-decoration: none;color: $fontColor;
           transition: .2s;
         }
         
         &>li{
-          flex: 0 1 17%; margin: 1em 1.5% 0;min-width: 6em;
+          flex: 1 1 calc(20% - 40px); margin: 1em 20px 0;
           &>a{
             padding: 5px 0 0;
-            font-weight: bold;border-bottom: 2px solid transparent;
-            &:hover, &:focus{
-              border-bottom-color: $fontColor;
-            }
+            font-weight: bold; border-bottom: 2px solid transparent;
+            &:hover, &:focus{border-bottom-color: $fontColor;}
           }
 
           &>ul{
@@ -166,7 +172,7 @@
               margin: 0 0 1em;
               &>a{
                 position: relative; padding-right: 12px;
-                border-bottom: 1px solid transparent;
+                border-bottom: 1px solid transparent; font-weight: normal;
                 &::before{
                   content: ''; position: absolute; left: 1px; top: .45em;
                   width: 0; height: 6px;
@@ -187,27 +193,19 @@
 
     // base ////////////////////////////////////////////////////////////
     .base{ padding-left: 6%; padding-right: 6%; padding-top: 40px; border: none;}
-    .logo{
-      width: 448px; margin: 0;
-    }
+
+    .logo{width: 448px; margin: 0;}
 
     // 聯絡資訊
-    .contactInfo {
-      margin: 2em auto 0;
-      li{
-        dt{nav-right: 1.6em;}
-      }
-    }
+    .contactInfo { margin: 2em auto 0; }
 
     // 宣告，無障礙標章
-    .declaration, .aaBadge{position: absolute; margin: 0; top: 50px;}
+    .aaBadge{position: absolute; margin: 0; top: 50px;}
     .declaration{
-      right:calc(6% + 160px); width: calc(88% - 620px );
-      ul{ text-align: right;}
-      li{
-        margin-bottom: 5px ;
-        float: none; display: inline-block;
-      }
+//  outline: 1px solid red; 
+      // right:calc(6% + 160px); width: calc(88% - 620px );
+      ul{ text-align: right; display: block;}
+      li{ float: left; }
     }
     .aaBadge{ right: 6%;}
 

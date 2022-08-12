@@ -26,15 +26,17 @@
     }
 
     .slick-dots{
-      position: absolute; right: 125px; top: 15px;
+      position: absolute; right: 160px; top: 14px;
       list-style: none; margin: 0 2.1em 0 0; padding: 0;
-      
+      height: 1em; line-height: 1;
       li{
         position: absolute; left: 0; top: 0; opacity: 0;
         margin: 0; padding: 0;
         button{
-          border: none; padding: 0;margin: 0; background-color: transparent;
+          border: none; padding: 0; margin: 0;
           font-size: 1.1rem; height: 1em; line-height: 1; font-weight: bold; color: $fontColor;
+          background-color: transparent;
+          width: 3em; text-align: right;
           &[disabled]{ color: $fontColor;}
         }
         &.slick-active{opacity: 1;}
@@ -42,8 +44,8 @@
     }
 
     .slideTotal{
-      position: absolute; right: 120px;top: 15px;
-      font-size: 1.1rem;
+      position: absolute; right: 100px; top: 16px; width: 2em; text-align: left;
+      font-size: 1.1rem; line-height: 1; height: 1em;
     }
 
   }

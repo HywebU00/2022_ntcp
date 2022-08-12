@@ -1,7 +1,8 @@
 body{
   margin: 0; padding: 0; 
   background: #f4f5f5; color: $fontColor;
-  font-size: 1em; font-family:'Tenor Sans', Helvetica, Arial,'微軟正黑體', sans-serif;
+  font-family:'Murecho', Helvetica, Arial,'微軟正黑體', sans-serif;
+  font-size: 1em; font-weight: 300;
   
   &.noScroll{ overflow: hidden; overflow-y:hidden; }
 
@@ -11,7 +12,6 @@ body{
   a, button, input{
     &:focus{outline: none;}
   }
-  // time{font-family: 'Tenor Sans', sans-serif;}
 }
 
 

@@ -3,29 +3,27 @@
 
 .contactUs{
   padding: 50px 0;
-  // background-color: $assistant;
   @include gradient($deg: 0deg);
 
   .depLinks{
     .label{
-      display: block; font-size: 1.125rem;
+      display: block; font-size: 1.15rem; font-weight: bold;
       width: calc(94% - 1.2em);margin: 0 auto 5px;
     }
 
     .dropList{
-      position: relative; z-index: 99;
+      position: relative; z-index: 991;
       padding:3px;margin: 5px auto; width: 94%; border-radius: 5px;
       font-size: 1rem; background-color: $primaryColor;
-
       button{
         margin: 0; background: none; border: none; color: $fontInvert;
-        height: 2.5em; line-height: 2.6;
+        height: 2.7em; line-height: 2.8;
         text-align: left; font-size: inherit;cursor: pointer;
       }
 
       button.selected{
-        position: relative; z-index: 9;
-        padding: 0 .6em; width: 100%;border-radius: 4px;
+        position: relative; z-index: 9; display: block;
+        padding: 0 40px 0 .6em; width: 100%;border-radius: 4px;
         background-color: $primaryColor; color: $fontInvert;
         transition: .2s;
         &:hover, &:focus{
@@ -68,10 +66,9 @@
         &.now{
           button{
             background-color: $primaryColor; color: $fontInvert;
-            // box-shadow: $assistant 0 0 0 1px inset;
             &::before{
               content: '';
-              position: absolute; left: 7px; top: .8em;
+              position: absolute; left: 7px; top: .9em;
               width: 10px; height: 10px; border-radius: 50%;
               background-color: $white;
               box-shadow: $primaryColor 0 0 0 2px inset;
@@ -80,7 +77,6 @@
             &:hover, &:focus {
               box-shadow: $white 0 0 0 1px inset , $primaryColor 0 0 0 2px;
             }
-  
           }
         }
       }
@@ -88,7 +84,7 @@
   }
 
   .depData{
-    width: 94%; margin: 10px auto 0; padding:20px 10px;
+    width: 94%; margin: 10px auto 0; padding:20px 16px;
     background-color: $white;
     border-radius: 4px;
     box-shadow: rgba(0,0,0,.3) 0 2px 8px;
@@ -177,15 +173,16 @@
 
     // 頁籤 
     .tabItems{
-      margin: 5px auto; flex-flow: row wrap;
+      margin: 15px auto 5px; flex-flow: row wrap;
 
       button{
         flex: 0 1 auto;
-        height: 2.4em; line-height: 2.5; border-radius: 2em;
-        padding: 0 .8em;margin: 3px; font-size: inherit;
-        box-shadow: $primaryColor 0 0 0 1px;
-        color: $fontColor;
+        height: 2.4em; line-height: 2.4; border-radius: 2em;
+        padding: 0 .8em;margin: 3px 5px;
+        box-shadow: $primaryColor 0 0 0 1px; color: $fontColor;
         transition: .15s;
+
+        &:first-child{margin-left: 0;}
 
         &:hover, &:focus{
           box-shadow: $primaryColor 0 0 0 2px;
@@ -201,7 +198,7 @@
     }
 
     .tabContent{
-      display: none; padding: 12px;
+      display: none; padding: 12px 6px;
     }
   }
 
@@ -218,17 +215,10 @@
   }
 
   @media screen and (min-width: $wwNormal){
-    position: relative;
+    position: relative; z-index: 19;
     padding: 40px 0 40px 5%;
-    background-color: #fff;
-    // background-image: none;
-    // background: url(../images/contactUs_bg.jpg) no-repeat right top,
-    //   url(../images/police_logo.png) no-repeat 0 0;
-    // background-size: auto 100%, 50% auto;
-    background: url(../images/police_logo.png) no-repeat right -60px top -10px;
+    background:$white url(../images/police_logo.png) no-repeat right -60px top -10px;
     background-size: 45% auto;
-
-
 
     .blockHeader{
       position: absolute; left: 6%; top: calc(40px + 1rem);
@@ -242,25 +232,35 @@
     
     .depLinks{
       position: relative; z-index: 8;
-      flex: 0 0 25%;width: auto;
+      flex: 0 0 36%;width: auto;
       padding: 7.5em 40px 20px 0;
 
       .dropList{
+        max-width: 23em;
+        button.selected{
+          white-space: nowrap;
+          display: block; overflow: hidden; text-overflow: ellipsis;
+        }
         .options{
           position: absolute; top: auto; left: 0; 
           width: 86vw; height: auto; padding: 8px;
         }
-        
         ul{ 
           display: flex; flex-flow: row wrap;
-          li{flex: 1 0 12em; margin: 2px;}
+          li{
+            flex: 0 0 calc(25% - 4px); margin: 2px;
+            button{ 
+              height: auto; width: 100%; line-height: 1.6;
+              padding-top: .6em ; padding-bottom: .5em;
+            }
+          }
         }
       }
     }
 
     .depData{
       position: relative; z-index: 5;
-      flex: 1 0 75%; width: auto; margin: 0; padding: 35px 20% 25px 40px;
+      flex: 1 1 64%; width: auto; margin: 0; padding: 35px 10% 25px 40px;
       background-color: transparent;
       background-image: linear-gradient( to right, rgba(255,255,255, 1) 50%, rgba(255,255,255,0) 110%);
       box-shadow: rgba(0,0,0,.12) -2px 2px 6px;
@@ -269,14 +269,12 @@
 
     // 裝飾的色塊
     &::before{
-      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 33%;
-      // background-image: linear-gradient( to bottom, rgba(255, 203, 17, .98) 20%, rgba(253, 237, 148, 0.7) 100%) ;
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 43%;
       @include gradient($deg: 0deg);
-
     }
     &::after{
       content: "";
-      position: absolute; right: 0; top: 0; bottom: 0;width: 66%;
+      position: absolute; right: 0; top: 0; bottom: 0;width: 57%;
       background-image: linear-gradient(to bottom, rgba(255,255,255, .95) 0%, rgba(255,255,255, .7) 80%); 
     }
   }
