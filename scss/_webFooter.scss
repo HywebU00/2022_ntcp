@@ -68,7 +68,6 @@
         display: block;padding: 0 0 3px;
         text-decoration: none; color: $fontColor;
         box-shadow: $borderColor 0 1px 0;
-        // white-space: nowrap; 
         &:hover, &:focus{box-shadow: $fontColor 0 2px 0;}
       }
     }
@@ -136,7 +135,7 @@
     
     // 二層網站架構
     .siteTree{
-      margin: 0 auto; width: 80%;
+      margin: 0 auto; width: 90%;
       ul{list-style: none; margin: 0; padding: 0;}
       &>ul{
         display: flex; flex-flow: row wrap;line-height: 1.4;
@@ -147,7 +146,7 @@
         }
         
         &>li{
-          flex: 0 1 17%; margin: 1em 1.5% 0;min-width: 6em;
+          flex: 0 1 17%; margin: 1em 1.5% 0; min-width: 6em;
           &>a{
             padding: 5px 0 0;
             font-weight: bold;border-bottom: 2px solid transparent;
@@ -181,16 +180,12 @@
       }
     }
 
-    // base ////////////////////////////////////////////////////////////
+    //////////////////////////////////////////////////////////////
     .base{ padding-left: 6%; padding-right: 6%; padding-top: 40px; border: none;}
-    .logo{
-      width: 448px; margin: 0;
-    }
+    .logo{width: 448px; margin: 0;}
 
     // 聯絡資訊
-    .contactInfo {
-      margin: 2em auto 0;
-    }
+    .contactInfo {margin: 2em auto 0;}
 
     // 宣告，無障礙標章
     .declaration, .aaBadge{position: absolute; margin: 0; top: 50px;}

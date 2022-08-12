@@ -1,8 +1,6 @@
-// 文章形式的 cp 頁
+// 文章形式的 cp 頁 ////////////////////////////////////////////////////
 .cpArticle{
-  @extend %mainWidth;
-  padding-bottom: 100px;
-
+  @extend %mainWidth;padding-bottom: 100px;
   line-height: 1.8;
 
   a{color: $linkColor;
@@ -12,7 +10,8 @@
 
   p{ margin: 1em 0 1.5em;}
 
-  h3, h4, h5, h6{ font-weight: bold; margin: 2rem 0 .5rem;
+  h3, h4, h5, h6{
+    font-weight: bold; margin: 2rem 0 .5rem;
     & + p{margin-top: .5rem;}
   }
   h3{ font-size: 1.3em;}
@@ -20,16 +19,12 @@
   h5{ font-size: 1.15em;}
   h6{ font-size: 1em;}
 
-
   figure{
-    display: block;
-    margin: 0 auto 1.5em;
-    img{
-      display: block; width: 100%; max-height: 65vh; object-fit: contain;
-    }
+    display: block; margin: 0 auto 1.5em;
+    img{display: block; width: 100%; max-height: 65vh; object-fit: contain;}
     figcaption{
-      display: block; line-height: 1.6; font-size: .875em;
-      margin: .5em 0 0;
+      display: block; margin: .5em 0 0;
+      line-height: 1.6; font-size: .875em;
     }
   }
 
@@ -49,7 +44,6 @@
     }
   }
 
-
   @media screen and (min-width: $wwMedium){
     overflow: hidden;
     figure{
@@ -60,20 +54,17 @@
 
       &+p{margin-top: 0;}
     }
-
-   
   }
 
   @media screen and (min-width: $wwNormal){
-    figure{
-      max-width: 460px;
-    }
+    figure{max-width: 460px;}
   }
 
 }
+// -----------------------------------------------------------------
 
 
-// ---------- 附件下載, 相關連結, 相關圖檔 ---------- //
+// 附件下載, 相關連結, 相關圖檔 ////////////////////////////////////////////////////
 .fileDownload, .seeAlso{
   @extend %mainWidth; margin-bottom: 50px;
   
@@ -81,8 +72,10 @@
   ul, ol{margin: 0; padding: 0; list-style: none; line-height: 1.8;}
   a{text-decoration: none; }
 }
+// -----------------------------------------------------------------
 
-// ---------- 相關連結
+
+// 相關連結 ////////////////////////////////////////////////////
 .seeAlso{
   &>ol{
     border-top: 3px solid $borderColor;
@@ -97,8 +90,7 @@
       transition: .2s;
       &::before{
         content: '';
-        position: absolute; left: 2px; top: 1.15em; 
-        width: 0; height: 0;
+        position: absolute; left: 2px; top: 1.25em; width: 0; height: 0;
         border-style: solid; 
         border-width: 6px 0 6px 3px; border-color: $primaryColor;
         transition:border-left-width .15s;
@@ -118,9 +110,10 @@
     }
   }
 }
+// -----------------------------------------------------------------
 
 
-// ---------- 附件下載
+// 附件下載 ////////////////////////////////////////////////////
 .cpArticle ~ .fileDownload{
   &>ul{
     border-top: 3px solid $borderColor;
@@ -132,9 +125,7 @@
       align-items: center; justify-content: flex-end;
     }
   }
-  .fileName{ 
-    margin: 6px 0 3px; flex: 1 1 auto;
-  }
+  .fileName{ margin: 6px 0 3px; flex: 1 1 auto; }
 
   .downloadFiles{
     flex: 0 1 auto;
@@ -148,11 +139,9 @@
       &:focus{
         box-shadow: $linkColor 0 0 0 1px inset;outline: none;
       }
-
     }
-
   }
+
   .fileType{ display: inline-block; vertical-align: middle; margin-right: 5px;}
 }
-
-
+// -----------------------------------------------------------------

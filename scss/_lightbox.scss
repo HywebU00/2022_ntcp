@@ -1,11 +1,12 @@
 // 燈箱（.lightbox）
-// 燈箱模組：需要燈箱效果的區塊可在原 class name 之後加 lightbox 即可有燈箱效果
+// 燈箱模組：需要燈箱效果的區塊可在原 class name 之後加 lightbox
 // 原來的 class name 只用來控制樣式
 .lightbox{ 
   display: none;
-  position:fixed; top:3vw; left:3vw;
-  width:94vw; height: calc(100vh - 6vw); z-index:999;
-  padding:50px 0 0; margin:0 auto; overflow: auto; overflow-y: auto;
+  position:fixed; top:3vw; left:3vw; z-index:999;
+  width:94vw; height: calc(100vh - 6vw);
+  padding:50px 0 0; margin:0 auto;
+  overflow: auto; overflow-y: auto;
   background-color: $white;
   box-shadow:rgba(0,0,0,.6) 0 0 28px;
 
@@ -16,8 +17,6 @@
     position: absolute; right:4px; top: 4px; z-index:99;
     margin: 0; padding: 0; border-radius: 0;
     background-color: rgba(0,0,0,.6);
-    // &:hover { background-color: $assistant; }
-    // &:focus{background-color: #c00; box-shadow:none;}
   }
 
   .header {
@@ -33,7 +32,8 @@
   }
  
   @media screen and (min-width:$wwNormal){
-    top: $wwNormal*.03; height: auto; max-height: calc(100vh - #{$wwNormal}*.06);
+    top: $wwNormal*.03; 
+    height: auto; max-height: calc(100vh - #{$wwNormal}*.06);
   }
   
   @media screen and (min-width: $wwMaximum){
@@ -45,8 +45,7 @@
 
 // ---------- 燈箱遮罩
 .coverAll{ 
-  display: none; 
-  z-index: 995;
+  display: none; z-index: 995;
   position: fixed; left: 0;right: 0;top: 0;bottom: 0;
   background: rgba(0,0,0,.6);
 }

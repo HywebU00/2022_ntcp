@@ -1,4 +1,4 @@
-// 項目 ul, li 條列 //
+// 項目 ul, li 條列 ////////////////////////////////////////////////
 .list{
   @extend %mainWidth;
   position: relative; padding: 10px 0;
@@ -7,7 +7,8 @@
     list-style: none; margin: 0; padding: 0; line-height: 1.6;
     border-top: 3px solid $borderColor; border-bottom: 3px solid $borderColor;
     &>li{
-      border-bottom: 1px solid $borderColorLight; margin:0; padding: 0;
+      margin:0; padding: 0;
+      border-bottom: 1px solid $borderColorLight;
       a{
         display: block; position: relative;
         padding: .9em 5px .8em 3em; margin: 3px 0;
@@ -20,7 +21,6 @@
         &:hover, &:focus{
           &::before{ z-index: 0; box-shadow: $hiLight 0 0 0 2px inset;}
         }
-
       }
       .numb{
         position: absolute; left: 5px; top: .85em;
@@ -28,7 +28,6 @@
         &::after{content: '.';}
       }
       .title{ margin-right: .5em; font-size: 1.125rem;}
-
       .from{
         display: inline-block; color: $fontColorLight;
         &::before{content: '（';}
@@ -52,13 +51,18 @@
     }
   }
 }
+// -----------------------------------------------------------------
 
-// 表格 table 條列 //
-// 注意：表格樣式非小螢幕優先 
+
+
+// 表格 table 條列 /////////////////////////////////////////////////
+// 注意：表格樣式非小螢幕優先 ( mobile first )
 .list{
   &>table{
-    border-collapse: collapse; line-height: 1.5; width: calc(100% - 8px); margin:4px;
-    border-top: 3px solid $borderColor; border-bottom: 3px solid $borderColor;
+    border-collapse: collapse; line-height: 1.5; 
+    width: calc(100% - 8px); margin:4px;
+    border-top: 3px solid $borderColor; 
+    border-bottom: 3px solid $borderColor;
     thead{
       tr{ border-bottom-color: $borderColor; }
     }
@@ -67,8 +71,9 @@
     th, td{ 
       padding: 14px 16px 12px; position: relative;
       &::after{
-        content: ''; position: absolute;top: 4px; bottom: 4px; left: 0;
-         width: 1px; background: $borderColorLight;
+        content: ''; 
+        position: absolute;top: 4px; bottom: 4px; left: 0;
+        width: 1px; background: $borderColorLight;
       }
       &:first-child{
         &::after{background-color: transparent;}
@@ -91,7 +96,8 @@
       }
       &>a{
         display: block;
-        color: $fontColorDark; text-decoration:none; transition: .2s;
+        color: $fontColorDark; text-decoration:none; 
+        transition: .2s;
         &::before{
           content: ''; position: absolute; left: 3px; right: 3px; bottom: 3px;top: 3px;
           border-radius: 4px; transition: .2s;
@@ -101,7 +107,6 @@
         }
       }
       time{ display: inline-block; white-space: nowrap;}
-
     }
   }
 
@@ -117,7 +122,8 @@
       td{
         padding:.3em 15px .3em 0;
         &::before {
-          content: attr(data-th) ':'; display: inline-block; margin-right: .5em;
+          content: attr(data-th) ':'; 
+          display: inline-block; margin-right: .5em;
           color: $fontColorLight;
         }
 
@@ -128,11 +134,11 @@
           &::before{ display: none;}
           &::after{display: inline-block;}
         }
+        
         &.title{
-          &>a{ display: inline;
-            &::before{
-              left: 0; right: 0;
-            }
+          &>a{ 
+            display: inline;
+            &::before{ left: 0; right: 0; }
           }
         }
       }
@@ -140,3 +146,4 @@
     }
   }
 }
+// -----------------------------------------------------------------

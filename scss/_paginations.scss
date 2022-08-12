@@ -14,7 +14,7 @@
   .items{ display: inline;
     a{ 
       display: inline-block; font-weight: bold;  color: $fontColorDark;
-      height: 1.8em; line-height: 1.9; margin:0 1px;padding: 0 6px;
+      height: 1.7em; line-height: 1.7; margin:0 1px;padding: 0 6px;
       border-radius: 3px;
       transition: .2s;
       &:hover, &:focus{ box-shadow: $primaryColor 0 0 0 2px;}

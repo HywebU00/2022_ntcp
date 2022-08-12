@@ -1,7 +1,10 @@
-// 表單元件基本樣式 ////////////////////////////////////
+// 表單元件基本樣式 ////////////////////////////////////////////////
 form {margin: 0;padding: 0;}
 
-label { display: inline-block; font-weight: normal; cursor: pointer;}
+label {
+  display: inline-block;
+  font-weight: normal; cursor: pointer;
+}
 
 input, textarea, select, button {
   font-size: inherit; font-family: inherit;
@@ -9,13 +12,12 @@ input, textarea, select, button {
   &:focus{ outline: none;}
 }
 
-// 顏色 //////////////
+// 顏色變數 ////////////////////////////
 $disabledColor: $gray;
 $inputBg: $white;
 $focused: $hiLight;
-// --------------------
 
-// 文字的input樣式 //////////////
+// 文字的input樣式 ////////////////////////////
 %textInput {
   appearance: none;
   -webkit-appearance: none;
@@ -32,7 +34,7 @@ $focused: $hiLight;
   &:focus{border-color: $focused; box-shadow: $focused 0 0 0 1px;}
 }
 
-// 下拉選單樣式 //////////////
+// 下拉選單樣式 ////////////////////////////
 %selectStyle {
   appearance: none;
   -webkit-appearance: none;
@@ -123,8 +125,7 @@ textarea {
 }
 
 // radio 和 checkbox ////////////////////////////
-input[type="radio"],
-input[type="checkbox"] {
+input[type="radio"], input[type="checkbox"] {
   -webkit-appearance: none; -moz-appearance: none; appearance: none;
 
   margin:1px 10px 0 4px; 
@@ -156,6 +157,8 @@ input[type="checkbox"]{
   }
 }
 
+//////////////////////////////////////////////////////////
+//////////////// disabled, readonly //////////////////////
 //////////////////////////////////////////////////////////
 
 // disabled 
@@ -189,7 +192,7 @@ input[disabled] {
   color: $fontColorLight;
 }
 
-// 按鈕的 readonly and disabled ////////////////////////////
+// 按鈕的 readonly and disabled 
 button[disabled],
 button.disabled,
 input[type="button"][disabled],
@@ -203,21 +206,4 @@ input[type="submit"][disabled]:focus {
   box-shadow: none;
   cursor: default;
 }
-
-// fieldset ////////////////////////////
-// fieldset {
-//   border: 1px solid $borderColorLight; border-radius: 8px;
-//   &+fieldset {
-//     margin-top: 1em;
-//   }
-//   legend {
-//     font-weight: normal; font-size: 1.4em; 
-//     padding: 9px .8em 8px; margin: 0 0 .5em; line-height: 1.1;
-//     border: 2px solid $borderColorLight;
-//     border-radius: 2em;
-//   }
-
-//   @media screen and (min-width: $wwNormal){
-//     legend{margin-bottom: 1em;}
-//   }
-// }
+// -----------------------------------------------------------------

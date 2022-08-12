@@ -1,4 +1,4 @@
-// 首頁：為民服務圖示連結
+// 首頁：為民服務圖示連結 //////////////////////////////////////////
 .servIcons{
   position: relative; padding: 30px 0;
   background-color: $grayLight;
@@ -43,10 +43,9 @@
     padding: 0 0 0 25vw;
     background-color: transparentize($primaryColor, .25);
 
-    // transform: translateY(-100%); 
-
     .blockHeader{
-      position: absolute; left: 0; width: 25vw; top:calc( 50% - .8em);
+      position: absolute; left: 0; top:calc( 50% - .8em);
+      width: 25vw; 
       color: $fontInvert;
     }
 
@@ -70,8 +69,9 @@
   }
 
 }
+// -----------------------------------------------------------------
 
-///////////////////////////////////////////////////
+
 .bigBanner + .servIcons{
   @media screen and (min-width: $wwNormal){
     margin-top: calc( -90px - 2.4em);

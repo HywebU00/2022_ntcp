@@ -1,7 +1,6 @@
 
-// imgSlick 大圖容器
+// imgSlick 大圖容器 ////////////////////////////////////////////////////
 .imgSlick{ 
-
   width: 100vw; max-width: 658px;
   position: relative; margin: 0 auto 50px; padding:0 0 15px;
   border-top: 1px solid $borderColor;
@@ -29,16 +28,16 @@
         .photoViewCount{ 
           display: block; margin-top: .5em; font-size: .9em;
           &::before{
-            content: ''; display: inline-block; 
-            vertical-align: middle;  margin-right: 3px; width: 22px; height: 16px;
-            background: url(../images/icon_eye2.png) no-repeat 0 0; background-size: 22px;
+            content: ''; display: inline-block; vertical-align: middle;
+            margin-right: 3px; width: 22px; height: 16px;
+            background: url(../images/icon_eye2.png) no-repeat 0 0;
+            background-size: 22px;
           }
         }
       }
       &:hover{
         .caption{ transform: translateY(100%);}
       }
-
       &::before{
         content: ''; position: absolute; left: 0; right: 0; top: 0; bottom: 0;
         box-shadow: $assistant 0 0 0 2px inset; z-index: -1;  display: none;
@@ -75,8 +74,7 @@
   .slider-nav{ 
     margin: 15px auto 0; padding: 0;
     .slick-slide{ 
-      cursor: pointer;display: block;
-      padding:3px 1px; margin:0;
+      cursor: pointer;display: block;padding:3px 1px; margin:0;
       a{
         display: block; position: relative;
         &::before{
@@ -92,15 +90,13 @@
         }
       }
     }
-
   }
 
 
 
   @media screen and (min-width: $wwMedium){
     width: $mobileWidth; max-width: none;
-    box-shadow: rgba(0,0,0 , .2) 0 0 12px;
-    border: none;
+    box-shadow: rgba(0,0,0 , .2) 0 0 12px; border: none;
 
     .slider-for{ 
       .slick-slide{
@@ -112,7 +108,6 @@
         img{  height: 160px; width: 160px; }
       }
     }
-
   }
 
   @media screen and (min-width: $wwNormal){
@@ -132,15 +127,15 @@
         img{width:$wwMaximum*.88; height: $wwMaximum*.55;}
       }
     }
-
   }
 }
+// -----------------------------------------------------------------
 
 
-// 照片描述（在照片內容頁中）
+// 照片描述（在照片內容頁中）//////////////////////////////////////
 .photoDescription{
   @extend %mainWidth;
-  padding-top: 1px; padding-bottom: 40px;line-height: 1.8;
+  padding-top: 1px; padding-bottom: 40px; line-height: 1.8;
   
   a{
     color: $linkColor;
@@ -150,3 +145,4 @@
 
   p{ margin: 1em 0 1.5em;}
 }
+// -----------------------------------------------------------------

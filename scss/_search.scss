@@ -1,4 +1,4 @@
-// ---------- 版頭快速查詢區
+// 版頭快速查詢區 //////////////////////////////////////////////////
 .search {
   display: none;transform: translateX(100%);
   flex-flow: row nowrap; align-items: flex-end;
@@ -86,7 +86,10 @@
 
     .hotKeywords{
       margin-top: 3px;
-      .label{ font-size: 1rem; display: inline-block; vertical-align: middle; color: $fontColor;}
+      .label{ 
+        display: inline-block;vertical-align: middle; 
+        font-size: 1rem; color: $fontColor;
+      }
       ul{display: inline-block; vertical-align: middle; margin: 0 -2px 0 0;}
       li{
         &:nth-child(n){display: inline-block;}
@@ -109,3 +112,4 @@
   }
 
 }
+// -----------------------------------------------------------------

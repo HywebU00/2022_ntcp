@@ -1,12 +1,10 @@
-// 首頁：最新消息
+// 首頁：最新消息 //////////////////////////////////////////////////
 .news{
   position: relative;padding: 50px 0;
   ul{ list-style: none; margin: 0; padding: 0;}
 
   .more{
-    // position: absolute; right: 0; top: 40px; right: 40px;
-    margin: 24px auto 0;
-    text-align: center;
+    margin: 24px auto 0; text-align: center;
   }
 
   .newsList{
@@ -27,7 +25,8 @@
         margin:2px 0; padding: 0; line-height: 1.6;
         border-bottom: 1px solid $borderColorLight;
         a{
-          padding: 20px 10px 15px; margin: 2px 0; white-space: nowrap; 
+          padding: 20px 10px 15px; margin: 2px 0;
+          white-space: nowrap; 
           border-radius: 4px; color: $fontColor;
           transition: .3s;
 
@@ -108,9 +107,7 @@
   @media screen and (min-width: $wwNormal){
     width: 100%; padding: 0 0 40px 35%;
 
-    .blockHeader{
-      padding: 50px 40px 15px;margin: 0;
-    }
+    .blockHeader{ padding: 50px 40px 15px; margin: 0; }
 
     .newsList{
       padding: 0; width: 100%;
@@ -128,24 +125,14 @@
             display: inline-block; vertical-align: middle;
             width: calc(100% - 14em); height: auto; margin: 0;
             white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-            // border-bottom: 1px solid transparent;
-
           }
         }
 
         // 第一筆
         &:first-child{
           position: absolute; left: 0; top: 0; bottom: 0;width: 35vw;
-          // background: url(../images/newsFirst_bg.jpg) no-repeat center center;
-          // background-size: cover;
-
-          a{
-            height: 100%;
-          }
-          img.theme{
-            height: 100%;
-          }
-          
+          a{height: 100%;}
+          img.theme{height: 100%;}
         }
       }
     }
@@ -160,3 +147,4 @@
   }
   
 }
+// -----------------------------------------------------------------

@@ -1,4 +1,4 @@
-// 首頁區塊：右側固定側邊欄（社群連結）
+// 首頁區塊：社群連結圖示（固定在右側）/////////////////////////////
 .socialMedia{
   display: none;
   @media screen and (min-width: $wwNormal){
@@ -18,13 +18,9 @@
         }
 
         &:hover, &:focus{
-          img{
-            transform: scale(1.2);
-          }
+          img{transform: scale(1.2);}
         }
-        &:focus{
-          box-shadow: $fontInvert 0 0 0 2px;
-        }
+        &:focus{box-shadow: $fontInvert 0 0 0 2px;}
       }
     }
   }
@@ -35,3 +31,4 @@
 
   }
 }
+// -----------------------------------------------------------------

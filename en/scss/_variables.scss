@@ -2,7 +2,6 @@
 // ---------- 長度常數 ---------- //
 $sideBarWidth: 280px;  // 窄版側欄選單
 $mobileWidth: 94vw; // 窄螢幕寬度 moduals width in mobile
-// $mmw: 92vw; // 行動版內頁模組寬度 modeles width in mobile
 $normalWidth: 88vw; // 寬螢幕寬度
 // ---------- 長度常數 ---------- //
 
@@ -22,7 +21,7 @@ $wwMaximum: 1200px;
     width: $normalWidth;
   }
   @media screen and (min-width: $wwMaximum){
-    width:calc( #{$wwMaximum}*(#{$normalWidth} / 100vw));
+    width: $wwMaximum*.88;
   }
 }
 // ---------- 主要內容寬度設定 ----------- //
@@ -30,15 +29,12 @@ $wwMaximum: 1200px;
 
 // ---------- 顏色變數 ----------- //
 $primaryColor:#1A2D3D;
-// $secondaryColor: #222;
 $assistant: #FFCB11;
 $hiLight:#05b9e1;
-// $hiLight2:#d6c41b;
 $notice: #a30f9e;
 
 $fontColor: #333;
 $fontColorLight: #666;
-// $fontColorPale: #999;
 $fontColorDark: #000;
 $fontInvert: #fff;
 $linkColor: #07637f;
@@ -64,5 +60,4 @@ $white:#fff;
 @mixin gradient($deg: 0deg) {
   background: linear-gradient($deg, #ffeb87 0%, #FFCF26 100%);
 }
-
 // ---------- 顏色變數 ----------- //

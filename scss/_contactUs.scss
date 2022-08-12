@@ -1,9 +1,6 @@
 // 首頁：聯絡我們
-// .main>*:not(.contactUs){display: none;}
-
 .contactUs{
   padding: 50px 0;
-  // background-color: $assistant;
   @include gradient($deg: 0deg);
 
   .depLinks{
@@ -68,7 +65,6 @@
         &.now{
           button{
             background-color: $primaryColor; color: $fontInvert;
-            // box-shadow: $assistant 0 0 0 1px inset;
             &::before{
               content: '';
               position: absolute; left: 7px; top: .8em;
@@ -80,7 +76,6 @@
             &:hover, &:focus {
               box-shadow: $white 0 0 0 1px inset , $primaryColor 0 0 0 2px;
             }
-  
           }
         }
       }
@@ -89,9 +84,8 @@
 
   .depData{
     width: 94%; margin: 10px auto 0; padding:20px 10px;
-    background-color: $white;
     border-radius: 4px;
-    box-shadow: rgba(0,0,0,.3) 0 2px 8px;
+    background-color: $white; box-shadow: rgba(0,0,0,.3) 0 2px 8px;
     h3{margin: 0 0 .5em;}
 
     // 報案專線、聽語障礙報案專線
@@ -150,11 +144,10 @@
         min-width: 8em; width: calc(50% - 7px);
         &:nth-child(2n+1) { margin-right: 14px;}
         a{ 
-          position: relative;display: block;
+          position: relative; display: block;width: 100%; 
           height: 2.35em; line-height: 2.4; 
-          padding:0 6px 0 2.5em; width: 100%; 
-          border-radius: 4px;white-space: nowrap;
-          color: $fontColor; text-decoration: none;
+          padding:0 6px 0 2.5em; border-radius: 4px;
+          color: $fontColor; text-decoration: none; white-space: nowrap;
           &::after{
             content: ''; position: absolute; 
             left: 2.5em; right: 5px; bottom:.4em; height: 1px;
@@ -181,28 +174,22 @@
 
       button{
         flex: 0 1 auto;
-        height: 2.4em; line-height: 2.4; border-radius: 2em;
-        padding: 0 .8em;margin: 4px; font-size: inherit;
-        box-shadow: $primaryColor 0 0 0 1px;
-        color: $fontColor;
+        height: 2.4em; line-height: 2.4; 
+        padding: 0 .8em; margin: 4px; 
+        font-size: inherit;border-radius: 2em;
+        box-shadow: $primaryColor 0 0 0 1px; color: $fontColor;
         transition: .15s;
 
-        &:hover, &:focus{
-          box-shadow: $primaryColor 0 0 0 2px;
-        }
+        &:hover, &:focus{ box-shadow: $primaryColor 0 0 0 2px; }
 
         &.active{
           background-color: $assistant; box-shadow: $assistant 0 0 0 2px;
-          &:hover, &:focus{
-            box-shadow: $primaryColor 0 0 0 2px;
-          }
+          &:hover, &:focus{box-shadow: $primaryColor 0 0 0 2px;}
         }
       }
     }
 
-    .tabContent{
-      display: none; padding: 12px;
-    }
+    .tabContent{display: none; padding: 12px;}
   }
 
   @media screen and (min-width: $wwMedium){
@@ -220,15 +207,9 @@
   @media screen and (min-width: $wwNormal){
     position: relative;
     padding: 40px 0 40px 5%;
-    background-color: #fff;
-    // background-image: none;
-    // background: url(../images/contactUs_bg.jpg) no-repeat right top,
-    //   url(../images/police_logo.png) no-repeat 0 0;
-    // background-size: auto 100%, 50% auto;
+    background-color: $white;
     background: url(../images/police_logo.png) no-repeat right -60px top -10px;
     background-size: 45% auto;
-
-
 
     .blockHeader{
       position: absolute; left: 6%; top: calc(40px + 1rem);
@@ -241,8 +222,8 @@
     .flexBox{width: 100%;display: flex;}
     
     .depLinks{
+      flex: 0 0 25%; width: auto;
       position: relative; z-index: 8;
-      flex: 0 0 25%;width: auto;
       padding: 7.5em 40px 20px 0;
 
       .dropList{
@@ -270,9 +251,7 @@
     // 裝飾的色塊
     &::before{
       content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 33%;
-      // background-image: linear-gradient( to bottom, rgba(255, 203, 17, .98) 20%, rgba(253, 237, 148, 0.7) 100%) ;
       @include gradient($deg: 0deg);
-
     }
     &::after{
       content: "";

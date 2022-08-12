@@ -1,5 +1,4 @@
-// 首頁：主題服務
-// .main>*:not(.topics){display: none;}
+// 首頁：主題服務 //////////////////////////////////////////////////
 .topics{
   margin: 0; padding: 50px 0;
   ul{ list-style: none; margin: 0; padding: 0;}
@@ -29,8 +28,6 @@
       transition: .2s;
     }
 
-    // ---------------------------------------------
-
     h3{
       position: absolute; left: 6%; width: 88%; top: 100%;
       margin: 0 0 1rem; padding:2.5rem 4px .5rem; z-index: 9;
@@ -58,7 +55,6 @@
       }
     }
 
-
     .links {
       position: absolute; left: 0; right: 0; top: 100%;
       line-height: 1.3; z-index: 9;
@@ -85,8 +81,9 @@
       object-fit: cover; z-index: 1;
     }
 
-    //////////////////////////////////////////////////////
-    // hover & focus ---------------------------------------------
+    ////////////////////////////////////////////////////////////////
+    // 游標 hover 到主題圖上方出現選單
+    // hover & focus 
     &:hover, &.reveal {
       &::before{opacity: 0;}
       &::after{ opacity: .65;}
@@ -98,15 +95,6 @@
       .links {top: 7.5rem;}
       .topicImg{filter: blur(5px);}
     }
-
-    // focus ---------------------------------------------
-    // button.hidden{
-    //   z-index: 9; position: absolute; top: 0;right: 0;
-    //   width: 1px; height: 1px; padding: 0;
-    //   background: transparent; box-shadow: none;border: none;
-
-    // }
-
   }
 
   @media screen and (min-width: $wwMedium + 100px){
@@ -130,7 +118,7 @@
         li{width: 82%;}
       }
 
-      // hover ---------------------------------------------
+      // hover 
       &:hover {
         .more{right: 9%;}
       }
@@ -138,3 +126,4 @@
   }
 
 }
+// -----------------------------------------------------------------

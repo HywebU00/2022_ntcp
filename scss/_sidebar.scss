@@ -1,23 +1,18 @@
-// .sidebarMask 行動版側欄專用遮罩
+// .sidebarMask 行動版側欄專用遮罩 /////////////////////////////////
 .sidebarMask{
   display: none; z-index: 980;
   position: fixed; left: 0; right: 0; top: 0; bottom: 0;
   background-color: rgba(0, 0, 0, .7);
 }
+// -----------------------------------------------------------------
 
 
-
-///////////////////////////////////////////////////////////////
-
-// 區塊 ///////////////////////////////////////////////////////
-
-// .sidebar 行動版側欄，預設隱藏
+// .sidebar 行動版側欄，預設隱藏 ///////////////////////////////////
 .sidebar{
   position: fixed; top: 60px; bottom: 0; z-index: 990;
   width: $sideBarWidth; left:$sideBarWidth * (-1);
   overflow: auto; 
-  background-color: $assistant; 
-  color: $fontColor;
+  background-color: $assistant; color: $fontColor;
   transition: .45s;
 
   // 顯示行動版側欄
@@ -27,11 +22,14 @@
     display: none;
   }
 }
+// -----------------------------------------------------------------
+
 
 ////////////////////////////////////////////////////////////////////
-// .sidebar 中的 .menu 和 .topLinks
-// 以 jQ 複製到 .sidebar
-// .topLinks ，寬版時通常在版頭右上的數個連結 /////////////////
+// 以 jQ 複製到 .sidebar 中的 .menu 和 .topLinks
+////////////////////////////////////////////////////////////////////
+
+// .topLinks 寬版時在版頭右上的數個連結 ////////////////////////////
 .sidebar .topLinks {
   border-top: 3px solid $white; padding: 10px;
   ul {
@@ -54,9 +52,10 @@
     }
   }
 }
+// -----------------------------------------------------------------
 
 
-// 在行動版側欄內的主選單
+// 在行動版側欄內的主選單 //////////////////////////////////////////
 .sidebar .menu {
   font-size: 1.15em;
   &>ul{ 
@@ -65,7 +64,8 @@
       border-bottom: 1px solid rgba(255, 255, 255, .5);
       &:last-child{ border-bottom: none; }
       a{ 
-        padding: .8em .8em .7em; color: $fontColor;
+        padding: .8em .8em .7em;
+        color: $fontColor;
         transition: .2s;
         &:hover{ background-color: $primaryColor; color: $fontInvert; }
       }
@@ -108,4 +108,4 @@
     }
   }
 }
-
+// -----------------------------------------------------------------
