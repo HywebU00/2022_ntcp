@@ -30,12 +30,13 @@
           padding: 20px 10px 15px; margin: 2px 0; white-space: nowrap; 
           border-radius: 4px; color: $fontColor;
           transition: .3s;
+          p{ font-weight: normal; color: $fontColorDark;}
 
           &:hover, &:focus{
             background-color: $primaryColor; color: $fontInvert;
+            p{color: $fontInvert;}
           }
         }
-        // .label{ margin-right: 1.2em;}
         time{
           display: inline-block; height: 1.2em; line-height: 1.2;
         }
@@ -65,7 +66,7 @@
           color: $fontInvert;
 
           display: flex; flex-flow: column nowrap;
-          justify-content: flex-end;
+          justify-content: flex-end; align-items: flex-start;
           
           &::before{
             position: absolute; left: 0; right: 0; top: 0; bottom: 0;
@@ -80,12 +81,10 @@
             &::before{content: '';}
           }
         }
-        .label {
-          position: absolute;top: 30px;left: 40px;
-        }
+
         time{
+          padding: 0 0 .3em;
           border-bottom: 2px solid $assistant;
-          padding: 0 0 .5em; width: 5em;
         }
         p{
           line-height: 1.6; margin:1.2em 0 0;

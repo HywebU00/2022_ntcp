@@ -36,7 +36,8 @@
   border-top: 3px solid $white; padding: 10px;
   ul {
     display: flex; flex-flow: row wrap;
-    list-style: none; margin: 0; padding: 0; line-height: 1.3;
+    list-style: none; margin: 0; padding: 0;
+    line-height: 1.3; font-weight: normal;
     &>li{
       flex: 1 1 40%;
       margin: 3px; padding: 0;
@@ -58,9 +59,8 @@
 
 // 在行動版側欄內的主選單
 .sidebar .menu {
-  font-size: 1.15em;
   &>ul{ 
-    line-height: 1.4;
+    font-size: 1.15em; line-height: 1.4;font-weight: normal;
     li{
       border-bottom: 1px solid rgba(255, 255, 255, .5);
       &:last-child{ border-bottom: none; }

@@ -150,7 +150,7 @@
           height: 2.35em; line-height: 2.4; 
           padding:0 6px 0 2.5em; width: 100%; 
           border-radius: 4px;white-space: nowrap;
-          color: $fontColor; text-decoration: none;
+          color: $fontColor; text-decoration: none; font-weight: normal;
           &::after{
             content: ''; position: absolute; 
             left: 2.5em; right: 5px; bottom:.4em; height: 1px;
