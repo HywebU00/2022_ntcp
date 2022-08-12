@@ -30,7 +30,7 @@
     li{
       display: flex; padding:.7em 0; margin: 0;
       .dt{
-        flex: 0 0 4em; width: 4em; margin: 0 .6em 0 0;
+        flex: 0 0 4em; width: 4em; margin: 0 1em 0 0;
         text-align: right;
       }
       .map{
@@ -39,13 +39,8 @@
          display: block; width: 30px; height: 30px; 
          background: url(../images/icon_map.png) no-repeat center center;
          background-size: 100%;border-radius: 4px;
-
-         &:hover{
-          box-shadow: $assistant 0 0 0 2px; 
-         }
-         &:focus{
-          box-shadow: $primaryColor 0 0 0 2px;
-         }
+         &:hover{box-shadow: $assistant 0 0 0 2px; }
+         &:focus{box-shadow: $primaryColor 0 0 0 2px;}
         }
       }
     }
@@ -60,20 +55,21 @@
       margin:4px 0 0; padding: 0;line-height: 1.2;
     }
     li{
-      float: left; position: relative; margin: 0; padding: 0 1em 0 0;
+      float: left; position: relative; margin: 0; padding: 0 1em 3px 0;
       &+li{margin-left: 1em;}
       &::after{
         content: ''; position: absolute; right: 0; top: .1em; 
-        width: 1px; height: 0.9em; background-color: $fontColor;
+        width: 1px; height: 1em; background-color: $fontColor;
       }
       &:last-child{
         &::after{display: none;}
       }
       a{
-        display: block;text-decoration: none; color: $fontColor;
-        white-space: nowrap;
-        border-bottom: 2px solid transparent;
-        &:hover, &:focus{ border-bottom-color: $fontColor;}
+        display: block;padding: 0 0 3px;
+        text-decoration: none; color: $fontColor;
+        box-shadow: $borderColor 0 1px 0;
+        // white-space: nowrap; 
+        &:hover, &:focus{box-shadow: $fontColor 0 2px 0;}
       }
     }
   }

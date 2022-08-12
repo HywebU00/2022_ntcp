@@ -45,14 +45,14 @@
       display: block;height: 1em; margin-right: .5em;
       color: $fontInvert;font-size: .8rem;
       }
-    ul{ list-style: none; margin:3px 0 0 -2px; padding: 0; overflow: hidden;}
+    ul{ list-style: none; margin:6px 0 0 -2px; padding: 0; overflow: hidden;}
     li{
        margin:0; padding: 2px; float: left;
        &+li{margin-left: 2px;}
        &:nth-child(n+3){display: none;}
       a{ 
         display: block;
-        height: 2em; line-height: 2.1; padding: 0 .4em; margin: 0; border-radius: 4px;
+        height: 1.9em; line-height: 1.8; padding: 0 .4em; margin: 0; border-radius: 4px;
         text-decoration: none; cursor: pointer;
         background-color: $white;
         &:hover, &:focus{ 
@@ -91,7 +91,7 @@
       li{
         &:nth-child(n){display: inline-block;}
         a{ 
-          height: 1.7em; line-height: 1.75;
+          height: 1.7em; line-height: 1.6;
           background-color: $grayLight; transition: .2s;
           &:hover, &:focus{
             box-shadow: $primaryColor 0 0 0 2px;
