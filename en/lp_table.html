@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Taipei City Police Department</title>
+  <link rel="shortcut icon" href="images/police_ico.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="images/police_ico.ico" type="image/vnd.microsoft.icon" />
+
+  <!-- 外掛字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../slick/slick.css"/><!-- slick 套件 -->
+  <link rel="stylesheet" href="../css/style2022en.css">
+
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../slick/slick.min.js"></script><!-- slick 套件 -->
+  <script src="js/uieffect.js"></script>
+
+</head>
+  
+<body>
+  <a class="goCenter" href="#aC" tabindex="0">跳至內容區</a>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="upper header block" >:::</a>
+    <h1>
+      <a href="mp.html"><img src="../publicData/h1_logo.png" alt="NEW TAIPEI CITY POLICE DEPARTMENT 新北市政府警察局"></a>
+    </h1>
+
+    <nav class="topLinks">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">中文版</a></li>
+      </ul>
+    </nav>
+
+    <button class="searchCtrl" type="button">show/hide Search</button><!-- 查詢區開關 -->
+    <section class="search">
+      <form action="">
+        <input type="text" placeholder="Keywords" aria-label="Keywords" accesskey="S">
+        <input type="button" value="search">
+      </form>
+      <div class="hotKeywords">
+        <span class="label">Hot Keywords</span>
+        <ul>
+          <li><a href="#">Police</a></li>
+          <li><a href="#">Criminal</a></li>
+          <li><a href="#">Record</a></li>
+          <li><a href="#">Certificate</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">About NTPD</a>
+          <ul>
+            <li><a href="#">Organization</a></li>
+            <li><a href="#">Commissioner</a></li>
+            <li><a href="#">Our Missions</a></li>
+            <li><a href="#">Precincts</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Services</a>
+          <ul>
+            <li><a href="#">Prevention</a></li>
+            <li><a href="#">Command and Control Center</a></li>
+            <li><a href="#">Traffic management</a></li>
+            <li><a href="#">Apply for the Police Criminal Record Certificate</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Public Information</a>
+          <ul>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="#">Related Laws & Regulations</a></li>
+            <li><a href="#">White Paper</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Education and Training</a></li>
+        <li><a href="#">Links</a></li>
+      </ul>
+    </nav>
+
+    
+    <button class="sidebarCtrl" type="button">show/hide Sidebar</button>
+  </header>
+  
+  <!-- 行動版側欄選單容器 -->
+  <aside class="sidebar">
+  </aside>
+  
+
+  <main class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="Content Area">:::</a>
+    <div class="breadcrumb" title="You are here">
+      <ul>
+        <li><a href="mp.html">Home</a></li>
+        <li><a href="x">Node</a></li>
+        <li>Services</li>
+      </ul>
+    </div>
+
+    <div class="pageHeader">
+      <h2>Table List</h2>
+      
+      <section class="funcBar">
+        <ul>
+          <li class="openLbSearch"><button type="button">Search</button></li>
+          <li class="print"><button type="button">Print</button></li>
+          <li class="forward"><a href="javascript:;">Forward</a></li>
+          <li class="back"><a href="javascript:;">Back</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 燈箱：條件查詢 -->
+    <div class="lightbox lbSearch" role="dialog">
+      <button type="button" title="close" class="closeThis"></button>
+
+      <h3 class="header">Search</h3>
+      <section class="formA">
+        <form action="">
+          <table class="formLayout"><tbody>
+            <tr>
+              <td>Category</td>
+              <td>
+                <select class="fullWidth">
+                  <option value="">Ipsum</option>
+                  <option value="">Faucibus</option>
+                  <option value="">Vitae</option>
+                  <option value="">Aliquet</option>
+                  <option value="">Nec</option>
+                  <option value="">ullamcorper</option>
+                  <option value="">sit</option>
+                  <option value="">amet</option>
+                  <option value="">risus</option>
+                  <option value="">nullam</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Title</td>
+              <td><input class="fullWidth" type="text" placeholder="請輸入查詢關鍵字"></td>
+            </tr>
+            <tr>
+              <td>Content</td>
+              <td><input class="fullWidth" type="text" placeholder="請輸入查詢關鍵字"></td>
+            </tr>
+            <tr>
+              <td>Date</td>
+              <td>
+                <div class="duration">
+                  <input type="date"><input type="date">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>單位</td>
+              <td>
+                <select class="fullWidth">
+                  <option selected value="0">- 請選擇 -</option>
+                  <option value="">刑事警察大隊</option>
+                  <option value="">交通警察大隊</option>
+                  <option value="">保安警察大隊</option>
+                  <option value="">少年警察隊</option>
+                  <option value="">婦幼警察隊</option>
+                  <option value="">板橋分局</option>
+                  <option value="">海山分局</option>
+                  <option value="">三重分局</option>
+                  <option value="">新莊分局</option>
+                  <option value="">中和分局</option>
+                  <option value="">永和分局</option>
+                  <option value="">新店分局</option>
+                  <option value="">蘆洲分局</option>
+                  <option value="">土城分局</option>
+                  <option value="">樹林分局</option>
+                  <option value="">三峽分局</option>
+                  <option value="">淡水分局</option>
+                  <option value="">汐止分局</option>
+                  <option value="">金山分局</option>
+                  <option value="">瑞芳分局</option>
+                  <option value="">林口分局</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>單選項目</td>
+              <td>
+                <div class="optionPool">
+                  <label><input type="radio" name="aaa" id="">Tincidunt</label>
+                  <label><input type="radio" name="aaa" id="">Interdum</label>
+                  <label><input type="radio" name="aaa" id="">Augue Velit</label>
+                  <label><input type="radio" name="aaa" id="">Euismod</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>多選項目</td>
+              <td>
+                <div class="optionPool">
+                  <label><input type="checkbox" name="" id="">Lorem</label>
+                  <label><input type="checkbox" name="" id="">Maecenas</label>
+                  <label><input type="checkbox" name="" id="">Aliquam</label>
+                  <label><input type="checkbox" name="" id="">Quisque tellus </label>
+                  <label><input type="checkbox" name="" id="">Rhoncus mattis</label>
+                  <label><input type="checkbox" name="" id="">Risus</label>
+                  <label><input type="checkbox" name="" id="">Natoque</label>
+                  <label><input type="checkbox" name="" id="">Ultricies eget mauris</label>
+                  <label><input type="checkbox" name="" id="">Quam</label>
+                  <label><input type="checkbox" name="" id="">Pellentesque</label>
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
+          <div class="btnDv">
+            <input type="button" value="Submit">
+            <input type="reset" value="Clear">
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <section class="category">
+      <ul>
+        <li class="active"><a href="javascript:;">All</a></li>
+        <li><a href="javascript:;">Duis aute</a></li>
+        <li><a href="javascript:;">Irure dolor in</a></li>
+        <li><a href="javascript:;">Reprehenderit</a></li>
+        <li><a href="javascript:;">Voluptate</a></li>
+        <li><a href="javascript:;">Velit esse cillum</a></li>
+        <li><a href="javascript:;">Dolore eu fugiat</a></li>
+        <li><a href="javascript:;">Nulla</a></li>
+        <li><a href="javascript:;">Pariatur</a></li>
+        <li><a href="javascript:;">Mauris commodo</a></li>
+        <li><a href="javascript:;">Imperdiet</a></li>
+        <li><a href="javascript:;">Tellus in hac habitasse </a></li>
+        <li><a href="javascript:;">Aliquet sagittis</a></li>
+      </ul>
+    </section>
+
+    <section class="list">
+      <table class="rwdTable">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Subject</th>
+            <th>From</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="numb">1</td>
+            <td class="title"><a href="#">Referdum on 18 December Voters are rulers</a></td>
+            <td class="from">New Taipei City Police Department</td>
+            <td><time>2022-08-18</time></td>
+          </tr>
+          <tr>
+            <td class="numb">2</td>
+            <td class="title"><a href="#">Those engaged in any affray in New Taipei City will never get away from the police!</a></td>
+            <td class="from">Xindian Precinct</td>
+            <td><time>2022-08-16</time></td>
+          </tr>
+          <tr>
+            <td class="numb">3</td>
+            <td class="title"><a href="#">Keeping the citizens safe is the duty of the police</a></td>
+            <td class="from">New Taipei City Police Department</td>
+            <td><time>2022-08-15</time></td>
+          </tr>
+          <tr>
+            <td class="numb">4</td>
+            <td class="title"><a href="#">The Policeman and the bandit faced off again after 17 years!</a></td>
+            <td class="from">New Taipei City Police Department</td>
+            <td><time>2022-08-15</time></td>
+          </tr>
+          <tr>
+            <td class="numb">5</td>
+            <td class="title"><a href="#">Recognize the Fraud, and Defend It Calmly</a></td>
+            </td>
+            <td class="from">Xindian Precinct</td>
+            <td><time>2022-08-12</time></td>
+          </tr>
+          <tr>
+            <td class="numb">6</td>
+            <td class="title"><a href="#">The Newly-Appointed Police Commissioner of New Taipei City----Adopts Community Policing to Maintain Public Order</a></td>
+            <td class="from">Xindian Precinct</td>
+            <td><time>2022-08-10</time></td>
+          </tr>
+          <tr>
+            <td class="numb">7</td>
+            <td class="title"><a href="#">Xinshu Police Station Established to Enhance Police Services</a></td>
+            <td class="from">Sanchong Precinct</td>
+            <td><time>2022-08-09</time></td>
+          </tr>
+          <tr>
+            <td class="numb">8888</td>
+            <td class="title"><a href="#">Making New Taipei City A Happy And Safe City</a></td>
+            <td class="from">Sanchong Precinct</td>
+            <td><time>2022-08-08</time></td>
+          </tr>
+          <tr>
+            <td class="numb">999</td>
+            <td class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</a></td>
+            <td class="from">Tucheng Precinct</td>
+            <td><time>2022-08-05</time></td>
+          </tr>
+          <tr>
+            <td class="numb">10</td>
+            <td class="title"><a href="#">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</a></td>
+            <td class="from">New Taipei City Police Department</td>
+            <td><time>2022-08-01</time></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="pagination">
+      <form action="">
+        <div class="total">
+          total<em>173</em>records，page<em>1/18</em>，
+          <div class="items">show <a class="active" href="#">20</a> <a href="#">40</a> <a href="#">60</a> records per page </div>
+        </div>
+      </form>
+      <ul class="page">
+        <li class="first"><a title="The first page" href="?">The first page</a></li>
+        <li class="prev"><a title="Previous" href="?">Previous</a></li>
+        <li><a title="1" href="?">1</a></li>
+        <li><a title="2" href="?">2</a></li>
+        <li class="active"><a title="3" href="?">3</a></li>
+        <li><a title="4" href="?">4</a></li>
+        <li><a title="5" href="?">5</a></li>
+        <li><a title="6" href="?">6</a></li>
+        <li><a title="7" href="?">7</a></li>
+        <li><a title="8" href="?">8</a></li>
+        <li><a title="9" href="?">9</a></li>
+        <li><a title="10" href="?">10</a></li>
+        <li class="next"><a title="Next" href="?">Next</a></li>
+        <li class="last"><a title="The last page" href="?">The last page</a></li>
+      </ul>
+    </section>
+
+
+  </main>
+
+
+  <footer class="webFooter">
+    <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="footer">:::</a>
+
+    <button type="button" class="fatFootCtrl" data-altText="Open">Close</button>
+    <section class="fatFooter">
+      <nav class="siteTree">
+        <ul>
+          <li><a href="#">About NTPD</a>
+            <ul>
+              <li><a href="#">Organization</a></li>
+              <li><a href="#">Commissioner</a></li>
+              <li><a href="#">Our Missions</a></li>
+              <li><a href="#">Precincts</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Services</a>
+            <ul>
+              <li><a href="#">Prevention</a></li>
+              <li><a href="#">Command and Control Center</a></li>
+              <li><a href="#">Traffic management</a></li>
+              <li><a href="#">Apply for the Police Criminal Record Certificate</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Public Information</a>
+            <ul>
+              <li><a href="#">NEWS</a></li>
+              <li><a href="#">Statistics</a></li>
+              <li><a href="#">Related Laws & Regulations</a></li>
+              <li><a href="#">White Paper</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Education and Training</a></li>
+          <li><a href="#">Links</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="base">
+      <div class="logo"><img src="images/footer_logo.png" alt="logo"></div>
+
+      <div class="contactInfo">
+        <ul>
+          <li>
+            <span class="dt">TEL</span>
+            <span class="dd">(02)80725454 extn. 4095</span>
+          </li>
+          <li>
+            <span class="dt">Address</span>
+            <span class="dd">No. 32, Fuzhong Rd., Banqiao District, New Taipei City ,220222 , R.O.C.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="declaration">
+        <ul>
+          <li><a href="#">Security Policy</a></li>
+          <li><a href="#">Government Website Open Information Announcement Sample</a></li>
+        </ul>
+      </div>
+
+      <div class="update">
+        <span>Last Update: <em>2022-08-11</em></span>
+        <span>Number of Visits: <em>14789131</em></span>
+      </div>
+
+      <div class="aaBadge"><a href="#" target="_blank" title="open new window"><img src="../publicData/aaBadge.png" alt="Conformance level AA"></a></div>
+
+    </section>
+
+  </footer>
+
+  <button type="button" class="goTop" title="Go to top">top</button>
+
+</body>
+</html>

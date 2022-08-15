@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Taipei City Police Department</title>
+  <link rel="shortcut icon" href="images/police_ico.ico" type="image/vnd.microsoft.icon" />
+  <link rel="icon" href="images/police_ico.ico" type="image/vnd.microsoft.icon" />
+
+  <!-- 外掛字型 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../slick/slick.css"/><!-- slick 套件 -->
+  <link rel="stylesheet" href="../css/style2022en.css">
+
+  <script src="../js/jquery-3.6.0.min.js"></script>
+  <script src="../slick/slick.min.js"></script><!-- slick 套件 -->
+  <script src="js/uieffect.js"></script>
+
+</head>
+  
+<body>
+  <a class="goCenter" href="#aC" tabindex="0">Link to Content Area</a>
+
+  <header class="webHeader">
+    <a class="accesskey" href="#aU" id="aU" accesskey="U" title="upper header block" >:::</a>
+    <h1>
+      <a href="mp.html"><img src="../publicData/h1_logo.png" alt="NEW TAIPEI CITY POLICE DEPARTMENT 新北市政府警察局"></a>
+    </h1>
+
+    <nav class="topLinks">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Sitemap</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">中文版</a></li>
+      </ul>
+    </nav>
+
+    <button class="searchCtrl" type="button">show/hide Search</button><!-- 查詢區開關 -->
+    <section class="search">
+      <form action="">
+        <input type="text" placeholder="Keywords" aria-label="Keywords" accesskey="S">
+        <input type="button" value="search">
+      </form>
+      <div class="hotKeywords">
+        <span class="label">Hot Keywords</span>
+        <ul>
+          <li><a href="#">Police</a></li>
+          <li><a href="#">Criminal</a></li>
+          <li><a href="#">Record</a></li>
+          <li><a href="#">Certificate</a></li>
+        </ul>
+      </div>
+    </section>
+
+
+    <nav class="menu">
+      <ul>
+        <li><a href="#">About NTPD</a>
+          <ul>
+            <li><a href="#">Organization</a></li>
+            <li><a href="#">Commissioner</a></li>
+            <li><a href="#">Our Missions</a></li>
+            <li><a href="#">Precincts</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Services</a>
+          <ul>
+            <li><a href="#">Prevention</a></li>
+            <li><a href="#">Command and Control Center</a></li>
+            <li><a href="#">Traffic management</a></li>
+            <li><a href="#">Apply for the Police Criminal Record Certificate</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Public Information</a>
+          <ul>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="#">Related Laws & Regulations</a></li>
+            <li><a href="#">White Paper</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Education and Training</a></li>
+        <li><a href="#">Links</a></li>
+      </ul>
+    </nav>
+
+    
+    <button class="sidebarCtrl" type="button">show/hide Sidebar</button>
+  </header>
+  
+  <!-- 行動版側欄選單容器 -->
+  <aside class="sidebar">
+  </aside>
+  
+
+  <main class="main">
+    <a class="accesskey" href="#aC" id="aC" accesskey="C" title="Content Area">:::</a>
+    <div class="breadcrumb" title="You are here">
+      <ul>
+        <li><a href="mp.html">Home</a></li>
+        <li><a href="x">Node</a></li>
+        <li>Services</li>
+      </ul>
+    </div>
+
+
+    <div class="pageHeader">
+      <h2>File Download List</h2>
+      
+      <section class="funcBar">
+        <ul>
+          <li class="openLbSearch"><button type="button">Search</button></li>
+          <li class="print"><button type="button">Print</button></li>
+          <li class="forward"><a href="javascript:;">Forward</a></li>
+          <li class="back"><a href="javascript:;">Back</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- 燈箱：條件查詢 -->
+    <div class="lightbox lbSearch" role="dialog">
+      <button type="button" title="close" class="closeThis"></button>
+
+      <h3 class="header">條件查詢</h3>
+      <section class="formA">
+        <form action="">
+          <table class="formLayout"><tbody>
+            <tr>
+              <td>類別</td>
+              <td>
+                <select class="fullWidth">
+                  <option value="">全部類別</option>
+                  <option value="">可多的業</option>
+                  <option value="">世是又人緊</option>
+                  <option value="">的人國展此服久連</option>
+                  <option value="">子坡往</option>
+                  <option value="">盡年不麼</option>
+                  <option value="">規因景皮</option>
+                  <option value="">子給由手同</option>
+                  <option value="">舞的象果是</option>
+                  <option value="">日然歷巴</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>標題</td>
+              <td><input class="fullWidth" type="text" placeholder="請輸入查詢關鍵字"></td>
+            </tr>
+            <tr>
+              <td>內文</td>
+              <td><input class="fullWidth" type="text" placeholder="請輸入查詢關鍵字"></td>
+            </tr>
+            <tr>
+              <td>張貼日</td>
+              <td>
+                <div class="duration">
+                  <input type="date"><input type="date">
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>單位</td>
+              <td>
+                <select class="fullWidth">
+                  <option selected value="0">- 請選擇 -</option>
+                  <option value="">刑事警察大隊</option>
+                  <option value="">交通警察大隊</option>
+                  <option value="">保安警察大隊</option>
+                  <option value="">少年警察隊</option>
+                  <option value="">婦幼警察隊</option>
+                  <option value="">板橋分局</option>
+                  <option value="">海山分局</option>
+                  <option value="">三重分局</option>
+                  <option value="">新莊分局</option>
+                  <option value="">中和分局</option>
+                  <option value="">永和分局</option>
+                  <option value="">新店分局</option>
+                  <option value="">蘆洲分局</option>
+                  <option value="">土城分局</option>
+                  <option value="">樹林分局</option>
+                  <option value="">三峽分局</option>
+                  <option value="">淡水分局</option>
+                  <option value="">汐止分局</option>
+                  <option value="">金山分局</option>
+                  <option value="">瑞芳分局</option>
+                  <option value="">林口分局</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>單選項目</td>
+              <td>
+                <div class="optionPool">
+                  <label><input type="radio" name="aaa" id="">單選項目一</label>
+                  <label><input type="radio" name="aaa" id="">項目二</label>
+                  <label><input type="radio" name="aaa" id="">藥外怎小</label>
+                  <label><input type="radio" name="aaa" id="">而布學</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>多選項目</td>
+              <td>
+                <div class="optionPool">
+                  <label><input type="checkbox" name="" id="">多選項目一</label>
+                  <label><input type="checkbox" name="" id="">項目二</label>
+                  <label><input type="checkbox" name="" id="">製路去黃</label>
+                  <label><input type="checkbox" name="" id="">方該要房</label>
+                  <label><input type="checkbox" name="" id="">會人情</label>
+                  <label><input type="checkbox" name="" id="">生起所</label>
+                  <label><input type="checkbox" name="" id="">多身部很中美水</label>
+                  <label><input type="checkbox" name="" id="">細人縣我</label>
+                </div>
+              </td>
+            </tr>
+          </tbody></table>
+          <div class="btnDv">
+            <input type="button" value="送出">
+            <input type="reset" value="清除">
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <section class="category">
+      <ul>
+        <li class="active"><a href="javascript:;">All</a></li>
+        <li><a href="javascript:;">Duis aute</a></li>
+        <li><a href="javascript:;">Irure dolor in</a></li>
+        <li><a href="javascript:;">Reprehenderit</a></li>
+        <li><a href="javascript:;">Voluptate</a></li>
+        <li><a href="javascript:;">Velit esse cillum</a></li>
+        <li><a href="javascript:;">Dolore eu fugiat</a></li>
+        <li><a href="javascript:;">Aliquet sagittis</a></li>
+      </ul>
+    </section>
+
+
+    <section class="list">
+      <table class="rwdTable">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>File Download</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="numb">1</td>
+            <td class="title">Facilisis gravida neque convallis a cras semper auctor.</td>
+            <td><time>2022-08-18</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <!-- <li><a download="" href="filename.doc" title="download filename.doc"><span class="fileType doc">doc</span></a></li> -->
+                <li><a download="" href="filename.docx" title="download filename.docx"><span class="fileType docx">docx</span></a></li>
+                <li><a download="" href="filename.odt" title="download filename.odt"><span class="fileType odt">odt</span></a></li>
+                <li><a download="" href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
+                <li><a download="" href="filename.txt" title="download filename.txt"><span class="fileType txt">txt</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">2</td>
+            <td class="title">Egestas dui id ornare arcu odio. Mus mauris vitae ultricies leo integer malesuada nunc.</td>
+            <td><time>2022-08-16</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.xls" title="download filename.xls"><span class="fileType xls">xls</span></a></li>
+                <!-- <li><a download="" href="filename.xlsx" title="download filename.xlsx"><span class="fileType xlsx">xlsx</span></a></li> -->
+                <li><a download="" href="filename.csv" title="download filename.csv"><span class="fileType csv">csv</span></a></li>
+                <li><a download="" href="filename.ods" title="download filename.ods"><span class="fileType ods">ods</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">3</td>
+            <td class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+            <td><time>2022-08-15</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.ppt" title="download filename.ppt"><span class="fileType ppt">ppt</span></a></li>
+                <li><a download="" href="filename.pptx" title="download filename.pptx"><span class="fileType pptx">pptx</span></a></li>
+                <li><a download="" href="filename.odp" title="download filename.odp"><span class="fileType odp">odp</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">4</td>
+            <td class="title">Tristique risus nec feugiat in fermentum posuere urna. Ut etiam sit amet nisl purus in mollis nunc. Sed euismod nisi porta lorem.</td>
+            <td><time>2022-08-15</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.jpg" title="download filename.jpg"><span class="fileType jpg">jpg</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">5</td>
+            <td class="title">Est lorem ipsum dolor sit amet consectetur. Pulvinar pellentesque habitant morbi tristique senectus et netus.</td>
+            <td><time>2022-08-12</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.mp3" title="download filename.mp3"><span class="fileType mp3">mp3</span></a></li>
+                <li><a download="" href="filename.mp4" title="download filename.mp4"><span class="fileType mp4">mp4</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">6</td>
+            <td class="title">Diam donec adipiscing tristique risus nec feugiat in.</td>
+            <td><time>2022-08-10</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.mov" title="download filename.mov"><span class="fileType mov">mov</span></a></li>
+                <li><a download="" href="filename.wmv" title="download filename.wmv"><span class="fileType wmv">wmv</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">7</td>
+            <td class="title">Vel pharetra vel turpis nunc eget lorem dolor sed viverra. Id semper risus in hendrerit gravida rutrum quisque non.</td>
+            <td><time>2022-08-09</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.zip" title="download filename.zip"><span class="fileType zip">zip</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">8888</td>
+            <td class="title">Laoreet suspendisse interdum consectetur libero id faucibus nisl tincidunt.</td>
+            <td><time>2022-08-08</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.other" title="download filename.other"><span class="fileType other">other</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">999</td>
+            <td class="title">Lacus luctus accumsan tortor posuere ac ut consequat.</td>
+            <td><time>2022-08-05</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.doc" title="download filename.doc"><span class="fileType doc">doc</span></a></li>
+                <li><a download="" href="filename.pdf" title="download filename.pdf"><span class="fileType pdf">pdf</span></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="numb">10</td>
+            <td class="title">Sit amet mauris commodo quis imperdiet.</td>
+            <td><time>2022-08-01</time></td>
+            <td>
+              <ul class="downloadFiles">
+                <li><a download="" href="filename.xlsx" title="download filename.xlsx"><span class="fileType xlsx">xlsx</span></a></li>
+                <li><a download="" href="filename.csv" title="download filename.csv"><span class="fileType csv">csv</span></a></li>
+                <li><a download="" href="filename.zip" title="download filename.zip"><span class="fileType zip">zip</span></a></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="pagination">
+      <form action="">
+        <div class="total">
+          共<em>173</em>筆資料，第<em>1/18</em>頁，
+          <div class="items">每頁顯示 <a class="active" href="#">20</a> <a href="#">40</a> <a href="#">60</a> 筆 </div>
+        </div>
+      </form>
+      <ul class="page">
+        <li class="first"><a title="第一頁" href="?">第一頁</a></li>
+        <li class="prev"><a title="上一頁" href="?">上一頁</a></li>
+        <li><a title="1" href="?">1</a></li>
+        <li><a title="2" href="?">2</a></li>
+        <li class="active"><a title="3" href="?">3</a></li>
+        <li><a title="4" href="?">4</a></li>
+        <li><a title="5" href="?">5</a></li>
+        <li><a title="6" href="?">6</a></li>
+        <li><a title="7" href="?">7</a></li>
+        <li><a title="8" href="?">8</a></li>
+        <li><a title="9" href="?">9</a></li>
+        <li><a title="10" href="?">10</a></li>
+        <li class="next"><a title="下一頁" href="?">下一頁</a></li>
+        <li class="last"><a title="最後一頁" href="?">最後一頁</a></li>
+      </ul>
+    </section>
+
+
+  </main>
+
+
+  <footer class="webFooter">
+    <a class="accesskey" href="#aZ" id="aZ" accesskey="Z" title="footer">:::</a>
+
+    <button type="button" class="fatFootCtrl" data-altText="Open">Close</button>
+    <section class="fatFooter">
+      <nav class="siteTree">
+        <ul>
+          <li><a href="#">About NTPD</a>
+            <ul>
+              <li><a href="#">Organization</a></li>
+              <li><a href="#">Commissioner</a></li>
+              <li><a href="#">Our Missions</a></li>
+              <li><a href="#">Precincts</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Services</a>
+            <ul>
+              <li><a href="#">Prevention</a></li>
+              <li><a href="#">Command and Control Center</a></li>
+              <li><a href="#">Traffic management</a></li>
+              <li><a href="#">Apply for the Police Criminal Record Certificate</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Public Information</a>
+            <ul>
+              <li><a href="#">NEWS</a></li>
+              <li><a href="#">Statistics</a></li>
+              <li><a href="#">Related Laws & Regulations</a></li>
+              <li><a href="#">White Paper</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Education and Training</a></li>
+          <li><a href="#">Links</a></li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="base">
+      <div class="logo"><img src="images/footer_logo.png" alt="logo"></div>
+
+      <div class="contactInfo">
+        <ul>
+          <li>
+            <span class="dt">TEL</span>
+            <span class="dd">(02)80725454 extn. 4095</span>
+          </li>
+          <li>
+            <span class="dt">Address</span>
+            <span class="dd">No. 32, Fuzhong Rd., Banqiao District, New Taipei City ,220222 , R.O.C.</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="declaration">
+        <ul>
+          <li><a href="#">Security Policy</a></li>
+          <li><a href="#">Government Website Open Information Announcement Sample</a></li>
+        </ul>
+      </div>
+
+      <div class="update">
+        <span>Last Update: <em>2022-08-11</em></span>
+        <span>Number of Visits: <em>14789131</em></span>
+      </div>
+
+      <div class="aaBadge"><a href="#" target="_blank" title="open new window"><img src="../publicData/aaBadge.png" alt="Conformance level AA"></a></div>
+
+    </section>
+
+  </footer>
+
+  <button type="button" class="goTop" title="Go to top">top</button>
+
+</body>
+</html>
