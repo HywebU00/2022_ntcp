@@ -65,7 +65,7 @@
         &::after{display: none;}
       }
       a{
-        display: block;padding: 0 0 3px;
+        display: block;padding: 0 0 1px;
         text-decoration: none; color: $fontColor;
         box-shadow: $borderColor 0 1px 0;
         &:hover, &:focus{box-shadow: $fontColor 0 2px 0;}

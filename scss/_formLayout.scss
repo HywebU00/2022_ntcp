@@ -221,7 +221,7 @@ table.formLayout {
 .hint, .warning, .error{
   position: relative; padding-left: 24px; line-height: 1.6;
   &::before{
-    content: ''; position: absolute; left: 0; top: 2px;
+    content: ''; position: absolute; left: 0; top: 0;
     width: 20px; height: 20px; border-radius: 50%;
     background: $grayDark url(../images/icon_msg.svg) no-repeat center 0;
     background-size: 16px auto;
