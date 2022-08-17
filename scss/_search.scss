@@ -39,20 +39,20 @@
 
   // 熱門關鍵字
   .hotKeywords{
-    flex: 0 0 auto;display: inline-block; vertical-align: top;
+    flex: 0 0 auto;display: inline-block; vertical-align: bottom;
     list-style: none; margin: 0 0 0 10px; padding: 0; line-height: 1.1;
     .label {
-      display: block;height: 1em; margin-right: .5em;
+      display: block;height: 1em; line-height: 1;
       color: $fontInvert;font-size: .8rem;
       }
-    ul{ list-style: none; margin:6px 0 0 -2px; padding: 0; overflow: hidden;}
+    ul{ list-style: none; margin:4px 0 0 -2px; padding: 0; overflow: hidden;}
     li{
        margin:0; padding: 2px; float: left;
        &+li{margin-left: 2px;}
        &:nth-child(n+3){display: none;}
       a{ 
         display: block;
-        height: 1.9em; line-height: 1.8; padding: 0 .4em; margin: 0; border-radius: 4px;
+        height: 1.8em; line-height: 1.9; padding: 0 .4em; margin: 0; border-radius: 4px;
         text-decoration: none; cursor: pointer;
         background-color: $white;
         &:hover, &:focus{ 
@@ -88,13 +88,13 @@
       margin-top: 3px;
       .label{ 
         display: inline-block;vertical-align: middle; 
-        font-size: 1rem; color: $fontColor;
+        font-size: 1rem; color: $fontColor; line-height: 1.2;
       }
       ul{display: inline-block; vertical-align: middle; margin: 0 -2px 0 0;}
       li{
         &:nth-child(n){display: inline-block;}
         a{ 
-          height: 1.7em; line-height: 1.6;
+          height: 1.7em; line-height: 1.8;
           background-color: $grayLight; transition: .2s;
           &:hover, &:focus{
             box-shadow: $primaryColor 0 0 0 2px;

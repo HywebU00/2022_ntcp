@@ -54,7 +54,7 @@
 // 更多 ////////////////////////////////////////////////////////////
 .more{
   a{
-    display: inline-block; height: 2.5em; line-height: 2.4em; padding: 0 1.2em; 
+    display: inline-block; height: 2.5em; line-height: 2.6em; padding: 0 1.2em; 
     border-radius: 2em; text-decoration: none;
     background-color: $primaryColor; color: $fontInvert;
     transition: .2s;
@@ -68,8 +68,8 @@
 // 捲動至頁面最上方 ////////////////////////////////////////////////
 .goTop{
   position: fixed; right: 10px; bottom: -60px; z-index: 99;
-  width: 44px; height: 44px; border-radius: 50%;
-  border: none; text-indent: -5em; overflow: hidden;
+  width: 44px; height: 44px; padding: 0; border-radius: 50%;
+  border: none; text-indent: -10em; overflow: hidden;
   box-shadow: transparent 0 0 0 2px, rgba(0, 0, 0, .3) 0 0 12px;
   background-color: rgba(255, 255, 255, .8); cursor: pointer;
   transition:box-shadow .2s, background-color .2s, bottom .8s;
@@ -94,7 +94,7 @@
   &.show{bottom: 20px;}
 
   @media screen and ( min-width: calc(#{$wwMaximum} + 64px) ){
-    right: calc(50vw - #{$wwMaximum}*.5 - 22px);
+    right: calc(50vw - #{$wwMaximum}*.5 - 25px);
   }
 
 }
