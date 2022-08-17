@@ -94,7 +94,7 @@
   &.show{bottom: 20px;}
 
   @media screen and ( min-width: calc(#{$wwMaximum} + 64px) ){
-    right: calc(50vw - #{$wwMaximum}*.5 - 25px);
+    right: calc(50% - #{$wwMaximum}*.5 - 25px);
   }
 
 }
