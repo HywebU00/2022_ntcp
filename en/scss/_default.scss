@@ -24,6 +24,7 @@ body{
   }
 
   @media screen and (min-width: $wwMaximum){
-    width: $wwMaximum;
+    // width: $wwMaximum;
+    max-width: $wwMaximum;
   }
 }

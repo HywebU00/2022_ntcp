@@ -85,6 +85,7 @@
     .slideShow{
       flex: 0 0 calc(50% - 12px); width: calc(50% - 12px);
       .image{
+        width: 100%;
         a{
           position: relative;
           &::before{

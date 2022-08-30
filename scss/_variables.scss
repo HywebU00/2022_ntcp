@@ -22,7 +22,6 @@ $wwMaximum: 1200px;
     width: $normalWidth;
   }
   @media screen and (min-width: $wwMaximum){
-    // width:calc( #{$wwMaximum}*( #{$normalWidth} / 100vw ));
     width: $wwMaximum*.88;
   }
 }
