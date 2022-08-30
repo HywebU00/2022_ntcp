@@ -254,12 +254,7 @@
 
   
     @media screen and (min-width: $wwMaximum){      
-      &>ul{
-      
-          // width: $wwMaximum;
-    max-width: $wwMaximum;
-
-      }
+      &>ul{max-width: $wwMaximum;}
     }
   }
 
@@ -274,7 +269,6 @@
   img{display: block; width: 100%; margin: 0 auto;}
 
   @media screen and (min-width: $wwMaximum){
-    // width: $wwMaximum;
     max-width: $wwMaximum;
   }
 }

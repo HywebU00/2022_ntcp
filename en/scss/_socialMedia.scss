@@ -29,8 +29,8 @@
     }
   }
 
-  @media screen and (min-width: $wwMaximum + 108px){
-    right: calc( 50% - #{$wwMaximum}/2 - 54px );
+  @media screen and (min-width: calc($wwMaximum + 108px)){
+    right: calc( 50% - $wwMaximum*.5 - 54px );
     border-radius: 0 6px 6px 0;
 
   }

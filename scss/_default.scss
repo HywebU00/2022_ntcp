@@ -22,10 +22,7 @@ time{  font-family:'Murecho', Helvetica, Arial, sans-serif;}
 
   @media screen and (min-width: $wwNormal){
     width: 100%;
-  }
-
-  @media screen and (min-width: $wwMaximum){
-    // width: $wwMaximum;
     max-width: $wwMaximum;
   }
+
 }
