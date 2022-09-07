@@ -95,6 +95,28 @@
         }
       }
 
+      // rss
+      &.rss>button::after{
+        content: ''; position: absolute; left: 9px; bottom: -5px;
+        width: 40px; height: 40px;
+        transition: 0;
+        background-image: radial-gradient(
+        #fff 0, #fff 3px,   transparent 4px, transparent 7px, 
+        #fff 8px, #fff 10px, transparent 11px, transparent 14px,
+        #fff 15px, #fff 17px, transparent 18px, transparent 100%
+        );
+        clip-path: polygon(
+        0% 0%,
+        56% 0%,
+        56% calc(56% - 4px),
+        calc(56% + 2px)  calc(56% - 4px),
+        calc(56% + 2px)  calc(56% + 2px),
+        calc(56% - 4px)  calc(56% + 2px),
+        calc(56% - 4px)  56%,
+        0% 56%
+        );
+      }
+
 
       // 第二層
       &>ul{ 
