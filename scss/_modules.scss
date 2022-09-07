@@ -308,3 +308,57 @@ a:hover, a:focus {
   }
 
 }
+
+
+
+//////////////////////////////////////////////////////////////////
+// 查詢結果
+.gsc-control-cse{
+  // outline: 1px dashed pink;
+  width: 94% !important;
+  margin: 0 auto; padding: 0 !important;
+
+  @media screen and (min-width: $wwNormal){
+    width: 88% !important;
+  }
+
+  .gsst_b{
+    text-align: center;
+    a.gsst_a{ 
+      display: block;
+      text-decoration: none; font-size: 1.8rem; 
+      &:hover, &:focus{background-color: #ddd;}
+    }
+  }
+  
+  .gsc-search-box{
+    padding: 5px 0;
+    // 文字輸入
+    td.gsc-input{ 
+      div.gsc-input-box{
+        border: none;
+        input.gsc-input{ margin: 0; padding: 0 8px !important; height: 2.2rem !important;}
+      }
+    }
+    
+    .gsc-search-button{
+      button.gsc-search-button.gsc-search-button{ 
+        height: 2.2rem; padding: 0 1rem; margin: 0;
+        background-color: $primaryColor; border: none;
+      }
+    }
+
+    &.gsc-search-box-tools{
+      .gsc-input {padding-right: 3px;}
+    }
+  }
+
+  .gsc-above-wrapper-area-container{
+    .gsc-result-info{font-size: 1rem;}
+  }
+  //排序依據
+  .gsc-above-wrapper-area{
+    font-size: 1rem;
+    .gsc-selected-option{ white-space: nowrap;font-size: 1rem;}
+  }
+}
