@@ -1,28 +1,41 @@
-body{
-  margin: 0; padding: 0; 
-  background: #f4f5f5; color: $fontColor;
-  font-size: 1em; font-family: Helvetica, Arial,'微軟正黑體', sans-serif;
-  // font-family:'Murecho', Helvetica, Arial,'微軟正黑體', sans-serif;
-  
-  &.noScroll{ overflow: hidden; overflow-y:hidden; }
-
-  *{box-sizing: border-box;}
-  a{ color: $linkColor;}
-
-  a, button, input{
-    &:focus{outline: none;}
-  }
+body {
+    margin: 0;
+    padding: 0;
+    background: #ddd;
+    color: $fontColor;
+    font-size: 1em;
+    font-family: Helvetica, Arial, '微軟正黑體', sans-serif;
+    // font-family:'Murecho', Helvetica, Arial,'微軟正黑體', sans-serif;
+    &.noScroll {
+        overflow: hidden;
+        overflow-y: hidden;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    a {
+        color: $linkColor;
+    }
+    a,
+    button,
+    input {
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
-time{  font-family:'Murecho', Helvetica, Arial, sans-serif;}
+time {
+    font-family: 'Murecho', Helvetica, Arial, sans-serif;
+}
 
-.main{
-  position: relative;padding-bottom: 1px; margin: 0 auto -1px;
-  background-color: $white;
-
-  @media screen and (min-width: $wwNormal){
-    width: 100%;
-    max-width: $wwMaximum;
-  }
-
+.main {
+    position: relative;
+    padding-bottom: 1px;
+    margin: 0 auto -1px;
+    background-color: $white;
+    @media screen and (min-width: $wwNormal) {
+        width: 100%;
+        max-width: $wwMaximum;
+    }
 }

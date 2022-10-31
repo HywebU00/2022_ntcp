@@ -17,7 +17,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f4f5f5;
+  background: #ddd;
   color: #333;
   font-size: 1em;
   font-family: Helvetica, Arial, "微軟正黑體", sans-serif;
@@ -33,7 +33,9 @@ body * {
 body a {
   color: #07637f;
 }
-body a:focus, body button:focus, body input:focus {
+body a:focus,
+body button:focus,
+body input:focus {
   outline: none;
 }
 
@@ -963,7 +965,8 @@ kbd {
   height: 9px;
   background-color: #FFCB11;
 }
-.webFooter .fatFootCtrl, .webFooter .fatFooter {
+.webFooter .fatFootCtrl,
+.webFooter .fatFooter {
   display: none;
 }
 .webFooter .base {
@@ -1187,9 +1190,9 @@ kbd {
   }
   .webFooter .siteTree > ul > li {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 17%;
-            flex: 0 1 17%;
-    margin: 1em 1.5% 0;
+        -ms-flex: 0 1 15%;
+            flex: 0 1 15%;
+    margin: 1em 0.8% 0;
     min-width: 6em;
   }
   .webFooter .siteTree > ul > li > a {
@@ -1246,7 +1249,8 @@ kbd {
   .webFooter .contactInfo {
     margin: 2em auto 0;
   }
-  .webFooter .declaration, .webFooter .aaBadge {
+  .webFooter .declaration,
+.webFooter .aaBadge {
     position: absolute;
     margin: 0;
     top: 50px;
