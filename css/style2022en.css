@@ -17,7 +17,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #f4f5f5;
+  background: #ddd;
   color: #333;
   font-family: "Murecho", Helvetica, Arial, sans-serif;
   font-size: 1em;
@@ -2194,11 +2194,17 @@ a:hover .fileType.other, a:focus .fileType.other {
   position: relative;
   height: calc(90px + 2.4em);
   padding: 80px 20px 10px;
-  background-color: #1A2D3D;
-  color: #fff;
+  background-color: #FFCB11;
+  color: #1A2D3D;
   text-decoration: none;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+@media screen and (min-width: 1000px) {
+  .servIcons .flowbox .flowItem a {
+    background-color: #1A2D3D;
+    color: #fff;
+  }
 }
 .servIcons .flowbox .flowItem a img {
   position: absolute;
@@ -2215,10 +2221,18 @@ a:hover .fileType.other, a:focus .fileType.other {
   transition: opacity 0.2s;
 }
 .servIcons .flowbox .flowItem a img.normal {
-  opacity: 1;
+  opacity: 0;
 }
 .servIcons .flowbox .flowItem a img.hover {
-  opacity: 0;
+  opacity: 1;
+}
+@media screen and (min-width: 1000px) {
+  .servIcons .flowbox .flowItem a img.normal {
+    opacity: 1;
+  }
+  .servIcons .flowbox .flowItem a img.hover {
+    opacity: 0;
+  }
 }
 .servIcons .flowbox .flowItem a p {
   display: block;
@@ -2231,14 +2245,26 @@ a:hover .fileType.other, a:focus .fileType.other {
   -webkit-line-clamp: 2;
 }
 .servIcons .flowbox .flowItem a:hover, .servIcons .flowbox .flowItem a:focus {
-  background-color: #FFCB11;
-  color: #1A2D3D;
+  background-color: #1A2D3D;
+  color: #fff;
 }
 .servIcons .flowbox .flowItem a:hover img.normal, .servIcons .flowbox .flowItem a:focus img.normal {
-  opacity: 0;
+  opacity: 1;
 }
 .servIcons .flowbox .flowItem a:hover img.hover, .servIcons .flowbox .flowItem a:focus img.hover {
-  opacity: 1;
+  opacity: 0;
+}
+@media screen and (min-width: 1000px) {
+  .servIcons .flowbox .flowItem a:hover, .servIcons .flowbox .flowItem a:focus {
+    background-color: #FFCB11;
+    color: #1A2D3D;
+  }
+  .servIcons .flowbox .flowItem a:hover img.normal, .servIcons .flowbox .flowItem a:focus img.normal {
+    opacity: 0;
+  }
+  .servIcons .flowbox .flowItem a:hover img.hover, .servIcons .flowbox .flowItem a:focus img.hover {
+    opacity: 1;
+  }
 }
 @media screen and (min-width: 1000px) {
   .servIcons {
