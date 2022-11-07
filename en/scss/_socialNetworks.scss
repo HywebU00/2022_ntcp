@@ -41,7 +41,7 @@
     }
   }
 
-  @media screen and (min-width: $wwSlim + 100px){
+  @media screen and (min-width: calc($wwSlim + 100px)){
     .blockHeader{ 
       span{ display: inline-block;
         &+span{ margin-top: 0; margin-left: .4em;}
