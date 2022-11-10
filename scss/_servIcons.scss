@@ -1,54 +1,42 @@
 // 首頁：為民服務圖示連結 //////////////////////////////////////////
 .servIcons {
-	position: relative;
-	padding: 30px 0;
+	position: relative; padding: 30px 0;
 	background-color: $grayLight;
-
 	.flowbox {
 		position: relative;padding: 0 52px;margin: 0 12px;
-
 		.flowItem {
 			text-align: center;
-
 			a {
 				display: block;
 				position: relative;height: calc(90px + 2.4em);padding: 80px 20px 10px;
 				background-color: $assistant;color: $primaryColor;
 				text-decoration: none;transition: .2s;
-
 				// @media screen and (min-width: $wwNormal) {
 				// 	background-color: $primaryColor;color: $fontInvert;
 				// }
-
 				img {
 					position: absolute;top: 16px;left: 50%;
 					width: 60px;height: 52px;margin: 0;object-fit: contain;
 					transform: translateX(-50%);transition: opacity .2s;
 					&.normal {opacity: 0;}
 					&.hover {opacity: 1;}
-
 					// @media screen and (min-width: $wwNormal) {
 					// 	&.normal {opacity: 1;}
 					// 	&.hover {opacity: 0;}
 					// }
 				}
-
 				p {
 					display: block;margin: 0 auto;padding: 0;line-height: 1.2;
 					display: -webkit-box;overflow: hidden;-webkit-box-orient: vertical;-webkit-line-clamp: 2;
 				}
-
 				&:hover, &:focus {
 					background-color: $primaryColor;color: $fontInvert;
-
 					img {
 						&.normal {opacity: 1;}
 						&.hover {opacity: 0;}
 					}
-
 					@media screen and (min-width: $wwNormal) {
 						background-color: $assistant;color: $primaryColor;
-
 						img {
 							&.normal {opacity: 0;}
 							&.hover {opacity: 1;}
@@ -63,7 +51,6 @@
 		// padding: 0 0 0 25vw;
 		// background-color: transparentize($primaryColor, .25);
 		padding: 0 0 0 35vw; background-color: transparent;
-
 		.blockHeader {
 			position: absolute;left: 0;top: calc(50% - .8em);width: 25vw;
 			color: $fontInvert;
@@ -73,16 +60,13 @@
 			background-color: transparentize($primaryColor, .7);
 			backdrop-filter: blur(3px);
 			.flowItem {
-				
 				a{
 					color: $fontInvert;background-color: transparent;
-
 					img{
 						&.normal {opacity: 1;}
 						&.hover {opacity: 0;}
 					}
 				}
-				
 			}
 		}
 		.slick-arrow {
@@ -90,7 +74,6 @@
 			&::before {border-color: $primaryColor;}
 			&:hover {box-shadow: $assistant 0 0 0 2px;}
 			&:focus {box-shadow: $primaryColor 0 0 0 1px, $assistant 0 0 0 4px;}
-
 			&.slick-next{right: 10px;}
 			&.slick-prev{left: 10px;}
 		}
@@ -98,7 +81,6 @@
 
 	@media screen and (min-width: $wwMaximum) {
 		padding-left: $wwMaximum*.35;
-
 		.blockHeader {
 			width: $wwMaximum*.35;
 		}
