@@ -1,22 +1,14 @@
 // 頁腳
 .webFooter {
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    background-color: #fff;
+    position: relative;margin: 0 auto;padding: 0;
+    background-color: $white;
     &::after {
         content: '';
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        height: 9px;
-        background-color: $assistant;
+        position: absolute;left: 0;right: 0;bottom: 0;height: 9px;
+        @include gradient1(90deg);
     }
-    .fatFootCtrl,
-    .fatFooter {
-        display: none;
-    }
+    .fatFootCtrl,.fatFooter {display: none;}
+
     //////////////////////////////////////////////////////////////////
     .base {
         position: relative;
@@ -64,10 +56,10 @@
                     background-size: 100%;
                     border-radius: 4px;
                     &:hover {
-                        box-shadow: $assistant 0 0 0 2px;
+                        box-shadow: $primaryColor 0 0 0 1px;
                     }
                     &:focus {
-                        box-shadow: $primaryColor 0 0 0 2px;
+                        box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 3px;
                     }
                 }
             }
@@ -151,7 +143,7 @@
             &:hover,
             &:focus {
                 img {
-                    box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 3px;
+                    box-shadow: $white 0 0 0 1px, $assistant 0 0 0 3px;
                     border-radius: 2px;
                 }
             }
@@ -171,7 +163,7 @@
             margin: 0;
             text-indent: -10em;
             overflow: hidden;
-            background-color: $primaryColor;
+            background-color: $assistant;
             border: none;
             box-shadow: none;
             cursor: pointer;
@@ -192,10 +184,10 @@
                 transition: .3s;
             }
             &:hover {
-                box-shadow: $primaryColor 0 0 0 2px;
+                box-shadow: $assistant 0 0 0 2px;
             }
             &:focus {
-                box-shadow: $assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
+                box-shadow: $primaryColor 0 0 0 1px, $assistant 0 0 0 4px;
             }
             &.closed {
                 &::before {
@@ -251,17 +243,13 @@
                                 border-bottom: 1px solid transparent;
                                 &::before {
                                     content: '';
-                                    position: absolute;
-                                    left: 1px;
-                                    top: .45em;
-                                    width: 0;
-                                    height: 6px;
-                                    background-color: $primaryColor;
+                                    position: absolute;left: 1px;top: .45em;width: 0;height: 6px;
+                                    background-color: $assistant;
                                     transition: .2s;
                                 }
                                 &:hover,
                                 &:focus {
-                                    border-bottom-color: $primaryColor;
+                                    border-bottom-color: $assistant;
                                     padding-left: 12px;
                                     padding-right: 0;
                                     &::before {

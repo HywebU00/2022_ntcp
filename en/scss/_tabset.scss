@@ -43,9 +43,9 @@
           box-shadow: $primaryColor 0 0 0 2px inset;
         }
         &.active {
-          color: $fontInvert; background: $fontColor;
+          color: $fontInvert; background: $assistant;
           &:focus, &:hover{
-            box-shadow: $assistant 0 0 0 1px inset, $primaryColor 0 0 0 3px;
+            box-shadow: $assistant 0 0 0 1px inset, $assistant 0 0 0 3px;
           }
         }
       }

@@ -5,7 +5,7 @@
     display: block; z-index: 199;
     position: fixed; top: 250px; right: 0; padding:5px 10px;
     border-radius: 6px 0 0 6px;
-    background-color: transparentize($primaryColor, .25);
+    background-color: transparentize($assistant, .25);
     backdrop-filter: blur(5px);
     ul{ list-style: none; margin: 0; padding: 0; width: 34px;}
     li{
@@ -29,7 +29,7 @@
   @media screen and (min-width: calc($wwMaximum + 108px)){
     right: calc( 50% - #{$wwMaximum}/2 - 54px );
     border-radius: 0 6px 6px 0; 
-    background-color: $primaryColor; backdrop-filter: none;
+    background-color: transparentize($assistant, .3); backdrop-filter: none;
   }
 }
 // -----------------------------------------------------------------

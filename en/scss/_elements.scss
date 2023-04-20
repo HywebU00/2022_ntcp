@@ -27,7 +27,7 @@
     padding: 0 .8em; border-radius: 0 0 4px 4px;
     overflow: hidden;
     font-size: .9rem; height: 1.8em; line-height: 1.8;
-    background-color: $primaryColor; color: $fontInvert;
+    background-color: $assistant; color: $fontInvert;
     text-decoration: none; outline: none;  cursor: pointer;
     transition:top .3s; 
     &:focus{ top: 0; z-index: 991;}
@@ -56,15 +56,10 @@
   a{
     display: inline-block; height: 2.4em; line-height: 2.2em; padding: 0 1.2em; 
     border-radius: 2em; text-decoration: none;
-    background-color: $primaryColor; color: $fontInvert;
+    background-color: $assistant; color: $fontInvert;
     transition: .2s;
-
-    &:hover{
-      box-shadow: $primaryColor 0 0 0 2px;
-    }
-    &:focus{
-      box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
-    }
+    &:hover{ box-shadow: $assistant 0 0 0 2px; }
+    &:focus{ box-shadow:$primaryColor 0 0 0 1px, $assistant 0 0 0 4px; }
   }
 }
 // -----------------------------------------------------------------
@@ -81,24 +76,22 @@
   &::before,  &::after{
     content: ''; position: absolute; width: 8px; height: 8px;
     left: 50%; top: 50%; margin-top: -6px; margin-left: -5px;
-    border: 2px solid $primaryColor; border-top: none; border-left: none;
+    border: 2px solid $assistant; border-top: none; border-left: none;
     transform: rotate(225deg);transition: .3s;
   }
   &::after{ margin-top: 1px;}
 
   &:hover{
-    background-color: #fff;
-    box-shadow: #fff 0 0 0 2px, rgba(0, 0, 0, .4) 0 0 20px;
+    background-color: $white;
+    box-shadow: $white 0 0 0 2px, rgba(0, 0, 0, .4) 0 0 20px;
    
   }
   &:focus{
-    background-color: #fff;
-    box-shadow:$primaryColor 0 0 0 2px, rgba(0, 0, 0, .4) 0 0 10px;
+    background-color: $white;
+    box-shadow:$assistant 0 0 0 2px, rgba(0, 0, 0, .4) 0 0 10px;
   }
 
-  &.show{
-    bottom: 20px;
-  }
+  &.show{bottom: 20px;}
 
   @media screen and ( min-width: calc(#{$wwMaximum} + 64px) ){
     right: calc(50% - #{$wwMaximum}*.5 - 22px);
@@ -114,13 +107,8 @@
   text-indent: -20em; overflow: hidden; outline: none; margin: 0;
   border-radius: 0; background-color: transparent; border: none;
   cursor: pointer; 
-
-  &:hover, &:focus{
-    background-color: $assistant;
-  }
-  &:focus{
-    box-shadow: $assistant 0 0 0 4px;
-  }
+  &:hover, &:focus{background-color: $primaryColor;}
+  &:focus{box-shadow: $primaryColor 0 0 0 4px;}
 }
 
 // 行動版查詢控制圖示 
@@ -168,13 +156,6 @@
       top: 25px; transform: rotate(-45deg);
       transition: transform .2s .2s, top .2s 0s;
     }
-  }
-
-  &:hover {
-    border: none; box-shadow: none;background-color: $assistant;
-  }
-  &:focus{
-    background-color: $assistant;box-shadow: $assistant 0 0 0 4px;
   }
 
   @media screen and (min-width: $wwNormal){
@@ -246,12 +227,13 @@ a:hover .videoThumb{
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 9;
   width: 42px; height: 42px; border-radius: 50%;
   text-indent: -20em; overflow: hidden; margin: 0;
-  background-color: $primaryColor;
+  background-color: $assistant;
+  box-shadow: transparent 0 0 0 2px, transparentize($assistant, .7) 0 3px 5px;
   cursor: pointer; outline: none; border: none; transition: .2s;
   &::before{
     content: ''; position: absolute; width: 8px; height: 8px;
     left: 50%; top: 50%; margin-top: -5px;
-    border: 2px solid $fontInvert; border-top: none; border-right: none;
+    border: 2px solid lighten($assistant, 75%); border-top: none; border-right: none;
     transform: rotate(45deg);
   }
   &.slick-prev{ left: 0; 
@@ -262,12 +244,12 @@ a:hover .videoThumb{
   }
 
   &:hover{
-    box-shadow: $primaryColor 0 0 0 2px;
-    background-color: $primaryColor;
+    box-shadow: $assistant 0 0 0 2px, transparent 0 0 0;
+    background-color: $assistant;
   }
   &:focus{
-    box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
-    background-color: $primaryColor;
+    box-shadow:$primaryColor 0 0 0 1px, $assistant 0 0 0 4px;
+    background-color: $assistant;
   }
 }
 // -----------------------------------------------------------------

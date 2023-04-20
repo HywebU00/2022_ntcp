@@ -1,11 +1,10 @@
-// .main>*:not(.mailAndApp){display: none;}
-// 局長信箱 + 新北市iPolice APP
+// 局長信箱 + 新北市iPolice APP ////////////////////////////////////
 .mailAndApp{
   a{text-decoration: none;}
 
   .mailCommissioner{
     padding: 40px 0; text-align: center;
-    background-color: transparentize( $primaryColor, .2);
+    background-color: $assistant;
     a{
       position: relative; overflow: hidden;
       display: inline-block;height: 64px; line-height: 64px;
@@ -13,7 +12,7 @@
       &::before{
         content: ''; float: left; margin-right: 8px;
         width: 64px; height: 64px; border-radius: 6px;
-        background: $assistant url(../images/icon_mail2.png) no-repeat center center;
+        background: url(../images/icon_mail2.png) no-repeat center center, linear-gradient(180deg, #832CAC 0%, #4C4498 100%);
         background-size: 36px auto;
       }
       &::after{
@@ -34,7 +33,7 @@
       white-space: nowrap;
       margin: 10px; padding-left: 74px;
       height: 64px; line-height: 64px;
-      font-size: 1.375rem;color: $fontInvert; 
+      font-size: 1.375rem;color: $fontColor; 
       background: url(../images/iPolice.png) no-repeat 0 0;
     }
     ul{

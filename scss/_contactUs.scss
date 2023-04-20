@@ -12,7 +12,8 @@
     .dropList{
       position: relative; z-index: 99;
       padding:3px;margin: 5px auto; width: 94%; border-radius: 5px;
-      font-size: 1rem; background-color: $primaryColor;
+      font-size: 1rem; 
+      // background-color: $primaryColor;
 
       button{
         margin: 0; background: none; border: none; color: $fontInvert;
@@ -23,15 +24,15 @@
       button.selected{
         position: relative; z-index: 9;
         padding: 0 .6em; width: 100%;border-radius: 4px;
-        background-color: $primaryColor; color: $fontInvert;
+        background-color: $assistant; color: $fontInvert;
+        box-shadow:$assistant 0 0 0 0;
         transition: .2s;
-        &:hover, &:focus{
-          box-shadow: $assistant 0 0 0 1px;
-        }
+        &:hover{box-shadow: $assistant 0 0 0 2px;}
+        &:focus{box-shadow:$primaryColor 0 0 0 1px, $assistant 0 0 0 3px;}
         &::after{
           content: ''; position: absolute; right: 12px;top: 12px;
           width: 10px; height: 10px;
-          border: 2px solid $assistant; border-left: none; border-top: none;
+          border: 2px solid $white; border-left: none; border-top: none;
           transform: rotate(45deg); transition: .4s;
         }  
         &.closeIt{
@@ -64,17 +65,17 @@
 
         &.now{
           button{
-            background-color: $primaryColor; color: $fontInvert;
+            background-color: $assistant; color: $fontInvert;
             &::before{
               content: '';
               position: absolute; left: 7px; top: .8em;
               width: 10px; height: 10px; border-radius: 50%;
               background-color: $white;
-              box-shadow: $primaryColor 0 0 0 2px inset;
+              box-shadow: $assistant 0 0 0 2px inset;
               border: 2px solid $fontInvert;
             }
             &:hover, &:focus {
-              box-shadow: $white 0 0 0 1px inset , $primaryColor 0 0 0 2px;
+              box-shadow: $assistant 0 0 0 2px;
             }
           }
         }
@@ -129,9 +130,7 @@
             }
           }
         }
-        &:focus{
-          box-shadow: $linkColor 0 0 0 2px;
-        }
+        &:focus{box-shadow: $assistant 0 0 0 2px;}
       }
     }
 
@@ -160,9 +159,12 @@
           }
 
           &:hover, &:focus{
-            &::after{background-color: $primaryColor; height: 2px;}
+            &::after{background-color: $assistant; height: 2px;}
           }
-          &:focus{background-color: $assistant;box-shadow: $assistant 0 0 0 2px;}
+          &:focus{
+            background-color: lighten($primaryColor, 10%);
+            box-shadow: lighten($primaryColor, 10%) 0 0 0 2px;
+          }
         }
       }
     }
@@ -177,14 +179,14 @@
         height: 2.4em; line-height: 2.4; 
         padding: 0 .8em; margin: 4px; 
         font-size: inherit;border-radius: 2em;
-        box-shadow: $primaryColor 0 0 0 1px; color: $fontColor;
+        box-shadow: $assistant 0 0 0 1px inset; color: $fontColor;
         transition: .15s;
 
-        &:hover, &:focus{ box-shadow: $primaryColor 0 0 0 2px; }
+        &:hover, &:focus{ box-shadow: $assistant 0 0 0 2px inset; }
 
         &.active{
-          background-color: $assistant; box-shadow: $assistant 0 0 0 2px;
-          &:hover, &:focus{box-shadow: $primaryColor 0 0 0 2px;}
+          background-color: $assistant; color: $fontInvert;
+          &:hover, &:focus{box-shadow:$primaryColor 0 0 0 1px inset, $assistant 0 0 0 2px;}
         }
       }
     }

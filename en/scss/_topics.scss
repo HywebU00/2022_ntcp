@@ -21,11 +21,12 @@
     }
     &::before{
       height: 45%;
-      background-image: linear-gradient(rgba(17, 53, 83, 0) 0%, rgba(17, 53, 83, .9) 100%);
+      background-image: linear-gradient(0deg, rgba(93, 87, 152, 0.9) 0%, rgba(93, 87, 152, 0) 100%);
+
     }
     &::after{
       height: 100%; opacity: 0;
-      background-color: rgb(17, 53, 83);
+      background-color: rgb(93, 87, 152);
       transition: .2s;
     }
 
@@ -47,15 +48,6 @@
     .more{
       position: absolute; right: 0; top: 3rem; z-index: 9;
       opacity: 0; transition: .3s;
-      a{
-        background-color: $assistant; color: $fontColor;
-        &:hover{
-          box-shadow: $assistant 0 0 0 2px;
-        }
-        &:focus{
-          box-shadow:$primaryColor 0 0 0 1px, $assistant 0 0 0 3px;
-        }
-      }
     }
 
 
@@ -86,13 +78,14 @@
     }
 
     //////////////////////////////////////////////////////
+    // 游標 hover 到主題圖上方出現選單
     // hover & focus ---------------------------------------------
     &:hover, &.reveal {
       &::before{opacity: 0;}
-      &::after{ opacity: .65;}
+      &::after{ opacity: .75;}
       h3{
         top: 0; transform: translateY(0);
-        border-bottom-color: $assistant;
+        border-bottom-color: lighten($primaryColor, 5%);
       }
       .more{left: auto; right: 6%; opacity: 1;}
       .links {top: 7.5rem;}
@@ -109,7 +102,7 @@
 
   }
 
-  @media screen and (min-width: $wwMedium + 100px){
+  @media screen and (min-width: calc($wwMedium + 100px)){
     .flexbox{
       display: flex; flex-flow: row nowrap;
       width: calc(100% - 24px); max-width: 912px; margin: 0 auto;

@@ -28,12 +28,14 @@ $wwMaximum: 1200px;
 
 
 // ---------- 顏色變數 ----------- //
-$primaryColor:#1A2D3D;
-$assistant: #FFCB11;
+// ---------- 顏色變數 2023 改紫色 ----------- //
+$primaryColor:#b39ad4;
+$prim2:#e6c0e6;
+$assistant: #2B262D;
 $hiLight:#05b9e1;
-$notice: #a30f9e;
-
-$fontColor: #333;
+$notice: #c430de;
+// $xxx:#e6d7ff;
+$fontColor: #2B262D;
 $fontColorLight: #666;
 $fontColorDark: #000;
 $fontInvert: #fff;
@@ -45,7 +47,7 @@ $borderColorLight: #e2e1e1;
 $borderColorDark:#a4a9aa;
 
 $gray: #c8c9c4;
-$grayLight: #eeefe9;
+$grayLight: #F7F3F8;
 $grayDark: #73756e;
 
 $btnBg1: $primaryColor;
@@ -58,6 +60,12 @@ $black:#000;
 $white:#fff;
 
 @mixin gradient($deg: 0deg) {
-  background: linear-gradient($deg, #ffeb87 0%, #FFCF26 100%);
+  background: linear-gradient($deg, rgba(135, 28, 185, 0.2) 0%, rgba(116, 55, 170, 0.3) 62.14%, rgba(98, 92, 160, 0.4) 100%);
+}
+@mixin gradient1($deg: 0deg) {
+  background: linear-gradient(90deg, #832CAC 0%, #4C4498 100%);
+}
+@mixin gradient2($deg: 0deg){
+  background-image: linear-gradient($deg, rgba(156, 65, 199, 0.5) 0%, rgba(110, 81, 165, 0.76) 59.37%, #817BBC 100%);
 }
 // ---------- 顏色變數 ----------- //

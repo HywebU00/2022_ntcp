@@ -12,7 +12,7 @@
   position: fixed; top: 60px; bottom: 0; z-index: 990;
   width: $sideBarWidth; left:$sideBarWidth * (-1);
   overflow: auto; 
-  background-color: $assistant; color: $fontColor;
+  background-color: $primaryColor; color: $fontInvert;
   transition: .45s;
 
   // 顯示行動版側欄
@@ -40,13 +40,16 @@
       margin: 3px; padding: 0;
       &>a{
         display: block; text-decoration: none;
-        padding:.7em .5em .6em; height: 100%;
+        padding:.7em .5em .6em; height: 100%;text-align: center;
         box-shadow: rgba(255, 255, 255, 0.5) 0 0 0 1px;
-        color: $fontColor; text-align: center;
+        color: $fontColor; 
         transition: .2s;
         &:hover, &:focus{
-          background-color: $primaryColor; color: $fontInvert;
-          box-shadow:$primaryColor 0 0 0 1px;
+          background-color: $assistant; color: $fontInvert;
+          box-shadow:$assistant 0 0 0 1px;
+        }
+        &:focus{
+          box-shadow: $white 0 0 0 2px;
         }
       }
     }
@@ -64,39 +67,29 @@
       border-bottom: 1px solid rgba(255, 255, 255, .5);
       &:last-child{ border-bottom: none; }
       a{ 
-        padding: .8em .8em .7em;
-        color: $fontColor;
+        padding: .8em .8em .7em;color: $fontColor;
         transition: .2s;
-        &:hover{ background-color: $primaryColor; color: $fontInvert; }
+        &:hover{ background-color:$assistant; color: $fontInvert; }
       }
 
       &.hasChild{
         &>a{
           padding-right: 36px; position: relative;
-          &::after{ content: ''; position: absolute; right: 15px; top: 1.2em;
-            width: 8px; height: 8px; border: 2px solid $primaryColor;
+          &::after{
+            content: ''; position: absolute; right: 15px; top: 1.2em;
+            width: 8px; height: 8px; border: 2px solid $fontColor;
             transform: rotate(45deg); border-left: none; border-top: none;
             transition: .2s;
           }
           &:hover{
-            &::after{ border-color: $assistant;}
+            &::after{ border-color: $fontInvert;}
           }
         }
         &.closeIt{
           background-color: $primaryColor;
           padding-bottom: 1px;
           &>a{
-            color: $fontInvert;
-            &::after{ transform: rotate(225deg); top: 1.5em; border-color: $assistant;}
-          }
-          li{
-            a{
-              color: $fontInvert;
-              &::after{ border-color: $assistant;}
-              &:hover{background-color: $assistant; color: $primaryColor;
-                &::after{border-color: $primaryColor;}
-              }
-            }
+            &::after{ transform: rotate(225deg); top: 1.5em;}
           }
         }
       }

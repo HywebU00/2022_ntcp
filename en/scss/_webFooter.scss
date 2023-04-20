@@ -1,12 +1,11 @@
 // 頁腳
 .webFooter{
   position: relative; margin: 0 auto; padding:0;
-  background-color: #fff;
-
+  background-color: $white;
   &::after{
     content: '';
     position: absolute; left: 0;right: 0;bottom: 0;height: 9px;
-    background-color: $assistant;
+    @include gradient1(90deg);
   }
 
   .fatFootCtrl, .fatFooter{display: none;}
@@ -42,11 +41,11 @@
          background-size: 100%;border-radius: 4px;
 
          &:hover{
-          box-shadow: $assistant 0 0 0 2px; 
+          box-shadow: $primaryColor 0 0 0 2px; 
          }
          &:focus{
-          box-shadow: $primaryColor 0 0 0 2px;
-         }
+          box-shadow: $white 0 0 0 1px, $primaryColor 0 0 0 3px;
+        }
         }
       }
     }
@@ -102,7 +101,7 @@
      a{ display: block;
       &:hover, &:focus{
         img{
-          box-shadow:$white 0 0 0 1px, $primaryColor 0 0 0 3px;
+          box-shadow: $white 0 0 0 1px, $assistant 0 0 0 3px;
           border-radius: 2px;
         }
       }
@@ -127,7 +126,7 @@
       position: absolute; top: 2px; right: 60px; z-index: 9;
       width: 44px; height: 44px;  border-radius: 0; margin: 0;
       text-indent: -10em; overflow: hidden;
-      background-color: $primaryColor;
+      background-color: $assistant;
       border: none; box-shadow: none; cursor: pointer; 
       transition: .2s;
       &::before{
@@ -136,8 +135,8 @@
         border: 2px solid $fontInvert; border-top: none; border-left: none;
         transform: rotate(225deg);transition: .3s;
       }
-      &:hover{box-shadow: $primaryColor 0 0 0 2px;}
-      &:focus{box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;}
+      &:hover{box-shadow: $assistant 0 0 0 2px;}
+      &:focus{box-shadow:$primaryColor 0 0 0 1px, $assistant 0 0 0 4px;}
       &.closed{
         &::before{transform: rotate(45deg); margin-top: -6px;}
       }
@@ -176,10 +175,10 @@
                 &::before{
                   content: ''; position: absolute; left: 1px; top: .45em;
                   width: 0; height: 6px;
-                  background-color: $primaryColor; transition: .2s;
+                  background-color: $assistant; transition: .2s;
                 }
                 &:hover, &:focus{
-                  border-bottom-color: $primaryColor;
+                  border-bottom-color: $assistant;
                   padding-left: 12px; padding-right: 0;
                   &::before{ width: 6px; }
                 }
@@ -202,8 +201,6 @@
     // 宣告，無障礙標章
     .aaBadge{position: absolute; margin: 0; top: 50px;}
     .declaration{
-//  outline: 1px solid red; 
-      // right:calc(6% + 160px); width: calc(88% - 620px );
       ul{ text-align: right; display: block;}
       li{ float: left; }
     }

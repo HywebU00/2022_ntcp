@@ -1,7 +1,6 @@
 // .webHeader 版頭 /////////////////////////////////////////////////
 .webHeader{
   position: relative; z-index: 990;
-  // width: 100vw; 
   height: 60px; margin: 0 auto;padding:0;
   background-color: $white;
   box-shadow: rgba(0,0,0,.5) 0 -2px 6px;
@@ -68,7 +67,7 @@
           text-decoration: none;color: $fontColor;
           &::after{
             content: ''; position: absolute; left: 50%; bottom: 0; width: 0;
-            height: 2px; background-color: $primaryColor;
+            height: 2px; background-color: $assistant;
             transition: .2s;
           }
           &:hover, &:focus{
@@ -108,17 +107,18 @@
   @media screen and (min-width: $wwNormal){
     display: block;
     margin:0 auto; width: 100%;
-    background: $assistant;
+    background-color: $primaryColor ;
+    @include gradient1(90deg);
     li{
       margin: 0; padding: 0;
-      a{ color: $fontColor;}
+      a{ color: $fontInvert;}
   
       &.hasChild{
         position: relative;
         &>a{
           &::after{
             content: ''; width: 8px; height: 8px; 
-            border: 2px solid $black; border-left: none; border-bottom: none;
+            border: 2px solid $fontInvert; border-left: none; border-bottom: none;
           }
         }
       }
@@ -135,7 +135,7 @@
           padding:.8em .5em; white-space: nowrap; 
           transition: .2s;
           &:focus, &:hover {
-            background-color: $primaryColor; color: $fontInvert;
+            background-color: rgba(30,30,30,.5); color: $fontInvert;
             &::after{ border-color: $fontInvert;}
           }
         }
@@ -147,7 +147,8 @@
             }
           }
           &.here{
-            &>a{  background-color: $primaryColor; color: $fontInvert;
+            &>a{
+              background-color: rgba(30,30,30,.5); color: $fontInvert;
               &::after{ border-color: $fontInvert;}
             }
           }
@@ -172,7 +173,7 @@
               border-bottom: 1px solid $borderColor;
               transition: .15s; 
               &:hover, &:focus{ 
-                background-color: $primaryColor; color: $white;
+                background-color: $assistant; color: $fontInvert;
               }
             }
             &:last-child>a{border-bottom-color:transparent}
@@ -191,7 +192,7 @@
               }
   
               &.here{
-                background-color:$primaryColor; 
+                background-color: $assistant; 
                 &>a{color: $white;
                   &::after{border-color: $white;}
                 }
