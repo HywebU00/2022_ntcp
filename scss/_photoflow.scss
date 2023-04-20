@@ -36,7 +36,7 @@
         }
         &:focus {
           p{ transition: none;}
-          &:before{ box-shadow: $primaryColor 0 0 0 2px inset;}
+          &:before{ box-shadow: $assistant 0 0 0 2px inset;}
         }
       }
       img{
@@ -68,13 +68,13 @@
         transition: .2s;
       }
       &.active{
-        &::before{ box-shadow: $primaryColor 0 0 0 2px;background:$primaryColor}
+        &::before{ box-shadow: $assistant 0 0 0 2px;background:$assistant}
       }
     }
   }
 
   // 左右箭頭 button
-  .diskBtn{top: auto; bottom: 8px;transform: translateY(0); margin: 0 5px;}
+  .diskBtn{top: auto; bottom: 8px;transform: translateY(0); margin: 0 5px; z-index: 99;}
 
   @media screen and (min-width: $wwMedium){
     .flowList{

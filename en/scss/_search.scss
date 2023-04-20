@@ -35,7 +35,8 @@
     background: url(../images/icon_search.svg) no-repeat center center;
     background-size: 60%;
     &:hover, &:focus{ 
-      background-color: $primaryColor; box-shadow: none;
+      background-color: $assistant2; box-shadow: none;
+      background-image: url(../images/icon_search_w.svg);
     }
   }
 
@@ -58,7 +59,7 @@
         text-decoration: none; cursor: pointer;
         background-color: $white;
         &:hover, &:focus{ 
-          background-color: darken($primaryColor, 20%); color: $fontInvert;
+          background-color: $assistant2; color: $fontInvert;
           box-shadow: $white 0 0 0 2px;
         }
       }

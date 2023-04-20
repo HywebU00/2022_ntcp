@@ -57,15 +57,15 @@
         }
         &:hover, &:focus{
           padding-bottom: 66px; margin-top: -22px; color: $fontColor;
-          &::before{background-color: $primaryColor;}
+          &::before{background-color: $assistant2;}
         }
         &:hover{
           color: $fontColor;
-          &::before{box-shadow: $primaryColor 0 0 0 2px;}
+          &::before{box-shadow: $assistant2 0 0 0 2px;}
         }
         &:focus{
           &::before{
-            box-shadow:$assistant 0 0 0 1px, $primaryColor 0 0 0 4px;
+            box-shadow:lighten($primaryColor, 12%) 0 0 0 1px, $assistant2 0 0 0 4px;
           }
         }
       }

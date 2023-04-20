@@ -3,15 +3,16 @@ body{
   position: relative;
   margin: 0; padding: 0;
   font-family:'Tenor Sans', Helvetica, Arial,'微軟正黑體', sans-serif;
-  background:$primaryColor; color: #fff;
-
+  background:$assistant1; color: #fff;
+  @include gradient1(0deg);
+  background-size: auto 120vh;
 }
 
 
+////////////////////////////////////////////////////////////////////
 .pageNotFound{
   margin: 0 auto;padding:30px 0 10px; width: 86vw;
   box-sizing: border-box;
-
 
   header{
     display: flex; flex-flow: row wrap; align-items: flex-end; 

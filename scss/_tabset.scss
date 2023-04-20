@@ -41,7 +41,7 @@
         background-color: $white; color: $fontColor;
         transition: .2s;
         &:focus, &:hover{
-          box-shadow: $primaryColor 0 0 0 2px inset;
+          box-shadow: $assistant 0 0 0 2px inset;
         }
         &.active {
           color: $fontInvert; background: $assistant;

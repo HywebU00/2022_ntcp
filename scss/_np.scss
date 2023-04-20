@@ -19,7 +19,7 @@
         transition: .2s;
         &::before{
           content: ''; position: absolute; left: 0; top: -1px; bottom: -1px; width: 5px;
-          background-color: $primaryColor;
+          background-color: $borderColorDark;
           transition: .1s;
         }
         &:hover, &:focus{

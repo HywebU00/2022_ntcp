@@ -45,10 +45,11 @@
       &.now {
         &::after {
           width: 24px; height: 24px;
-					background: $assistant;
-          box-shadow:$white 0 0 0 2px, $primaryColor 0 0 0 6px;
+					background: lighten($primaryColor, 15%);
+          background-color: $assistant2;
+          box-shadow:$white 0 0 0 2px, $assistant1 0 0 0 6px;
         }
-        em{color: $primaryColor;}
+        em{color: $fontInvert;}
       }
     }
   }

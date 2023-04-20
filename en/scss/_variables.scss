@@ -27,31 +27,31 @@ $wwMaximum: 1200px;
 // ---------- 主要內容寬度設定 ----------- //
 
 
-// ---------- 顏色變數 ----------- //
 // ---------- 顏色變數 2023 改紫色 ----------- //
 $primaryColor:#b39ad4;
-$prim2:#e6c0e6;
 $assistant: #2B262D;
-$hiLight:#05b9e1;
-$notice: #c430de;
-// $xxx:#e6d7ff;
+$assistant1: #8a07b6;
+$assistant2: #4d2ea4;
+$hiLight: #8a07b6;
+$notice:#ff1550;
+
 $fontColor: #2B262D;
 $fontColorLight: #666;
 $fontColorDark: #000;
 $fontInvert: #fff;
-$linkColor: #07637f;
+$linkColor: #0b4abf;
 $mainBg: #fff;
 
-$borderColor: #c1c5c6;
-$borderColorLight: #e2e1e1;
-$borderColorDark:#a4a9aa;
+$borderColor: #c4c1c6;
+$borderColorLight: #e2e1e2;
+$borderColorDark:#929094;
 
-$gray: #c8c9c4;
+$gray: #c8c4c9;
 $grayLight: #F7F3F8;
-$grayDark: #73756e;
+$grayDark: #736e75;
 
-$btnBg1: $primaryColor;
-$btnBg2: #00699a;
+$btnBg1: $assistant;
+$btnBg2: #832CAC;
 
 $footerBg: #f8f9f7;
 $sidebarBg: $primaryColor;
@@ -63,7 +63,7 @@ $white:#fff;
   background: linear-gradient($deg, rgba(135, 28, 185, 0.2) 0%, rgba(116, 55, 170, 0.3) 62.14%, rgba(98, 92, 160, 0.4) 100%);
 }
 @mixin gradient1($deg: 0deg) {
-  background: linear-gradient(90deg, #832CAC 0%, #4C4498 100%);
+  background: linear-gradient($deg, #832CAC 0%, #4C4498 100%);
 }
 @mixin gradient2($deg: 0deg){
   background-image: linear-gradient($deg, rgba(156, 65, 199, 0.5) 0%, rgba(110, 81, 165, 0.76) 59.37%, #817BBC 100%);

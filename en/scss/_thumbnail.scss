@@ -12,8 +12,8 @@
         background: $white;  color: $fontColor; text-decoration: none;
         box-shadow: $borderColor 0 0 0 1px;
         transition: .3s;
-        &:hover{ box-shadow: $primaryColor 0 0 0 1px, rgba(0, 0, 0, 0.4) 0 4px 16px;}
-        &:focus{box-shadow: $primaryColor 0 0 0 2px, rgba(0, 0, 0, 0.4) 0 4px 16px;}
+        &:hover{ box-shadow: $borderColorDark 0 0 0 1px, rgba(0, 0, 0, 0.4) 0 4px 16px;}
+        &:focus{box-shadow: $assistant1 0 0 0 2px, rgba(0, 0, 0, 0.4) 0 4px 16px;}
       }
 
       img{ display: block; width: 100%; margin: 0 0 1em; }
@@ -49,7 +49,7 @@
       &>li{
         flex: 0 0 calc(50% - 8px); margin-right: 16px;
         &:nth-child(2n){ margin-right: 0;}
-        img{height: calc(#{$mobileWidth}/2 - 18px); object-fit: contain; background: $grayLight;}
+        img{height: calc(#{$mobileWidth}/2 - 18px); object-fit: contain; background: desaturate($grayLight, 30%);}
         p{
           display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2;
           overflow: hidden;
@@ -72,8 +72,8 @@
             transform: translateY(-4px);
             p, h3 { text-decoration: underline; color: $fontColorDark; }
           }
-          &:hover{ box-shadow:$primaryColor 0 0 0 1px, $borderColor 0 0 20px;}
-          &:focus{box-shadow: $primaryColor 0 0 0 2px, rgba(0, 0, 0, 0.4) 0 4px 16px;}
+          &:hover{ box-shadow:$borderColorDark 0 0 0 1px, $borderColor 0 0 20px;}
+          &:focus{ box-shadow: $assistant1 0 0 0 2px, rgba(0, 0, 0, 0.4) 0 4px 16px;}
         }
         img{ height: calc(#{$normalWidth}/4 - 22px); }
 
