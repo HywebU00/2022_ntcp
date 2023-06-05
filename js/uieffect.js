@@ -830,7 +830,7 @@ $(function(){
     let _tabContent = _this.find('.tabContent');
     let i = _tabButton.filter('.active').index();
 
-    _tabContent.not(':last').append('<button class="skip"></button>')
+    _tabContent.not(':last').append('<button type="button" class="skip">到下一個頁籤項</button>')
     let _skip = _tabContent.find('.skip');
     
     _tabContent.eq(i).show();
