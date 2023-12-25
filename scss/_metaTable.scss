@@ -35,12 +35,12 @@
     }
   }
 
-  @media screen and (max-width: $wwNormal - 1px){
+  @media screen and (max-width: calc($wwNormal - 1px)){
     margin-bottom: 50px;padding:25px 3vw; 
     border-radius: 6px;
   }
 
-  @media screen and (max-width: $wwMedium - 1px){
+  @media screen and (max-width: calc($wwMedium - 1px)){
     &>table{
       border-width: 1px;
       tr{
